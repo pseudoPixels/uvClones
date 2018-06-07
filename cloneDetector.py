@@ -278,24 +278,27 @@ for i in range(0, len(all_potential_clones)):
 				#print trueCloneProb
 				if trueCloneProb > 0.5:
 					c = c + 1
-					print '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$', trueCloneProb
-					print 'system_id'
-					print 'clone_id'
-					print all_potential_clones[i].attrs['file'], " ", all_potential_clones[i].attrs['startline'], " ", all_potential_clones[i].attrs['endline']
-					print all_potential_clones[j].attrs['file'], " ", all_potential_clones[j].attrs['startline'], " ", all_potential_clones[j].attrs['endline']
 
-					print '----------------------------------------'
-					print src1
-					print '----------------------------------------'
-					print src2
-					print '----------------------------------------'
+					with open(potential_clones+".clones", "a") as fo:
+						#fo.write(out)
+						fo.write( '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n')
+						fo.write( '0\n' )
+						fo.write( '0\n' )
+						fo.write( all_potential_clones[i].attrs['file'] + " " + all_potential_clones[i].attrs['startline'] + " " + all_potential_clones[i].attrs['endline'] + "\n")
+						fo.write( all_potential_clones[j].attrs['file'] +  " " + all_potential_clones[j].attrs['startline'] + " " + all_potential_clones[j].attrs['endline'] + "\n")
+
+						fo.write( '----------------------------------------\n')
+						fo.write( src1 +"\n")
+						fo.write( '----------------------------------------\n')
+						fo.write( src2 +"\n")
+						fo.write( '----------------------------------------\n')
 
 					# print '***************************** CLONE PAIR ***************************', trueCloneProb
 					# print src1
 					# print ' =========================== '
 					# print src2
 
-print "Total Clones Found:: ", c
+#print "Total Clones Found:: ", c
 
 #################################################################################
 ####################CODE CLONE VALIDATION ENDS###################################
