@@ -1,0 +1,11 @@
+
+public DrawApplication (String title) {
+    super (title);
+    setApplicationName (title);
+    winCount ++;
+}
+public DrawApplication (String title) {
+    super (title);
+    setApplicationName (title);
+    winCount ++;
+}

@@ -1,0 +1,13 @@
+
+public void newView () {
+    if (view () == 0) {
+        return;
+    }
+    DrawApplication window = createApplication ();
+    window.open (view ());
+    if (view ().drawing ().getTitle () != 0) {
+        window.setDrawingTitle (view ().drawing ().getTitle () + 0);
+    } else {
+        window.setDrawingTitle (getDefaultDrawingTitle () + 0);
+    }
+}

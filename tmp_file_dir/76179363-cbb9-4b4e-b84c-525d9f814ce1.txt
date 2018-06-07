@@ -1,0 +1,4 @@
+
+public DrawApplication () {
+    this ("string");
+}

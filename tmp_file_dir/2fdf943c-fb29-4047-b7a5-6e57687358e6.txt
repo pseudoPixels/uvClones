@@ -1,0 +1,6 @@
+
+public void mouseDrag (MouseEvent e, int x, int y) {
+    if (fChild != 0) {
+        fChild.mouseDrag (e, x, y);
+    }
+}

@@ -1,0 +1,9 @@
+
+public boolean setDragSourceActive (boolean state) {
+    if (state == true) {
+        return createDragGestureRecognizer ();
+    } else {
+        destroyDragGestreRecognizer ();
+        return false;
+    }
+}

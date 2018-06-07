@@ -1,0 +1,7 @@
+
+public void invokeEnd (int x, int y, int anchorX, int anchorY, DrawingView view) {
+    myOwner ().smoothPoints ();
+    if ((x == anchorX) && (y == anchorY)) {
+        setUndoActivity (0);
+    }
+}

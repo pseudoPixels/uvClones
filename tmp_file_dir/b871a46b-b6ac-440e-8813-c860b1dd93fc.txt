@@ -1,0 +1,13 @@
+
+public void x1 () {
+    if (x2 () == null) {
+        return;
+    }
+    x3 x4 = x5 ();
+    x4.x6 (x2 ());
+    if (x2 ().x7 ().x8 () != null) {
+        x4.x9 (x2 ().x7 ().x8 () + " (View)");
+    } else {
+        x4.x9 (x10 () + " (View)");
+    }
+}
