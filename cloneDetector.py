@@ -241,7 +241,7 @@ lang = 'java'
 potential_clones = 'jHotDraw2.xml'
 minLine = 11
 maxLine = 2500
-
+threshold = 0.5
 
 
 
@@ -253,16 +253,19 @@ with open(potential_clones) as fp:
 
 all_potential_clones = soup.find_all('source')
 
-l = len(all_potential_clones)
-print l
-c = 0
-for i in range(0, len(all_potential_clones)):
+total_pcs = len(all_potential_clones)
+#print l
+number_of_clones_found = 0
+print "Detecting Clones..."
+for i in range(0, total_pcs):
 	src1 = all_potential_clones[i].text
 	src1_lines = src1.count('\n')
 	#print "Progress ", i*100/l , "%"
-	for j in range(i+1, len(all_potential_clones)):
+	for j in range(i+1, total_pcs):
 		src2 = all_potential_clones[j].text
 		src2_lines = src2.count('\n')
+
+
 
 		if (src1_lines >= minLine or src2_lines >= minLine) and (src1_lines <= maxLine or src2_lines <= maxLine):
 			if min(src1_lines, src2_lines)*2 >= max(src1_lines, src2_lines):
@@ -276,8 +279,8 @@ for i in range(0, len(all_potential_clones)):
 				#print trueCloneProb
 				#print '++++++++++++++++++++++++++++++++++++++'
 				#print trueCloneProb
-				if trueCloneProb > 0.5:
-					c = c + 1
+				if trueCloneProb > threshold:
+					number_of_clones_found = number_of_clones_found + 1
 
 					with open(potential_clones+".clones", "a") as fo:
 						#fo.write(out)
@@ -292,6 +295,29 @@ for i in range(0, len(all_potential_clones)):
 						fo.write( '----------------------------------------\n')
 						fo.write( src2 +"\n")
 						fo.write( '----------------------------------------\n')
+
+
+	print "Progress : ", str(i * 100 / total_pcs), "%"
+
+
+#Writting Clone Analysis Information
+with open(potential_clones + ".clones", "a") as fo:
+	fo.write("\n\n****************************************************\n")
+	fo.write("*************Clone Analysis Stats ******************\n")
+	fo.write("****************************************************\n")
+
+	fo.write('Total Potential Clones ==> ' + str(total_pcs)+'\n')
+	fo.write('Minimum Line ==> ' + str(minLine) + '\n')
+	fo.write('Maximum Line ==> ' + str(maxLine) + '\n')
+	fo.write('Threshold ==> ' + str(threshold) + '\n')
+	fo.write('Clones Found ==> ' + str(number_of_clones_found) + '\n')
+
+	fo.write("****************************************************\n")
+
+
+
+print "Done"
+
 
 					# print '***************************** CLONE PAIR ***************************', trueCloneProb
 					# print src1
