@@ -238,7 +238,7 @@ lang = 'java'
 # 			print src2
 
 
-potential_clones = 'jHotDraw.xml'
+potential_clones = 'google_guava.xml'
 minLine = 11
 maxLine = 2500
 threshold = 0.5
