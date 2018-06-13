@@ -1,0 +1,14 @@
+
+public void playbackStateChanged (PlaybackState state, AudioObject currentAudioObject) {
+    this.lastState = state;
+    this.lastAudioObject = currentAudioObject;
+    if (state == PlaybackState.PLAYING || state == PlaybackState.RESUMING) {
+        if (currentAudioObject instanceof AudioFile) {
+            setMessage (AbstractPattern.applyPatternTransformations ((String) configuration.getProperty (0).getValue (), (AudioFile) currentAudioObject));
+        } else {
+            setMessage (currentAudioObject.getTitle ());
+        }
+    } else {
+        setMessage (0);
+    }
+}

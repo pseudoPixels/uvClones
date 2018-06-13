@@ -1,0 +1,22 @@
+
+x1  x2 (final x3  x4, final x5 x6, final x7 x8, final x9 x10, x9 x11, x12 x13) {
+    x1  x14 = new x15  ();
+    if (x6.x16 ()) {
+        if (x10 == null) {
+            x14.x17 (x4);
+        } else {
+            for (int x18 = 0;
+            x18  x19 = (x20 ) x6.x21 (x18).x22 ();
+                x14.x17 (x19.x23 ());
+            }
+        }
+    } else {
+        @x24("unchecked")
+        x20  x19 = (x20 ) x6.x22 ();
+        x14.x17 (x19.x23 ());
+    }
+    if (x11 != null) {
+        x14 = x13.x25 (x14, x11);
+    }
+    return x14;
+}

@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6aaae02f-c222-43c0-9fb9-aa49de184dea" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PotentialClones/google_guava.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/google_guava.xml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/jHotDraw.xml" afterPath="$PROJECT_DIR$/PotentialClones/jHotDraw.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/jHotDraw.xml.clones" afterPath="$PROJECT_DIR$/Test/jHotDraw.xml.clones" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/jHotDraw.xml_DO NOT DELETE.clones" afterPath="$PROJECT_DIR$/Test/jHotDraw.xml_DO NOT DELETE.clones" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/jHotDraw2.xml" afterPath="$PROJECT_DIR$/PotentialClones/jHotDraw2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloneDetector.py" afterPath="$PROJECT_DIR$/cloneDetector.py" />
     </list>
     <ignored path="uvClones.iws" />
@@ -25,41 +32,11 @@
       <file leaf-file-name="cloneDetector.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cloneDetector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="745">
-              <caret line="245" column="0" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+            <state relative-caret-position="265">
+              <caret line="269" column="20" selection-start-line="269" selection-start-column="20" selection-end-line="269" selection-end-column="20" />
               <folding>
                 <element signature="e#249#262#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="google_guava.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/google_guava.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jHotDraw.xml.clones" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jHotDraw.xml.clones">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="7574" column="0" selection-start-line="7574" selection-start-column="0" selection-end-line="7574" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jHotDraw.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jHotDraw.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -76,15 +53,18 @@
         <option value="$PROJECT_DIR$/jHotDraw2.xml" />
         <option value="$PROJECT_DIR$/jHotDraw2.xml.clones" />
         <option value="$PROJECT_DIR$/jHotDraw2.xml.validated" />
+        <option value="$PROJECT_DIR$/google_guava.xml" />
+        <option value="$PROJECT_DIR$/google_guava.xml.clones" />
         <option value="$PROJECT_DIR$/cloneDetector.py" />
+        <option value="$PROJECT_DIR$/atunes.xml.clones" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
+    <option name="x" value="2625" />
     <option name="y" value="-4" />
-    <option name="width" value="2495" />
-    <option name="height" value="1604" />
+    <option name="width" value="1855" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -130,20 +110,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uvClones" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uvClones" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DetectedClones" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -153,9 +119,14 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Test" />
+      <recent name="$PROJECT_DIR$/PotentialClones" />
       <recent name="$PROJECT_DIR$/DetectedClones" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/DetectedClones" />
       <recent name="$PROJECT_DIR$/Repo_Libraries" />
       <recent name="$PROJECT_DIR$/UserValidator" />
     </key>
@@ -310,10 +281,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="2495" height="1604" extended-state="6" />
+    <frame x="2625" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18527508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -356,7 +327,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jHotDraw2.xml">
+    <entry file="file://$PROJECT_DIR$/PotentialClones/jHotDraw2.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
@@ -364,7 +335,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jHotDraw.xml">
+    <entry file="file://$PROJECT_DIR$/PotentialClones/jHotDraw.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
@@ -380,15 +351,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DetectedClones/jHotDraw.xml.clones">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jHotDraw.xml.clones">
+    <entry file="file://$PROJECT_DIR$/Test/jHotDraw.xml.clones">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="7574" column="0" selection-start-line="7574" selection-start-column="0" selection-end-line="7574" selection-end-column="0" />
@@ -396,18 +359,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/google_guava.xml">
+    <entry file="file://$PROJECT_DIR$/PotentialClones/ipscan.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PotentialClones/google_guava.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/google_guava.xml.clones">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4050">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PotentialClones/jLipSync.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainedNetwork">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/atunes.xmlOLD.clones">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PotentialClones/atunes.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1980">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DetectedClones/jHotDraw.xml.clones">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="5915" column="40" selection-start-line="5915" selection-start-column="40" selection-end-line="5915" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/jLipSync.xml_thres0.5.clones">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DetectedClones/jLipSync.xml_thres0.7.clones">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/atunes.xml.clones">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="251" column="5" selection-start-line="251" selection-start-column="5" selection-end-line="251" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cloneDetector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="245" column="0" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+        <state relative-caret-position="265">
+          <caret line="269" column="20" selection-start-line="269" selection-start-column="20" selection-end-line="269" selection-end-column="20" />
           <folding>
             <element signature="e#249#262#0" expanded="true" />
           </folding>

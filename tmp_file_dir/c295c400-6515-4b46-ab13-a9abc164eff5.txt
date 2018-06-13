@@ -1,0 +1,7 @@
+
+public x1  x2 (int x3) {
+    if (x3 == 0) {
+        return x4.class;
+    }
+    return null;
+}

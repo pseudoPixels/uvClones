@@ -1,0 +1,11 @@
+public void removePlayList (final int index) {
+    if (validateIndex (index) && moreThanOnePlayList ()) {
+        switchPlayListIfNeeded (index);
+        playListsContainer.removePlayList (index);
+        adjustVisibleAndActivePlayLists (index);
+        playListTabController.deletePlayList (index);
+        playListController.refreshPlayList ();
+        playListHandler.playListsChanged ();
+    }
+}
+

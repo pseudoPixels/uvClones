@@ -1,0 +1,9 @@
+
+static ImmutableMap  parseTrie (CharSequence encoded) {
+    ImmutableMap.Builder  builder = ImmutableMap.builder ();
+    int encodedLen = encoded.length ();
+    int idx = 0;
+    while (idx  newLinkedList (), encoded.subSequence (idx, encodedLen), builder);
+    }
+    return builder.build ();
+}

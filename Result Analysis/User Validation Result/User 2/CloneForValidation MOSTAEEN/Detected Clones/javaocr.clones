@@ -1,0 +1,1710 @@
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/moment/src/main/java/net/sourceforge/javaocr/plugin/moment/RawMomentFilter.java 42 47
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/moment/src/main/java/net/sourceforge/javaocr/plugin/moment/RawMomentFilter.java 50 55
+----------------------------------------
+
+protected double [] precomputeX (Image image) {
+    final double [] doubles = new double [image.getWidth ()];
+    for (int i = 0;
+    i < doubles.length; i ++) doubles [i] = Math.pow (i, p);
+
+    return doubles;
+}
+
+----------------------------------------
+
+protected double [] precomputeY (Image image) {
+    final double [] doubles = new double [image.getHeight ()];
+    for (int i = 0;
+    i < doubles.length; i ++) doubles [i] = Math.pow (i, q);
+
+    return doubles;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/moment/src/main/java/net/sourceforge/javaocr/plugin/moment/RawMomentFilter.java 42 47
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/moment/src/main/java/net/sourceforge/javaocr/plugin/moment/CentralMomentFilter.java 46 51
+----------------------------------------
+
+protected double [] precomputeX (Image image) {
+    final double [] doubles = new double [image.getWidth ()];
+    for (int i = 0;
+    i < doubles.length; i ++) doubles [i] = Math.pow (i, p);
+
+    return doubles;
+}
+
+----------------------------------------
+
+protected double [] precomputeX (Image image) {
+    final double [] doubles = new double [image.getWidth ()];
+    for (int i = 0;
+    i < doubles.length; i ++) doubles [i] = Math.pow (i - xMean, p);
+
+    return doubles;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/moment/src/main/java/net/sourceforge/javaocr/plugin/moment/RawMomentFilter.java 42 47
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/moment/src/main/java/net/sourceforge/javaocr/plugin/moment/CentralMomentFilter.java 54 59
+----------------------------------------
+
+protected double [] precomputeX (Image image) {
+    final double [] doubles = new double [image.getWidth ()];
+    for (int i = 0;
+    i < doubles.length; i ++) doubles [i] = Math.pow (i, p);
+
+    return doubles;
+}
+
+----------------------------------------
+
+protected double [] precomputeY (Image image) {
+    final double [] doubles = new double [image.getHeight ()];
+    for (int i = 0;
+    i < doubles.length; i ++) doubles [i] = Math.pow (i - yMean, q);
+
+    return doubles;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/moment/src/main/java/net/sourceforge/javaocr/plugin/moment/RawMomentFilter.java 50 55
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/moment/src/main/java/net/sourceforge/javaocr/plugin/moment/CentralMomentFilter.java 46 51
+----------------------------------------
+
+protected double [] precomputeY (Image image) {
+    final double [] doubles = new double [image.getHeight ()];
+    for (int i = 0;
+    i < doubles.length; i ++) doubles [i] = Math.pow (i, q);
+
+    return doubles;
+}
+
+----------------------------------------
+
+protected double [] precomputeX (Image image) {
+    final double [] doubles = new double [image.getWidth ()];
+    for (int i = 0;
+    i < doubles.length; i ++) doubles [i] = Math.pow (i - xMean, p);
+
+    return doubles;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/moment/src/main/java/net/sourceforge/javaocr/plugin/moment/RawMomentFilter.java 50 55
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/moment/src/main/java/net/sourceforge/javaocr/plugin/moment/CentralMomentFilter.java 54 59
+----------------------------------------
+
+protected double [] precomputeY (Image image) {
+    final double [] doubles = new double [image.getHeight ()];
+    for (int i = 0;
+    i < doubles.length; i ++) doubles [i] = Math.pow (i, q);
+
+    return doubles;
+}
+
+----------------------------------------
+
+protected double [] precomputeY (Image image) {
+    final double [] doubles = new double [image.getHeight ()];
+    for (int i = 0;
+    i < doubles.length; i ++) doubles [i] = Math.pow (i - yMean, q);
+
+    return doubles;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/moment/src/main/java/net/sourceforge/javaocr/plugin/moment/CentralMomentFilter.java 46 51
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/moment/src/main/java/net/sourceforge/javaocr/plugin/moment/CentralMomentFilter.java 54 59
+----------------------------------------
+
+protected double [] precomputeX (Image image) {
+    final double [] doubles = new double [image.getWidth ()];
+    for (int i = 0;
+    i < doubles.length; i ++) doubles [i] = Math.pow (i - xMean, p);
+
+    return doubles;
+}
+
+----------------------------------------
+
+protected double [] precomputeY (Image image) {
+    final double [] doubles = new double [image.getHeight ()];
+    for (int i = 0;
+    i < doubles.length; i ++) doubles [i] = Math.pow (i - yMean, q);
+
+    return doubles;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/fir/src/main/java/net/sourceforge/javaocr/plugin/fir/AbstractNeighborhoodFilter.java 54 71
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/morphology/src/main/java/net/sourceforge/javaocr/plugin/morphology/ErosionFilter.java 61 78
+----------------------------------------
+
+public void process (Image image) {
+    final int imageW = image.getWidth ();
+    final int imageH = image.getHeight ();
+    for (int y = sizeT;
+    y < imageH - sizeB; ++ y) {
+        for (int x = sizeL;
+        x < imageW - sizeR; ++ x) {
+            Image nImage = image.chisel (x - sizeL, y - sizeT, filterW, filterH);
+            destImage.put (x, y, processNeighborhood (nImage));
+        }
+    }
+    image.chisel (0, 0, imageW, sizeT).copy (destImage.chisel (0, 0, imageW, sizeT));
+    image.chisel (0, imageH - sizeB, imageW, sizeB).copy (destImage.chisel (0, imageH - sizeB, imageW, sizeB));
+    image.chisel (0, 0, sizeL, imageH).copy (destImage.chisel (0, 0, sizeL, imageH));
+    image.chisel (imageW - sizeR, 0, sizeR, imageH).copy (destImage.chisel (imageW - sizeR, 0, sizeR, imageH));
+}
+
+----------------------------------------
+
+public void process (Image image) {
+    final int imageW = image.getWidth ();
+    final int imageH = image.getHeight ();
+    image.chisel (0, 0, imageW, sizeT).copy (destImage.chisel (0, 0, imageW, sizeT));
+    image.chisel (0, imageH - sizeB, imageW, sizeB).copy (destImage.chisel (0, imageH - sizeB, imageW, sizeB));
+    image.chisel (0, 0, sizeL, imageH).copy (destImage.chisel (0, 0, sizeL, imageH));
+    image.chisel (imageW - sizeR, 0, sizeR, imageH).copy (destImage.chisel (imageW - sizeR, 0, sizeR, imageH));
+    for (int y = sizeT;
+    y < imageH - sizeB; ++ y) {
+        for (int x = sizeL;
+        x < imageW - sizeR; ++ x) {
+            Image nImage = image.chisel (x - sizeL, y - sizeT, seImageW, seImageH);
+            destImage.put (x, y, processNeighborhood (nImage));
+        }
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/fir/src/main/java/net/sourceforge/javaocr/plugin/fir/AbstractNeighborhoodFilter.java 54 71
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/morphology/src/main/java/net/sourceforge/javaocr/plugin/morphology/DilationFilter.java 61 80
+----------------------------------------
+
+public void process (Image image) {
+    final int imageW = image.getWidth ();
+    final int imageH = image.getHeight ();
+    for (int y = sizeT;
+    y < imageH - sizeB; ++ y) {
+        for (int x = sizeL;
+        x < imageW - sizeR; ++ x) {
+            Image nImage = image.chisel (x - sizeL, y - sizeT, filterW, filterH);
+            destImage.put (x, y, processNeighborhood (nImage));
+        }
+    }
+    image.chisel (0, 0, imageW, sizeT).copy (destImage.chisel (0, 0, imageW, sizeT));
+    image.chisel (0, imageH - sizeB, imageW, sizeB).copy (destImage.chisel (0, imageH - sizeB, imageW, sizeB));
+    image.chisel (0, 0, sizeL, imageH).copy (destImage.chisel (0, 0, sizeL, imageH));
+    image.chisel (imageW - sizeR, 0, sizeR, imageH).copy (destImage.chisel (imageW - sizeR, 0, sizeR, imageH));
+}
+
+----------------------------------------
+
+public void process (Image image) {
+    final int imageW = image.getWidth ();
+    final int imageH = image.getHeight ();
+    image.chisel (0, 0, imageW, sizeT).copy (destImage.chisel (0, 0, imageW, sizeT));
+    image.chisel (0, imageH - sizeB, imageW, sizeB).copy (destImage.chisel (0, imageH - sizeB, imageW, sizeB));
+    image.chisel (0, 0, sizeL, imageH).copy (destImage.chisel (0, 0, sizeL, imageH));
+    image.chisel (imageW - sizeR, 0, sizeR, imageH).copy (destImage.chisel (imageW - sizeR, 0, sizeR, imageH));
+    for (int y = sizeT;
+    y < imageH - sizeB; ++ y) {
+        for (int x = sizeL;
+        x < imageW - sizeR; ++ x) {
+            if (image.get (x, y) == full) {
+                Image nImage = destImage.chisel (x - sizeL, y - sizeT, seImageW, seImageH);
+                processNeighborhood (nImage);
+            }
+        }
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/awt/src/main/java/net/sourceforge/javaocr/ocrPlugins/charExtractor/CharacterExtractor.java 48 66
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/awt/src/main/java/net/sourceforge/javaocr/ocrPlugins/lineExtractor/LineExtractor.java 44 60
+----------------------------------------
+
+public void slice (File inputImage, File outputDir, int std_width, int std_height) {
+    try {
+        this.std_width = std_width;
+        this.std_height = std_height;
+        this.inputImage = inputImage;
+        this.outputDir = outputDir;
+        Image img = ImageIO.read (inputImage);
+        PixelImage pixelImage = new PixelImage (img);
+        pixelImage.toGrayScale (true);
+        pixelImage.filter ();
+        documentScanner.scan (pixelImage, this, 0, 0, pixelImage.width, pixelImage.height);
+    } catch (IOException ex) {
+        Logger.getLogger (CharacterExtractor.class.getName ()).log (Level.SEVERE, null, ex);
+    }
+}
+
+----------------------------------------
+
+public void slice (File inputImage, File outputDir) {
+    try {
+        this.inputImage = inputImage;
+        this.outputDir = outputDir;
+        Image img = ImageIO.read (inputImage);
+        PixelImage pixelImage = new PixelImage (img);
+        pixelImage.toGrayScale (true);
+        pixelImage.filter ();
+        documentScanner.scan (pixelImage, this, 0, 0, pixelImage.width, pixelImage.height);
+    } catch (IOException ex) {
+        LOG.log (Level.SEVERE, null, ex);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/awt/src/main/java/net/sourceforge/javaocr/ocrPlugins/charExtractor/CharacterExtractor.java 48 66
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/awt/src/main/java/net/sourceforge/javaocr/ocrPlugins/charTracer/CharacterTracer.java 45 65
+----------------------------------------
+
+public void slice (File inputImage, File outputDir, int std_width, int std_height) {
+    try {
+        this.std_width = std_width;
+        this.std_height = std_height;
+        this.inputImage = inputImage;
+        this.outputDir = outputDir;
+        Image img = ImageIO.read (inputImage);
+        PixelImage pixelImage = new PixelImage (img);
+        pixelImage.toGrayScale (true);
+        pixelImage.filter ();
+        documentScanner.scan (pixelImage, this, 0, 0, pixelImage.width, pixelImage.height);
+    } catch (IOException ex) {
+        Logger.getLogger (CharacterExtractor.class.getName ()).log (Level.SEVERE, null, ex);
+    }
+}
+
+----------------------------------------
+
+public BufferedImage getTracedImage (File inputImage) {
+    try {
+        bfImage = ImageIO.read (inputImage);
+        bfImageGraphics = bfImage.createGraphics ();
+        Image img = ImageIO.read (inputImage);
+        PixelImage pixelImage = new PixelImage (img);
+        pixelImage.toGrayScale (true);
+        pixelImage.filter ();
+        documentScanner.scan (pixelImage, this, 0, 0, pixelImage.width, pixelImage.height);
+    } catch (IOException ex) {
+        LOG.log (Level.SEVERE, null, ex);
+    }
+    bfImageGraphics.dispose ();
+    return bfImage;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/awt/src/main/java/net/sourceforge/javaocr/ocrPlugins/mseOCR/OCRScanner.java 139 148
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/awt/src/main/java/net/sourceforge/javaocr/ocrPlugins/mseOCR/OCRScanner.java 353 363
+----------------------------------------
+
+public void endRow (PixelImage pixelImage, int y1, int y2) {
+    if (accListener != null) {
+        OCRIdentification identAccuracy = new OCRIdentification (OCRComp.MSE);
+        identAccuracy.addChar ('\n', 0.0);
+        accListener.processCharOrSpace (identAccuracy);
+    }
+}
+
+----------------------------------------
+
+public void processSpace (PixelImage pixelImage, int x1, int y1, int x2, int y2) {
+    decodeBuffer.append (' ');
+    if (accListener != null) {
+        OCRIdentification identAccuracy = new OCRIdentification (OCRComp.MSE);
+        identAccuracy.addChar (' ', 0.0);
+        accListener.processCharOrSpace (identAccuracy);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/awt/src/main/java/net/sourceforge/javaocr/ocrPlugins/mseOCR/OCRScanner.java 139 148
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/awt/src/main/java/net/sourceforge/javaocr/ocrPlugins/aspectRatio/AspectRatioOCR.java 68 77
+----------------------------------------
+
+public void endRow (PixelImage pixelImage, int y1, int y2) {
+    if (accListener != null) {
+        OCRIdentification identAccuracy = new OCRIdentification (OCRComp.MSE);
+        identAccuracy.addChar ('\n', 0.0);
+        accListener.processCharOrSpace (identAccuracy);
+    }
+}
+
+----------------------------------------
+
+public void endRow (PixelImage pixelImage, int y1, int y2) {
+    if (listener != null) {
+        OCRIdentification identAccuracy = new OCRIdentification (OCRComp.ASPECT_RATIO);
+        identAccuracy.addChar ('\n', 0.0);
+        listener.processCharOrSpace (identAccuracy);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/awt/src/main/java/net/sourceforge/javaocr/ocrPlugins/mseOCR/OCRScanner.java 353 363
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/awt/src/main/java/net/sourceforge/javaocr/ocrPlugins/aspectRatio/AspectRatioOCR.java 94 102
+----------------------------------------
+
+public void processSpace (PixelImage pixelImage, int x1, int y1, int x2, int y2) {
+    decodeBuffer.append (' ');
+    if (accListener != null) {
+        OCRIdentification identAccuracy = new OCRIdentification (OCRComp.MSE);
+        identAccuracy.addChar (' ', 0.0);
+        accListener.processCharOrSpace (identAccuracy);
+    }
+}
+
+----------------------------------------
+
+public void processSpace (PixelImage pixelImage, int x1, int y1, int x2, int y2) {
+    if (listener != null) {
+        OCRIdentification identAccuracy = new OCRIdentification (OCRComp.ASPECT_RATIO);
+        identAccuracy.addChar (' ', 0.0);
+        listener.processCharOrSpace (identAccuracy);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/awt/src/main/java/net/sourceforge/javaocr/ocrPlugins/aspectRatio/AspectRatioOCR.java 68 77
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/awt/src/main/java/net/sourceforge/javaocr/ocrPlugins/aspectRatio/AspectRatioOCR.java 94 102
+----------------------------------------
+
+public void endRow (PixelImage pixelImage, int y1, int y2) {
+    if (listener != null) {
+        OCRIdentification identAccuracy = new OCRIdentification (OCRComp.ASPECT_RATIO);
+        identAccuracy.addChar ('\n', 0.0);
+        listener.processCharOrSpace (identAccuracy);
+    }
+}
+
+----------------------------------------
+
+public void processSpace (PixelImage pixelImage, int x1, int y1, int x2, int y2) {
+    if (listener != null) {
+        OCRIdentification identAccuracy = new OCRIdentification (OCRComp.ASPECT_RATIO);
+        identAccuracy.addChar (' ', 0.0);
+        listener.processCharOrSpace (identAccuracy);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/awt/src/main/java/net/sourceforge/javaocr/ocrPlugins/lineExtractor/LineExtractor.java 44 60
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/awt/src/main/java/net/sourceforge/javaocr/ocrPlugins/charTracer/CharacterTracer.java 45 65
+----------------------------------------
+
+public void slice (File inputImage, File outputDir) {
+    try {
+        this.inputImage = inputImage;
+        this.outputDir = outputDir;
+        Image img = ImageIO.read (inputImage);
+        PixelImage pixelImage = new PixelImage (img);
+        pixelImage.toGrayScale (true);
+        pixelImage.filter ();
+        documentScanner.scan (pixelImage, this, 0, 0, pixelImage.width, pixelImage.height);
+    } catch (IOException ex) {
+        LOG.log (Level.SEVERE, null, ex);
+    }
+}
+
+----------------------------------------
+
+public BufferedImage getTracedImage (File inputImage) {
+    try {
+        bfImage = ImageIO.read (inputImage);
+        bfImageGraphics = bfImage.createGraphics ();
+        Image img = ImageIO.read (inputImage);
+        PixelImage pixelImage = new PixelImage (img);
+        pixelImage.toGrayScale (true);
+        pixelImage.filter ();
+        documentScanner.scan (pixelImage, this, 0, 0, pixelImage.width, pixelImage.height);
+    } catch (IOException ex) {
+        LOG.log (Level.SEVERE, null, ex);
+    }
+    bfImageGraphics.dispose ();
+    return bfImage;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/awt/src/main/java/net/sourceforge/javaocr/ocrPlugins/charTracer/CharacterTracer.java 68 80
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/awt/src/main/java/net/sourceforge/javaocr/ocrPlugins/charTracer/CharacterTracer.java 83 95
+----------------------------------------
+
+public void processChar (PixelImage pixelImage, int x1, int y1, int x2, int y2, int rowY1, int rowY2) {
+    try {
+        bfImageGraphics.setStroke (new BasicStroke (4));
+        bfImageGraphics.setColor (Color.red);
+        bfImageGraphics.drawRect (x1, y1, x2 - x1, y2 - y1);
+    } catch (Exception ex) {
+        LOG.log (Level.SEVERE, null, ex);
+    }
+}
+
+----------------------------------------
+
+public void processSpace (PixelImage pixelImage, int x1, int y1, int x2, int y2) {
+    try {
+        bfImageGraphics.setStroke (new BasicStroke (4));
+        bfImageGraphics.setColor (Color.yellow);
+        bfImageGraphics.drawRect (x1, y1, x2 - x1, y2 - y1);
+    } catch (Exception ex) {
+        LOG.log (Level.SEVERE, null, ex);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/cluster/src/main/java/net/sourceforge/javaocr/plugin/cluster/NormalDistributionCluster.java 67 75
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/cluster/src/main/java/net/sourceforge/javaocr/plugin/cluster/AbstractBaseCluster.java 52 60
+----------------------------------------
+
+public double [] getVar () {
+    if (var == null) {
+        var = new double [getDimensions ()];
+        for (int i = 0;
+        i < getDimensions (); i ++) {
+            var [i] = getAmountSamples () == 0 ? 0 : (quads [i] - getSum () [i] * getSum () [i] / getAmountSamples ()) / getAmountSamples ();
+        }
+    }
+    return var;
+}
+
+----------------------------------------
+
+public double [] center () {
+    if (mx == null) {
+        mx = new double [getDimensions ()];
+        for (int i = 0;
+        i < getDimensions (); i ++) {
+            mx [i] = getAmountSamples () == 0 ? 0 : sum [i] / getAmountSamples ();
+        }
+    }
+    return mx;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/cluster/src/main/java/net/sourceforge/javaocr/plugin/cluster/NormalDistributionCluster.java 83 89
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/cluster/src/main/java/net/sourceforge/javaocr/plugin/cluster/AbstractBaseCluster.java 95 103
+----------------------------------------
+
+public void train (double samples []) {
+    super.train (samples);
+    var = null;
+    for (int i = 0;
+    i < getDimensions (); i ++) {
+        quads [i] += samples [i] * samples [i];
+    }
+}
+
+----------------------------------------
+
+public void train (double [] features) {
+    amountSamples ++;
+    mx = null;
+    for (int i = 0;
+    i < getDimensions (); i ++) {
+        sum [i] += features [i];
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/cluster/src/main/java/net/sourceforge/javaocr/plugin/cluster/NormalDistributionCluster.java 83 89
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/cluster/src/main/java/net/sourceforge/javaocr/plugin/cluster/MahalanobisDistanceCluster.java 92 100
+----------------------------------------
+
+public void train (double samples []) {
+    super.train (samples);
+    var = null;
+    for (int i = 0;
+    i < getDimensions (); i ++) {
+        quads [i] += samples [i] * samples [i];
+    }
+}
+
+----------------------------------------
+
+public void train (double [] samples) {
+    super.train (samples);
+    invcov = null;
+    for (int i = 0;
+    i < getDimensions (); i ++) for (int j = 0;
+    j < getDimensions (); j ++) {
+        sumxy [i] [j] += samples [i] * samples [j];
+    }
+
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/cluster/src/main/java/net/sourceforge/javaocr/plugin/cluster/extractor/FreeSpacesExtractor.java 49 55
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/cluster/src/main/java/net/sourceforge/javaocr/plugin/cluster/extractor/AspectRatioExtractor.java 32 36
+----------------------------------------
+
+public double [] extract (Image image) {
+    double [] retval = new double [1];
+    process (image);
+    retval [0] = spaceCount - reductionFactor;
+    return retval;
+}
+
+----------------------------------------
+
+public double [] extract (Image image) {
+    double [] features = new double [1];
+    features [0] = image.getAspectRatio ();
+    return features;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/cluster/src/main/java/net/sourceforge/javaocr/plugin/cluster/AbstractBaseCluster.java 95 103
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/cluster/src/main/java/net/sourceforge/javaocr/plugin/cluster/MahalanobisDistanceCluster.java 92 100
+----------------------------------------
+
+public void train (double [] features) {
+    amountSamples ++;
+    mx = null;
+    for (int i = 0;
+    i < getDimensions (); i ++) {
+        sum [i] += features [i];
+    }
+}
+
+----------------------------------------
+
+public void train (double [] samples) {
+    super.train (samples);
+    invcov = null;
+    for (int i = 0;
+    i < getDimensions (); i ++) for (int j = 0;
+    j < getDimensions (); j ++) {
+        sumxy [i] [j] += samples [i] * samples [j];
+    }
+
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/morphology/src/main/java/net/sourceforge/javaocr/plugin/morphology/ClosingFilter.java 60 65
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/morphology/src/main/java/net/sourceforge/javaocr/plugin/morphology/OpeningFilter.java 60 65
+----------------------------------------
+
+public ClosingFilter (Image strElem, Image dest, int full, int empty) {
+    tempImage = new PixelImage (dest.getWidth (), dest.getHeight ());
+    dilationFilter = new DilationFilter (strElem, tempImage, full, empty);
+    destImage = dest;
+    erosionFilter = new ErosionFilter (strElem, destImage, full, empty);
+}
+
+----------------------------------------
+
+public OpeningFilter (Image strElem, Image dest, int full, int empty) {
+    tempImage = new PixelImage (dest.getWidth (), dest.getHeight ());
+    erosionFilter = new ErosionFilter (strElem, tempImage, full, empty);
+    destImage = dest;
+    dilationFilter = new DilationFilter (strElem, destImage, full, empty);
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/morphology/src/main/java/net/sourceforge/javaocr/plugin/morphology/ErosionFilter.java 61 78
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/morphology/src/main/java/net/sourceforge/javaocr/plugin/morphology/DilationFilter.java 61 80
+----------------------------------------
+
+public void process (Image image) {
+    final int imageW = image.getWidth ();
+    final int imageH = image.getHeight ();
+    image.chisel (0, 0, imageW, sizeT).copy (destImage.chisel (0, 0, imageW, sizeT));
+    image.chisel (0, imageH - sizeB, imageW, sizeB).copy (destImage.chisel (0, imageH - sizeB, imageW, sizeB));
+    image.chisel (0, 0, sizeL, imageH).copy (destImage.chisel (0, 0, sizeL, imageH));
+    image.chisel (imageW - sizeR, 0, sizeR, imageH).copy (destImage.chisel (imageW - sizeR, 0, sizeR, imageH));
+    for (int y = sizeT;
+    y < imageH - sizeB; ++ y) {
+        for (int x = sizeL;
+        x < imageW - sizeR; ++ x) {
+            Image nImage = image.chisel (x - sizeL, y - sizeT, seImageW, seImageH);
+            destImage.put (x, y, processNeighborhood (nImage));
+        }
+    }
+}
+
+----------------------------------------
+
+public void process (Image image) {
+    final int imageW = image.getWidth ();
+    final int imageH = image.getHeight ();
+    image.chisel (0, 0, imageW, sizeT).copy (destImage.chisel (0, 0, imageW, sizeT));
+    image.chisel (0, imageH - sizeB, imageW, sizeB).copy (destImage.chisel (0, imageH - sizeB, imageW, sizeB));
+    image.chisel (0, 0, sizeL, imageH).copy (destImage.chisel (0, 0, sizeL, imageH));
+    image.chisel (imageW - sizeR, 0, sizeR, imageH).copy (destImage.chisel (imageW - sizeR, 0, sizeR, imageH));
+    for (int y = sizeT;
+    y < imageH - sizeB; ++ y) {
+        for (int x = sizeL;
+        x < imageW - sizeR; ++ x) {
+            if (image.get (x, y) == full) {
+                Image nImage = destImage.chisel (x - sizeL, y - sizeT, seImageW, seImageH);
+                processNeighborhood (nImage);
+            }
+        }
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/morphology/src/main/java/net/sourceforge/javaocr/plugin/morphology/ErosionFilter.java 80 91
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/plugins/morphology/src/main/java/net/sourceforge/javaocr/plugin/morphology/DilationFilter.java 82 91
+----------------------------------------
+
+protected int processNeighborhood (Image nImage) {
+    for (int i = 0;
+    i < seImageH; ++ i) {
+        for (seImage.iterateH (i), nImage.iterateH (i); seImage.hasNext () && nImage.hasNext ();) {
+            seImage.next ();
+            nImage.next ();
+            if (seImage.get () == full && nImage.get () == empty) return empty;
+
+        }
+    }
+    return full;
+}
+
+----------------------------------------
+
+protected void processNeighborhood (Image nImage) {
+    for (int i = 0;
+    i < seImageH; ++ i) {
+        for (seImage.iterateH (i), nImage.iterateH (i); seImage.hasNext () && nImage.hasNext ();) {
+            if (seImage.next () == full) nImage.next (full);
+            else nImage.next ();
+
+        }
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/core/src/main/java/net/sourceforge/javaocr/scanner/DocumentScanner.java 190 390
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/core/src/main/java/net/sourceforge/javaocr/ocr/DocumentScanner.java 186 278
+----------------------------------------
+
+public final void scan (PixelImage pixelImage, DocumentScannerListener listener, int blockX1, int blockY1, int blockX2, int blockY2) {
+    int [] pixels = pixelImage.pixels;
+    int w = pixelImage.width;
+    int h = pixelImage.height;
+    if (blockX1 < 0) {
+        blockX1 = 0;
+    } else if (blockX1 >= w) {
+        blockX1 = w - 1;
+    }
+
+    if (blockY1 < 0) {
+        blockY1 = 0;
+    } else if (blockY1 >= h) {
+        blockY1 = h - 1;
+    }
+
+    if ((blockX2 <= 0) || (blockX2 >= w)) {
+        blockX2 = w - 1;
+    }
+    if ((blockY2 <= 0) || (blockY2 >= h)) {
+        blockY2 = h - 1;
+    }
+    blockX2 ++;
+    blockY2 ++;
+    boolean whiteLine = true;
+    listener.beginDocument (pixelImage);
+    ArrayList < Integer > al = new ArrayList < Integer > ();
+    int y1 = 0;
+    for (int y = blockY1;
+    y < blockY2; y ++) {
+        boolean isWhiteSpace = true;
+        for (int x = blockX1, idx = (y * w) + blockX1;
+        x < blockX2; x ++, idx ++) {
+            if (pixels [idx] < whiteThreshold) {
+                isWhiteSpace = false;
+                break;
+            }
+        }
+        if (isWhiteSpace) {
+            if (! whiteLine) {
+                whiteLine = true;
+                al.add (new Integer (y1));
+                al.add (new Integer (y));
+            }
+        } else {
+            if (whiteLine) {
+                whiteLine = false;
+                y1 = y;
+            }
+        }
+    }
+    if (! whiteLine) {
+        al.add (new Integer (y1));
+        al.add (new Integer (blockY2));
+    }
+    for (int i = 0;
+    (i + 4) <= al.size (); i += 2) {
+        int bY0 = (al.get (i)).intValue ();
+        int bY1 = (al.get (i + 1)).intValue ();
+        int bY2 = (al.get (i + 2)).intValue ();
+        int bY3 = (al.get (i + 3)).intValue ();
+        int row0H = bY1 - bY0;
+        int whiteH = bY2 - bY1;
+        int row1H = bY3 - bY2;
+        if (((row1H <= (int) ((float) row0H * shortRowFraction)) || (row1H < 6)) && ((whiteH <= (int) ((float) row0H * shortRowFraction)) || (whiteH < 6))) {
+            al.remove (i + 2);
+            al.remove (i + 1);
+            i -= 2;
+        }
+    }
+    if (al.size () == 0) {
+        al.add (new Integer (blockY1));
+        al.add (new Integer (blockY2));
+    }
+    for (int i = 0;
+    (i + 1) < al.size (); i += 2) {
+        int bY1 = (al.get (i)).intValue ();
+        int bY2 = (al.get (i + 1)).intValue ();
+        processRow (pixelImage, listener, pixels, w, h, blockX1, bY1, blockX2, bY2);
+    }
+}
+
+----------------------------------------
+
+public final void scan (Image pixelImage, DocumentScannerListener listener, int blockX1, int blockY1, int blockX2, int blockY2) {
+    int w = pixelImage.getWidth ();
+    int h = pixelImage.getHeight ();
+    if (blockX1 < 0) {
+        blockX1 = 0;
+    } else if (blockX1 >= w) {
+        blockX1 = w - 1;
+    }
+
+    if (blockY1 < 0) {
+        blockY1 = 0;
+    } else if (blockY1 >= h) {
+        blockY1 = h - 1;
+    }
+
+    if ((blockX2 <= 0) || (blockX2 >= w)) {
+        blockX2 = w - 1;
+    }
+    if ((blockY2 <= 0) || (blockY2 >= h)) {
+        blockY2 = h - 1;
+    }
+    blockX2 ++;
+    blockY2 ++;
+    boolean whiteLine = true;
+    listener.beginDocument (pixelImage);
+    ArrayList al = new ArrayList ();
+    int y1 = 0;
+    for (int y = blockY1;
+    y < blockY2; y ++) {
+        boolean isWhiteSpace = pixelImage.horizontalSpanEquals (y, blockX1, blockX2, 0);
+        if (isWhiteSpace) {
+            if (! whiteLine) {
+                whiteLine = true;
+                al.add (new Integer (y1));
+                al.add (new Integer (y));
+            }
+        } else {
+            if (whiteLine) {
+                whiteLine = false;
+                y1 = y;
+            }
+        }
+    }
+    if (! whiteLine) {
+        al.add (new Integer (y1));
+        al.add (new Integer (blockY2));
+    }
+    for (int i = 0;
+    (i + 4) <= al.size (); i += 2) {
+        int bY0 = ((Integer) (al.get (i))).intValue ();
+        int bY1 = ((Integer) (al.get (i + 1))).intValue ();
+        int bY2 = ((Integer) (al.get (i + 2))).intValue ();
+        int bY3 = ((Integer) (al.get (i + 3))).intValue ();
+        int row0H = bY1 - bY0;
+        int whiteH = bY2 - bY1;
+        int row1H = bY3 - bY2;
+        if (((row1H <= (int) ((float) row0H * shortRowFraction)) || (row1H < 6)) && ((whiteH <= (int) ((float) row0H * shortRowFraction)) || (whiteH < 6))) {
+            al.remove (i + 2);
+            al.remove (i + 1);
+            i -= 2;
+        }
+    }
+    if (al.size () == 0) {
+        al.add (new Integer (blockY1));
+        al.add (new Integer (blockY2));
+    }
+    for (int i = 0;
+    (i + 1) < al.size (); i += 2) {
+        int bY1 = ((Integer) (al.get (i))).intValue ();
+        int bY2 = ((Integer) (al.get (i + 1))).intValue ();
+        processRow (pixelImage, listener, w, h, blockX1, bY1, blockX2, bY2);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/core/src/main/java/net/sourceforge/javaocr/scanner/DocumentScanner.java 392 573
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/core/src/main/java/net/sourceforge/javaocr/ocr/DocumentScanner.java 280 405
+----------------------------------------
+
+private void processRow (PixelImage pixelImage, DocumentScannerListener listener, int [] pixels, int w, int h, int x1, int y1, int x2, int y2) {
+    listener.beginRow (pixelImage, y1, y2);
+    int rowHeight = y2 - y1;
+    int minCharBreakWidth = Math.max (1, (int) ((float) rowHeight * minCharBreakWidthAsFractionOfRowHeight));
+    int liberalWhitspaceMinWhitePixelsPerColumn = (int) ((float) rowHeight * liberalPolicyAreaWhitespaceFraction);
+    ArrayList < Integer > al = new ArrayList < Integer > ();
+    boolean inCharSeparator = true;
+    int charX1 = 0, prevCharX1 = - 1;
+    boolean liberalWhitespacePolicy = false;
+    int numConsecutiveWhite = 0;
+    for (int x = x1 + 1;
+    x < (x2 - 1); x ++) {
+        if ((! liberalWhitespacePolicy) && (numConsecutiveWhite == 0) && ((x - charX1) >= rowHeight)) {
+            x = charX1;
+            liberalWhitespacePolicy = true;
+        }
+        int numWhitePixelsThisColumn = 0;
+        boolean isWhiteSpace = true;
+        for (int y = y1, idx = (y1 * w) + x;
+        y < y2; y ++, idx += w) {
+            if (pixels [idx] >= whiteThreshold) {
+                numWhitePixelsThisColumn ++;
+            } else {
+                if (! liberalWhitespacePolicy) {
+                    isWhiteSpace = false;
+                    break;
+                }
+            }
+        }
+        if ((liberalWhitespacePolicy) && (numWhitePixelsThisColumn < liberalWhitspaceMinWhitePixelsPerColumn)) {
+            isWhiteSpace = false;
+        }
+        if (isWhiteSpace) {
+            numConsecutiveWhite ++;
+            if (numConsecutiveWhite >= minCharBreakWidth) {
+                if (! inCharSeparator) {
+                    inCharSeparator = true;
+                    al.add (new Integer (charX1));
+                    al.add (new Integer (x - (numConsecutiveWhite - 1)));
+                }
+            }
+        } else {
+            numConsecutiveWhite = 0;
+            if (inCharSeparator) {
+                inCharSeparator = false;
+                prevCharX1 = charX1;
+                charX1 = x;
+                liberalWhitespacePolicy = false;
+            }
+        }
+    }
+    if (numConsecutiveWhite == 0) {
+        al.add (new Integer (charX1));
+        al.add (new Integer (x2));
+    }
+    int minSpaceWidth = (int) ((float) rowHeight * minSpaceWidthAsFractionOfRowHeight);
+    int minCharWidth = (int) ((float) rowHeight * minCharWidthAsFractionOfRowHeight);
+    if (minCharWidth < 1) {
+        minCharWidth = 1;
+    }
+    for (int i = 0;
+    (i + 4) < al.size (); i += 2) {
+        int thisCharWidth = (al.get (i + 2)).intValue () - (al.get (i)).intValue ();
+        if ((thisCharWidth < minCharWidth) || (thisCharWidth < 6)) {
+            al.remove (i + 2);
+            al.remove (i + 1);
+            i -= 2;
+        }
+    }
+    for (int i = 0;
+    (i + 1) < al.size (); i += 2) {
+        if (i >= 2) {
+            int cx1 = (al.get (i - 1)).intValue ();
+            int cx2 = (al.get (i)).intValue ();
+            while ((cx2 - cx1) >= minSpaceWidth) {
+                int sx2 = Math.min (cx1 + minSpaceWidth, cx2);
+                listener.processSpace (pixelImage, cx1, y1, sx2, y2);
+                cx1 += minSpaceWidth;
+            }
+        }
+        int cx1 = (al.get (i)).intValue ();
+        int cx2 = (al.get (i + 1)).intValue ();
+        int cy1 = y1;
+        while (cy1 < y2) {
+            boolean isWhiteSpace = true;
+            for (int x = cx1, idx = (cy1 * w) + cx1;
+            x < cx2; x ++, idx ++) {
+                if (pixels [idx] < whiteThreshold) {
+                    isWhiteSpace = false;
+                    break;
+                }
+            }
+            if (! isWhiteSpace) {
+                break;
+            }
+            cy1 ++;
+        }
+        int cy2 = y2;
+        while (cy2 > cy1) {
+            boolean isWhiteSpace = true;
+            for (int x = cx1, idx = ((cy2 - 1) * w) + cx1;
+            x < cx2; x ++, idx ++) {
+                if (pixels [idx] < whiteThreshold) {
+                    isWhiteSpace = false;
+                    break;
+                }
+            }
+            if (! isWhiteSpace) {
+                break;
+            }
+            cy2 --;
+        }
+        if (cy1 >= cy2) {
+            listener.processSpace (pixelImage, cx1, y1, cx2, y2);
+        } else {
+            listener.processChar (pixelImage, cx1, cy1, cx2, cy2, y1, y2);
+        }
+    }
+    listener.endRow (pixelImage, y1, y2);
+}
+
+----------------------------------------
+
+private final void processRow (Image pixelImage, DocumentScannerListener listener, int w, int h, int x1, int y1, int x2, int y2) {
+    listener.beginRow (pixelImage, y1, y2);
+    int rowHeight = y2 - y1;
+    int minCharBreakWidth = Math.max (1, (int) ((float) rowHeight * minCharBreakWidthAsFractionOfRowHeight));
+    int liberalWhitspaceMinWhitePixelsPerColumn = (int) ((float) rowHeight * liberalPolicyAreaWhitespaceFraction);
+    ArrayList al = new ArrayList ();
+    boolean inCharSeparator = true;
+    int charX1 = 0, prevCharX1 = - 1;
+    boolean liberalWhitespacePolicy = false;
+    int numConsecutiveWhite = 0;
+    for (int x = x1 + 1;
+    x < (x2 - 1); x ++) {
+        if ((! liberalWhitespacePolicy) && (numConsecutiveWhite == 0) && ((x - charX1) >= rowHeight)) {
+            x = charX1;
+            liberalWhitespacePolicy = true;
+        }
+        int numWhitePixelsThisColumn = 0;
+        boolean isWhiteSpace = pixelImage.verticalSpanEquals (x, y1, y2 - 1, 0);
+        if ((liberalWhitespacePolicy) && (numWhitePixelsThisColumn < liberalWhitspaceMinWhitePixelsPerColumn)) {
+            isWhiteSpace = false;
+        }
+        if (isWhiteSpace) {
+            numConsecutiveWhite ++;
+            if (numConsecutiveWhite >= minCharBreakWidth) {
+                if (! inCharSeparator) {
+                    inCharSeparator = true;
+                    al.add (new Integer (charX1));
+                    al.add (new Integer (x - (numConsecutiveWhite - 1)));
+                }
+            }
+        } else {
+            numConsecutiveWhite = 0;
+            if (inCharSeparator) {
+                inCharSeparator = false;
+                prevCharX1 = charX1;
+                charX1 = x;
+                liberalWhitespacePolicy = false;
+            }
+        }
+    }
+    if (numConsecutiveWhite == 0) {
+        al.add (new Integer (charX1));
+        al.add (new Integer (x2));
+    }
+    int minSpaceWidth = (int) ((float) rowHeight * minSpaceWidthAsFractionOfRowHeight);
+    int minCharWidth = (int) ((float) rowHeight * minCharWidthAsFractionOfRowHeight);
+    if (minCharWidth < 1) {
+        minCharWidth = 1;
+    }
+    for (int i = 0;
+    (i + 4) < al.size (); i += 2) {
+        int thisCharWidth = ((Integer) (al.get (i + 2))).intValue () - ((Integer) (al.get (i))).intValue ();
+        if ((thisCharWidth < minCharWidth) || (thisCharWidth < 6)) {
+            al.remove (i + 2);
+            al.remove (i + 1);
+            i -= 2;
+        }
+    }
+    for (int i = 0;
+    (i + 1) < al.size (); i += 2) {
+        if (i >= 2) {
+            int cx1 = ((Integer) (al.get (i - 1))).intValue ();
+            int cx2 = ((Integer) (al.get (i))).intValue ();
+            while ((cx2 - cx1) >= minSpaceWidth) {
+                int sx2 = Math.min (cx1 + minSpaceWidth, cx2);
+                listener.processSpace (pixelImage, cx1, y1, sx2, y2);
+                cx1 += minSpaceWidth;
+            }
+        }
+        int cx1 = ((Integer) (al.get (i))).intValue ();
+        int cx2 = ((Integer) (al.get (i + 1))).intValue ();
+        int cy1 = y1;
+        while (cy1 < y2) {
+            boolean isWhiteSpace = pixelImage.horizontalSpanEquals (cy1, cx1, cx2 - 1, 0);
+            if (! isWhiteSpace) {
+                break;
+            }
+            cy1 ++;
+        }
+        int cy2 = y2;
+        while (cy2 > cy1) {
+            boolean isWhiteSpace = pixelImage.horizontalSpanEquals (cy2 - 1, cx1, cx2 - 1, 0);
+            if (! isWhiteSpace) {
+                break;
+            }
+            cy2 --;
+        }
+        if (cy1 >= cy2) {
+            listener.processSpace (pixelImage, cx1, y1, cx2, y2);
+        } else {
+            listener.processChar (pixelImage, cx1, cy1, cx2, cy2, y1, y2);
+        }
+    }
+    listener.endRow (pixelImage, y1, y2);
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/core/src/main/java/net/sourceforge/javaocr/ocr/AbstractBaseSlicer.java 81 92
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/core/src/main/java/net/sourceforge/javaocr/ocr/Shrinker.java 67 75
+----------------------------------------
+
+protected boolean spanEmpty () {
+    boolean spanEmpty;
+    spanEmpty = true;
+    iterateSpan ();
+    while (image.hasNext ()) if (image.next () != empty) {
+        spanEmpty = false;
+        break;
+    }
+
+    return spanEmpty;
+}
+
+----------------------------------------
+
+private boolean spanEmpty (Image source) {
+    boolean spanEmpty = true;
+    while (source.hasNext ()) if (source.next () != empty) {
+        spanEmpty = false;
+        break;
+    }
+
+    return spanEmpty;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/core/src/main/java/net/sourceforge/javaocr/ocr/AbstractLinearImage.java 186 193
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/core/src/main/java/net/sourceforge/javaocr/ocr/AbstractLinearImage.java 202 208
+----------------------------------------
+
+public boolean horizontalSpanEquals (final int y, final int from, final int to, final int value) {
+    iterateH (y, from, to);
+    while (hasNext ()) {
+        if (next () != value) return false;
+
+    }
+    return true;
+}
+
+----------------------------------------
+
+public boolean verticalSpanEquals (final int x, final int from, final int to, final int value) {
+    iterateV (x, from, to);
+    while (hasNext ()) {
+        if (next () != value) return false;
+
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/core/src/main/java/net/sourceforge/javaocr/ocr/AbstractLinearImage.java 259 266
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/core/src/main/java/net/sourceforge/javaocr/ocr/AbstractLinearImage.java 273 280
+----------------------------------------
+
+public void copy (Image dst) {
+    final int height = getHeight ();
+    for (int i = 0;
+    i < height; i ++) {
+        for (iterateH (i), dst.iterateH (i); hasNext ();) {
+            dst.next (next ());
+        }
+    }
+}
+
+----------------------------------------
+
+public void flip (Image dst) {
+    final int width = getWidth ();
+    for (int i = 0;
+    i < width; i ++) {
+        for (iterateV (i), dst.iterateH (i); hasNext ();) {
+            dst.next (next ());
+        }
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/core/src/main/java/net/sourceforge/javaocr/ocr/AbstractLinearImage.java 259 266
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/core/src/main/java/net/sourceforge/javaocr/filter/AbstractSinglePixelFilter.java 28 35
+----------------------------------------
+
+public void copy (Image dst) {
+    final int height = getHeight ();
+    for (int i = 0;
+    i < height; i ++) {
+        for (iterateH (i), dst.iterateH (i); hasNext ();) {
+            dst.next (next ());
+        }
+    }
+}
+
+----------------------------------------
+
+public void process (Image image) {
+    final int height = image.getHeight ();
+    for (int i = 0;
+    i < height; i ++) {
+        for (image.iterateH (i); image.hasNext ();) {
+            processPixel (image);
+        }
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/core/src/main/java/net/sourceforge/javaocr/ocr/AbstractLinearImage.java 273 280
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/core/src/main/java/net/sourceforge/javaocr/filter/AbstractSinglePixelFilter.java 28 35
+----------------------------------------
+
+public void flip (Image dst) {
+    final int width = getWidth ();
+    for (int i = 0;
+    i < width; i ++) {
+        for (iterateV (i), dst.iterateH (i); hasNext ();) {
+            dst.next (next ());
+        }
+    }
+}
+
+----------------------------------------
+
+public void process (Image image) {
+    final int height = image.getHeight ();
+    for (int i = 0;
+    i < height; i ++) {
+        for (image.iterateH (i); image.hasNext ();) {
+            processPixel (image);
+        }
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/core/src/main/java/net/sourceforge/javaocr/filter/NormaliseGrayscaleFilter.java 33 39
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/core/src/main/java/net/sourceforge/javaocr/filter/GrayscaleToRGBA.java 29 34
+----------------------------------------
+
+public NormaliseGrayscaleFilter (int min, int max) {
+    super (new int [256]);
+    int range = max - min;
+    for (int i = 0;
+    i < 256; i ++) {
+        lut [i] = Math.min (255, Math.max (0, ((i - min) * 255) / range));
+    }
+}
+
+----------------------------------------
+
+public GrayscaleToRGBA () {
+    super (new int [256]);
+    for (int i = 0;
+    i < 256; i ++) {
+        lut [i] = 0xff000000 | i << 16 | i << 8 | i;
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/camera-utils/src/main/java/net/sf/javaocr/demos/android/utils/camera/CameraManager.java 213 242
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/camera-utils/src/main/java/net/sf/javaocr/demos/android/utils/camera/CameraManager.java 250 274
+----------------------------------------
+
+public synchronized boolean doAutofocus () {
+    Log.d (LOG_TAG, "autofocus requested");
+    if (! isCameraActive ()) return false;
+
+    if (waitingForFocus) return false;
+
+    focusState = false;
+    camera.autoFocus (this);
+    try {
+        wait ();
+    } catch (InterruptedException e) {
+        focusState = false;
+    }
+    waitingForFocus = false;
+    Log.d (LOG_TAG, "autofocus ready");
+    return focusState;
+}
+
+----------------------------------------
+
+public synchronized byte [] getPreviewFrame () {
+    Log.d (LOG_TAG, "preview frame requested");
+    if (! isCameraActive ()) return null;
+
+    if (waitingForPreview) return null;
+
+    waitingForPreview = true;
+    previewImage = null;
+    camera.setOneShotPreviewCallback (this);
+    try {
+        wait ();
+    } catch (InterruptedException e) {
+        return previewImage = null;
+    }
+    waitingForPreview = false;
+    return previewImage;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/camera-utils/src/main/java/net/sf/javaocr/demos/android/utils/camera/CameraManager.java 282 287
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/camera-utils/src/main/java/net/sf/javaocr/demos/android/utils/camera/CameraManager.java 295 299
+----------------------------------------
+
+public synchronized void onAutoFocus (boolean b, Camera camera) {
+    Log.d (LOG_TAG, "autofocus callback received");
+    focusState = b;
+    notify ();
+}
+
+----------------------------------------
+
+public synchronized void onPreviewFrame (byte [] bytes, Camera camera) {
+    Log.d (LOG_TAG, "preview frame received");
+    previewImage = bytes;
+    notify ();
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/recognizer/src/net/sf/javaocr/demos/android/recognizer/Recognizer.java 240 254
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/sampler/src/net/sf/javaocr/demos/android/sampler/Sampler.java 164 175
+----------------------------------------
+
+protected void onResume () {
+    super.onResume ();
+    if (haveSurface) {
+        try {
+            Log.d (LOG_TAG, "existing surface - start camera now");
+            startCamera ();
+        } catch (IOException e) {
+            Log.e (LOG_TAG, "error starting preview in on resume", e);
+        }
+    }
+}
+
+----------------------------------------
+
+protected void onResume () {
+    super.onResume ();
+    Log.d (LOG_TAG, "resuming execution");
+    if (haveSurface) {
+        try {
+            Log.d (LOG_TAG, "existing surface - start camera now");
+            startCamera ();
+        } catch (IOException e) {
+            Log.e (LOG_TAG, "error starting preview in on resume", e);
+        }
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/recognizer/src/net/sf/javaocr/demos/android/recognizer/Recognizer.java 294 307
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/sampler/src/net/sf/javaocr/demos/android/sampler/Sampler.java 164 175
+----------------------------------------
+
+public void surfaceChanged (SurfaceHolder surfaceHolder, int i, int width, int height) {
+    Log.d (LOG_TAG, " surface changed, initialize camera");
+    haveSurface = true;
+    Log.d (LOG_TAG, "surface changed " + width + "x" + height);
+    overlayW = width;
+    overlayH = height;
+    try {
+        startCamera ();
+    } catch (IOException e) {
+        Log.e (LOG_TAG, "error starting preview", e);
+    }
+}
+
+----------------------------------------
+
+protected void onResume () {
+    super.onResume ();
+    Log.d (LOG_TAG, "resuming execution");
+    if (haveSurface) {
+        try {
+            Log.d (LOG_TAG, "existing surface - start camera now");
+            startCamera ();
+        } catch (IOException e) {
+            Log.e (LOG_TAG, "error starting preview in on resume", e);
+        }
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/recognizer/src/net/sf/javaocr/demos/android/recognizer/Recognizer.java 294 307
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/sampler/src/net/sf/javaocr/demos/android/sampler/Sampler.java 300 310
+----------------------------------------
+
+public void surfaceChanged (SurfaceHolder surfaceHolder, int i, int width, int height) {
+    Log.d (LOG_TAG, " surface changed, initialize camera");
+    haveSurface = true;
+    Log.d (LOG_TAG, "surface changed " + width + "x" + height);
+    overlayW = width;
+    overlayH = height;
+    try {
+        startCamera ();
+    } catch (IOException e) {
+        Log.e (LOG_TAG, "error starting preview", e);
+    }
+}
+
+----------------------------------------
+
+public void surfaceChanged (SurfaceHolder surfaceHolder, int i, int width, int height) {
+    haveSurface = true;
+    Log.d (LOG_TAG, "surface changed " + width + "x" + height);
+    overlayW = width;
+    overlayH = height;
+    try {
+        startCamera ();
+    } catch (IOException e) {
+        Log.e (LOG_TAG, "error starting preview", e);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/recognizer/src/net/sf/javaocr/demos/android/recognizer/Recognizer.java 314 319
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/sampler/src/net/sf/javaocr/demos/android/sampler/Sampler.java 157 161
+----------------------------------------
+
+public void surfaceDestroyed (SurfaceHolder surfaceHolder) {
+    Log.d (LOG_TAG, " surface destroyed");
+    haveSurface = false;
+    cameraManager.stop ();
+}
+
+----------------------------------------
+
+protected void onPause () {
+    super.onPause ();
+    Log.d (LOG_TAG, "paunsing");
+    cameraManager.stop ();
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/recognizer/src/net/sf/javaocr/demos/android/recognizer/Recognizer.java 326 334
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/recognizer/src/net/sf/javaocr/demos/android/recognizer/Recognizer.java 405 412
+----------------------------------------
+
+private void startProcessing () {
+    Thread worker = new Thread (new Runnable () {
+        public void run () {
+            acquireAndProcess ();
+        }}
+
+    );
+    worker.start ();
+}
+
+----------------------------------------
+
+private void displayFailure () {
+    runOnUiThread (new Runnable () {
+        public void run () {
+            Toast.makeText (scanArea.getContext (), scanArea.getContext ().getString (R.string.recognitionFailed), Toast.LENGTH_SHORT).show ();
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/recognizer/src/net/sf/javaocr/demos/android/recognizer/Recognizer.java 326 334
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/sampler/src/net/sf/javaocr/demos/android/sampler/Sampler.java 191 199
+----------------------------------------
+
+private void startProcessing () {
+    Thread worker = new Thread (new Runnable () {
+        public void run () {
+            acquireAndProcess ();
+        }}
+
+    );
+    worker.start ();
+}
+
+----------------------------------------
+
+private void startProcessing () {
+    Thread worker = new Thread (new Runnable () {
+        public void run () {
+            acquireAndProcess ();
+        }}
+
+    );
+    worker.start ();
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/recognizer/src/net/sf/javaocr/demos/android/recognizer/Recognizer.java 336 350
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/sampler/src/net/sf/javaocr/demos/android/sampler/Sampler.java 370 383
+----------------------------------------
+
+private void computeViewfinderOrigin () {
+    int [] absPos = new int [2];
+    scanArea.getLocationOnScreen (absPos);
+    viewfinderOriginX = absPos [0];
+    viewfinderOriginY = absPos [1];
+    surfaceView.getLocationOnScreen (absPos);
+    viewfinderOriginX -= absPos [0];
+    viewfinderOriginY -= absPos [1];
+}
+
+----------------------------------------
+
+private void computeViewfinderOrigin () {
+    int [] absPos = new int [2];
+    scanArea.getLocationOnScreen (absPos);
+    viewfinderOriginX = absPos [0];
+    viewfinderOriginY = absPos [1];
+    surfaceView.getLocationOnScreen (absPos);
+    viewfinderOriginX -= absPos [0];
+    viewfinderOriginX -= absPos [1];
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/recognizer/src/net/sf/javaocr/demos/android/recognizer/Recognizer.java 369 399
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/sampler/src/net/sf/javaocr/demos/android/sampler/Sampler.java 389 414
+----------------------------------------
+
+private void setUpImagesAndBitmaps () {
+    final Camera.Size previewSize = cameraManager.getPreviewSize ();
+    Log.d (LOG_TAG, "preview width: " + previewSize.width + " preview height: " + previewSize.height);
+    int viewfinderH = scanArea.getBottom () - scanArea.getTop ();
+    int viewfinderW = scanArea.getRight () - scanArea.getLeft ();
+    scaleW = (float) overlayW / (float) previewSize.width;
+    scaleH = (float) overlayH / (float) previewSize.height;
+    bitmapW = (int) ((float) viewfinderW / scaleW);
+    bitmapH = (int) ((float) viewfinderH / scaleH);
+    processImage = new PixelImage (bitmapW + WINDOW_SIZE, bitmapH + WINDOW_SIZE);
+    Log.d (LOG_TAG, "image width: " + processImage.getWidth () + " height: " + processImage.getHeight ());
+    backBuffer = Bitmap.createBitmap (bitmapW, bitmapH, Bitmap.Config.ARGB_8888);
+    imageProcessor = new SauvolaImageProcessor (previewSize.width, previewSize.height, bitmapW, bitmapH, 0, 1);
+    slicer = new IntegralImageSlicer (new PixelImage (bitmapW, bitmapH));
+}
+
+----------------------------------------
+
+private void setUpImagesAndBitmaps () {
+    Camera.Size previewSize = cameraManager.getPreviewSize ();
+    Log.d (LOG_TAG, "preview width:" + previewSize.width + " preview height:" + previewSize.height);
+    int viewfinderH = scanArea.getBottom () - scanArea.getTop ();
+    int viewfinderW = scanArea.getRight () - scanArea.getLeft ();
+    scaleW = (float) overlayW / (float) previewSize.width;
+    scaleH = (float) overlayH / (float) previewSize.height;
+    bitmapW = (int) ((float) viewfinderW / scaleW);
+    bitmapH = (int) ((float) viewfinderH / scaleH);
+    backBuffer = Bitmap.createBitmap (bitmapW, bitmapH, Bitmap.Config.ARGB_8888);
+    imageProcessor = new SauvolaImageProcessor (previewSize.width, previewSize.height, bitmapW, bitmapH, 0, 1);
+    slicer = new IntegralImageSlicer (new PixelImage (bitmapW, bitmapH));
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/recognizer/src/net/sf/javaocr/demos/android/recognizer/Recognizer.java 405 412
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/sampler/src/net/sf/javaocr/demos/android/sampler/Sampler.java 191 199
+----------------------------------------
+
+private void displayFailure () {
+    runOnUiThread (new Runnable () {
+        public void run () {
+            Toast.makeText (scanArea.getContext (), scanArea.getContext ().getString (R.string.recognitionFailed), Toast.LENGTH_SHORT).show ();
+        }}
+
+    );
+}
+
+----------------------------------------
+
+private void startProcessing () {
+    Thread worker = new Thread (new Runnable () {
+        public void run () {
+            acquireAndProcess ();
+        }}
+
+    );
+    worker.start ();
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/recognizer/src/net/sf/javaocr/demos/android/recognizer/Recognizer.java 544 550
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/javaocr/demos/sampler/src/net/sf/javaocr/demos/android/sampler/Sampler.java 270 277
+----------------------------------------
+
+public void run () {
+    workArea.setImageBitmap (backBuffer);
+    workArea.invalidate ();
+    resultText.setText (result);
+    snap.setEnabled (true);
+}
+
+----------------------------------------
+
+public void run () {
+    resultArea.setImageBitmap (backBuffer);
+    resultArea.invalidate ();
+    snap.setEnabled (true);
+    save.setEnabled (true);
+}
+
+----------------------------------------
+
+
+****************************************************
+*************Clone Analysis Stats ******************
+****************************************************
+Total Potential Clones ==> 387
+Minimum Line ==> 5
+Maximum Line ==> 700
+Threshold ==> 0.5
+Clones Found ==> 44
+****************************************************

@@ -1,0 +1,25 @@
+
+public x1 x2 () {
+    if (x3.x4 == null) {
+        x3.x4 = new x1 ();
+        x5  x6 = x7 ().x8 ("addToPlayListFromRadioNavigationView", x9.class);
+        x6.x10 (x3);
+        x3.x4.x11 (x6);
+        x12 x13 = x7 ().x8 ("setAsPlaylistFromRadioNavigationView", x12.class);
+        x13.x10 (x3);
+        x3.x4.x11 (x13);
+        x3.x4.x11 (new x14 ());
+        x3.x4.x11 (x7 ().x8 (x15.class));
+        x5  x16 = x7 ().x8 (x17.class);
+        x16.x10 (x3);
+        x3.x4.x11 (x16);
+        x18 x19 = x7 ().x8 (x18.class);
+        x19.x10 (x3);
+        x3.x4.x11 (x19);
+        x3.x4.x11 (x7 ().x8 (x20.class));
+        x21 x22 = x7 ().x8 (x21.class);
+        x22.x10 (x3);
+        x3.x4.x11 (x22);
+    }
+    return x3.x4;
+}

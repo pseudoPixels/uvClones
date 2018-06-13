@@ -1,0 +1,17 @@
+
+public void x1 (x2 x3, x4 x5) {
+    x6 (x3, "Runnable was null.");
+    x6 (x5, "Executor was null.");
+    x7 x8 = x9;
+    if (x8 != x7.x10) {
+        x7 x11 = new x7 (x3, x5);
+        do {
+            x11.x12 = x8;
+            if (x13.x14 (x15, x8, x11)) {
+                return;
+            }
+            x8 = x9;
+        } while (x8 != x7.x10);
+    }
+    x16 (x3, x5);
+}

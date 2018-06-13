@@ -1,0 +1,11 @@
+
+protected void executeAction () {
+    IConfirmationDialog dialog = dialogFactory.newDialog (IConfirmationDialog.class);
+    dialog.setMessage (I18nUtils.getString (0));
+    dialog.showDialog ();
+    if (dialog.userAccepted ()) {
+        IChangeTagsProcess process = (IChangeTagsProcess) processFactory.getProcessByName (0);
+        process.setFilesToChange (getFilesWithEmptyAlbum (repositoryHandler.getAudioFilesList ()));
+        process.execute ();
+    }
+}

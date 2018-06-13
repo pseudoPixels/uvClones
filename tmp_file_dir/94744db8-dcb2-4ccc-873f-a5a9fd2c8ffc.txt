@@ -1,0 +1,6 @@
+
+public Object [] toArray () {
+    synchronized (mutex) {
+        return ObjectArrays.toArrayImpl (delegate ());
+    }
+}

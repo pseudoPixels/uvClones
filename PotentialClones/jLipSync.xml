@@ -1,0 +1,3228 @@
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/OptionForm.java" startline="28" endline="35">
+public void openWindow () {
+    pane.add (f1);
+    pane.add (f2);
+    pane.add (f3);
+    pane.setVisible (true);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/OptionForm.java" startline="37" endline="39">
+public String getCompanyName () {
+    return f1.getText ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/About.java" startline="28" endline="188">
+public About (Frame owner, String version) {
+    super (owner, "About JLipSync...", true);
+    strAbout = "JLipSync " + version + "\n\n";
+    strAbout += "Original developer:\t David Cuny                               \n";
+    strAbout += "Additional programming:\t David Lamhauge                       \n";
+    strAbout += "Copyright 2009                                               \n\n\n";
+    strAbout += "Released under Q Public License                              \n";
+    strAbout += "    http://JLipSync.sourceforge.net                          \n\n";
+    strAbout += "Based on the shareware program \"Magpie\" by Miguel Grinberg \n";
+    strAbout += "    http://www.thirdwishsoftware.com                          \n\n";
+    strThanks = "Thanks to:                                                             \n\n";
+    strThanks += "    Miguel Grinberg                                                    \n";
+    strThanks += "    Sascha Ledinsky                                                    \n";
+    strThanks += "    Elaine Reali                                  						\n";
+    strThanks += "    SourceForge.net                                                    \n";
+    strThanks += "    Myles Strous                                                       \n";
+    StringBuffer sbLicense = new StringBuffer ();
+    sbLicense.append ("The Q Public License Version 1.0												\n");
+    sbLicense.append ("																				\n");
+    sbLicense.append ("Copyright (C) 1999 Trolltech AS, Norway.										\n");
+    sbLicense.append ("Everyone is permitted to copy and distribute this license document.			\n");
+    sbLicense.append ("																				\n");
+    sbLicense.append ("The intent of this license is to establish freedom to share and change the 	\n");
+    sbLicense.append ("software regulated by this license under the open source model.               \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("This license applies to any software containing a notice placed by the        \n");
+    sbLicense.append ("copyright holder saying that it may be distributed under the terms of the     \n");
+    sbLicense.append ("Q Public License version 1.0. Such software is herein referred to as the      \n");
+    sbLicense.append ("Software. This license covers modification and distribution of the Software,  \n");
+    sbLicense.append ("use of third-party application programs based on the Software, and            \n");
+    sbLicense.append ("development of free software which uses the Software.                         \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("Granted Rights                                                                \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("1. You are granted the non-exclusive rights set forth in this license         \n");
+    sbLicense.append ("provided you agree to and comply with any and all conditions in this license. \n");
+    sbLicense.append ("Whole or partial distribution of the Software, or software items that link    \n");
+    sbLicense.append ("with the Software, in any form signifies acceptance of this license.          \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("2. You may copy and distribute the Software in unmodified form provided that  \n");
+    sbLicense.append ("the entire package, including - but not restricted to - copyright, trademark  \n");
+    sbLicense.append ("notices and disclaimers, as released by the initial developer of the Software,\n");
+    sbLicense.append ("is distributed.                                                               \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("3. You may make modifications to the Software and distribute your             \n");
+    sbLicense.append ("modifications, in a form that is separate from the Software, such as patches. \n");
+    sbLicense.append ("The following restrictions apply to modifications:                            \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("a. Modifications must not alter or remove any copyright notices in the        \n");
+    sbLicense.append ("Software.                                                                     \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("    b. When modifications to the Software are released under this license, a  \n");
+    sbLicense.append ("  non-exclusive royalty-free right is granted to the initial developer of     \n");
+    sbLicense.append ("  the Software to distribute your modification in future versions of the      \n");
+    sbLicense.append ("  Software provided such versions remain available under these terms in       \n");
+    sbLicense.append ("  addition to any other license(s) of the initial developer.                  \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("4. You may distribute machine-executable forms of the Software or machine-    \n");
+    sbLicense.append ("  executable forms of modified versions of the Software, provided that you    \n");
+    sbLicense.append ("  meet these restrictions:                                                    \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("    a. You must include this license document in the distribution.            \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("    b. You must ensure that all recipients of the machine-executable forms    \n");
+    sbLicense.append ("  are also able to receive the complete machine-readable source code to       \n");
+    sbLicense.append ("  the distributed Software, including all modifications, without any charge   \n");
+    sbLicense.append ("  beyond the costs of data transfer, and place prominent notices in the       \n");
+    sbLicense.append ("  distribution explaining this.                                               \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("    c. You must ensure that all modifications included in the machine-        \n");
+    sbLicense.append ("  executable forms are available under the terms of this license.             \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("5. You may use the original or modified versions of the Software to compile,  \n");
+    sbLicense.append ("link and run application programs legally developed by you or by others.      \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("6. You may develop application programs, reusable components and other        \n");
+    sbLicense.append ("software items that link with the original or modified versions of the        \n");
+    sbLicense.append ("Software. These items, when distributed, are subject to the following         \n");
+    sbLicense.append ("requirements:                                                                 \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("    a. You must ensure that all recipients of machine-executable forms of     \n");
+    sbLicense.append ("  these items are also able to receive and use the complete machine-readable  \n");
+    sbLicense.append ("  source code to the items without any charge beyond the costs of data        \n");
+    sbLicense.append ("  transfer.                                                                   \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("    b. You must explicitly license all recipients of your items to use and    \n");
+    sbLicense.append ("  re-distribute original and modified versions of the items in both machine-  \n");
+    sbLicense.append ("  executable and source code forms. The recipients must be able to do so      \n");
+    sbLicense.append ("  without any charges whatsoever, and they must be able to re-distribute      \n");
+    sbLicense.append ("  to anyone they choose.                                                      \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("    c. If the items are not available to the general public, and the initial  \n");
+    sbLicense.append ("  developer of the Software requests a copy of the items, then you must       \n");
+    sbLicense.append ("  supply one.                                                                 \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("Limitations of Liability                                                      \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("In no event shall the initial developers or copyright holders be liable for   \n");
+    sbLicense.append ("any damages whatsoever, including - but not restricted to - lost revenue or   \n");
+    sbLicense.append ("profits or other direct, indirect, special, incidental or consequential       \n");
+    sbLicense.append ("damages, even if they have been advised of the possibility of such damages,   \n");
+    sbLicense.append ("except to the extent invariable law, if any, provides otherwise.              \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("No Warranty                                                                   \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("The Software and this license document are provided AS IS with NO WARRANTY    \n");
+    sbLicense.append ("OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS    \n");
+    sbLicense.append ("FOR A PARTICULAR PURPOSE.                                                     \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("Choice of Law                                                                 \n");
+    sbLicense.append ("                                                                              \n");
+    sbLicense.append ("This license is governed by the Laws of Norway. Disputes shall be settled     \n");
+    sbLicense.append ("by Oslo City Court.                                                           \n");
+    strLicense = sbLicense.toString ();
+    JTextArea taAbout = new JTextArea (strAbout);
+    JTextArea taLicense = new JTextArea (strLicense);
+    JTextArea taThanks = new JTextArea (strThanks);
+    taAbout.setEditable (false);
+    taLicense.setEditable (false);
+    taThanks.setEditable (false);
+    taAbout.setBorder (new EmptyBorder (5, 5, 5, 5));
+    taLicense.setBorder (new EmptyBorder (5, 5, 5, 5));
+    taThanks.setBorder (new EmptyBorder (5, 5, 5, 5));
+    taAbout.setFont (new Font ("SansSerif", Font.BOLD, 12));
+    taLicense.setFont (new Font ("Monospaced", Font.PLAIN, 12));
+    paneAbout = new JScrollPane (taAbout);
+    paneLicense = new JScrollPane (taLicense);
+    paneThanks = new JScrollPane (taThanks);
+    tabbedPane.addTab ("About", paneAbout);
+    tabbedPane.addTab ("License", paneLicense);
+    tabbedPane.addTab ("Thanks", paneThanks);
+    JPanel panel = new JPanel ();
+    panel.add (buttonOK);
+    buttonOK.addActionListener (this);
+    getContentPane ().setLayout (new BorderLayout ());
+    getContentPane ().add (tabbedPane, BorderLayout.CENTER);
+    getContentPane ().add (panel, BorderLayout.SOUTH);
+    setSize (640, 480);
+    setLocationRelativeTo (owner);
+    setVisible (true);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/About.java" startline="192" endline="196">
+private ImagePane (ImageIcon icon) {
+    this.icon = icon;
+    Dimension dim = new Dimension (icon.getIconWidth () + 10, icon.getIconHeight () + 10);
+    setPreferredSize (dim);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/About.java" startline="198" endline="200">
+public void paint (Graphics g) {
+    icon.paintIcon (this, g, 5, getHeight () - icon.getIconHeight () - 5);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/About.java" startline="203" endline="208">
+public void actionPerformed (ActionEvent actionEvent) {
+    if (actionEvent.getSource () == buttonOK) {
+        setVisible (false);
+        dispose ();
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JlsFilter.java" startline="16" endline="26">
+public boolean accept (File f) {
+    if (f.isDirectory ()) {
+        return true;
+    }
+    String fileName = f.getName ().toLowerCase ();
+    if (fileName.endsWith (".jls")) {
+        return true;
+    }
+    return false;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JlsFilter.java" startline="29" endline="31">
+public String getDescription () {
+    return "JLipSync Files";
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/AviFilter.java" startline="16" endline="26">
+public boolean accept (File f) {
+    if (f.isDirectory ()) {
+        return true;
+    }
+    String fileName = f.getName ().toLowerCase ();
+    if (fileName.endsWith (".avi")) {
+        return true;
+    }
+    return false;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/AviFilter.java" startline="29" endline="31">
+public String getDescription () {
+    return "AVI Video Files";
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/FacePanel.java" startline="52" endline="54">
+public FacePanel (String set) {
+    useSet (set);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/FacePanel.java" startline="56" endline="407">
+public void useSet (String faces) {
+    poses = new ImageIcon [30];
+    smallPoses = new ImageIcon [30];
+    if (faces.equals ("default")) {
+        poses [pose_a] = Utilities.createImageIcon ("default/ai.png");
+        poses [pose_i] = poses [pose_a];
+        poses [pose_c] = Utilities.createImageIcon ("default/cdgk.png");
+        poses [pose_e] = poses [pose_c];
+        poses [pose_g] = poses [pose_c];
+        poses [pose_k] = poses [pose_c];
+        poses [pose_n] = poses [pose_c];
+        poses [pose_r] = poses [pose_c];
+        poses [pose_s] = poses [pose_c];
+        poses [pose_t] = poses [pose_c];
+        poses [pose_rest] = Utilities.createImageIcon ("default/closed.png");
+        poses [pose_d] = Utilities.createImageIcon ("default/d.png");
+        poses [pose_e] = Utilities.createImageIcon ("default/e.png");
+        poses [pose_f] = Utilities.createImageIcon ("default/fv.png");
+        poses [pose_v] = poses [pose_f];
+        poses [pose_l] = Utilities.createImageIcon ("default/l.png");
+        poses [pose_th] = Utilities.createImageIcon ("default/th.png");
+        poses [pose_m] = Utilities.createImageIcon ("default/mbp.png");
+        poses [pose_b] = poses [pose_m];
+        poses [pose_p] = poses [pose_m];
+        poses [pose_o] = Utilities.createImageIcon ("default/o.png");
+        poses [pose_u] = Utilities.createImageIcon ("default/u.png");
+        poses [pose_w] = Utilities.createImageIcon ("default/wq.png");
+        poses [pose_q] = poses [pose_w];
+        Object defaultList [] = {"<none>", "A", "B", "C", "Closed", "D", "E", "F", "G", "I", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "SH", "T", "TH", "U", "V", "W"};
+        phonemes = defaultList;
+    } else if (faces.equals ("toon")) {
+        poses [pose_a] = Utilities.createImageIcon ("toon/ai.gif");
+        poses [pose_i] = poses [pose_a];
+        poses [pose_e] = Utilities.createImageIcon ("toon/e.gif");
+        poses [pose_c] = Utilities.createImageIcon ("toon/cdgk.gif");
+        poses [pose_g] = poses [pose_c];
+        poses [pose_k] = poses [pose_c];
+        poses [pose_n] = poses [pose_c];
+        poses [pose_r] = poses [pose_c];
+        poses [pose_s] = poses [pose_c];
+        poses [pose_t] = poses [pose_c];
+        poses [pose_rest] = Utilities.createImageIcon ("toon/closed.gif");
+        poses [pose_d] = Utilities.createImageIcon ("toon/d.gif");
+        poses [pose_e] = Utilities.createImageIcon ("toon/e.gif");
+        poses [pose_f] = Utilities.createImageIcon ("toon/fv.gif");
+        poses [pose_v] = poses [pose_f];
+        poses [pose_l] = Utilities.createImageIcon ("toon/l.gif");
+        poses [pose_th] = Utilities.createImageIcon ("toon/th.gif");
+        poses [pose_m] = Utilities.createImageIcon ("toon/mbp.gif");
+        poses [pose_b] = poses [pose_m];
+        poses [pose_p] = poses [pose_m];
+        poses [pose_o] = Utilities.createImageIcon ("toon/o.gif");
+        poses [pose_u] = Utilities.createImageIcon ("toon/u.gif");
+        poses [pose_w] = Utilities.createImageIcon ("toon/wq.gif");
+        poses [pose_q] = poses [pose_w];
+        Object toonList [] = {"<none>", "A", "B", "C", "CH", "Closed", "D", "E", "F", "G", "I", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "SH", "T", "TH", "U", "V", "W"};
+        phonemes = toonList;
+    } else if (faces.equals ("wally")) {
+        poses [pose_rest] = Utilities.createImageIcon ("wally/rest.gif");
+        poses [pose_a] = Utilities.createImageIcon ("wally/ai.gif");
+        poses [pose_i] = poses [pose_a];
+        poses [pose_e] = Utilities.createImageIcon ("wally/e.gif");
+        poses [pose_g] = Utilities.createImageIcon ("wally/etc.gif");
+        poses [pose_t] = poses [pose_g];
+        poses [pose_c] = poses [pose_g];
+        poses [pose_j] = poses [pose_g];
+        poses [pose_k] = poses [pose_g];
+        poses [pose_r] = poses [pose_g];
+        poses [pose_s] = poses [pose_g];
+        poses [pose_u] = poses [pose_g];
+        poses [pose_f] = Utilities.createImageIcon ("wally/fv.gif");
+        poses [pose_v] = poses [pose_f];
+        poses [pose_l] = Utilities.createImageIcon ("wally/l.gif");
+        poses [pose_n] = poses [pose_l];
+        poses [pose_d] = poses [pose_l];
+        poses [pose_b] = Utilities.createImageIcon ("wally/mbp.gif");
+        poses [pose_m] = poses [pose_b];
+        poses [pose_p] = poses [pose_b];
+        poses [pose_o] = Utilities.createImageIcon ("wally/o.gif");
+        poses [pose_w] = Utilities.createImageIcon ("wally/wq.gif");
+        poses [pose_q] = poses [pose_w];
+        Object wally [] = {"<none>", "A", "B", "C", "Closed", "D", "E", "F", "G", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W"};
+        phonemes = wally;
+    } else if (faces.equals ("blair")) {
+        poses [pose_rest] = Utilities.createImageIcon ("blair/rest.gif");
+        poses [pose_a] = Utilities.createImageIcon ("blair/ai.gif");
+        poses [pose_i] = poses [pose_a];
+        poses [pose_e] = Utilities.createImageIcon ("blair/e.gif");
+        poses [pose_g] = Utilities.createImageIcon ("blair/etc.gif");
+        poses [pose_t] = poses [pose_g];
+        poses [pose_c] = poses [pose_g];
+        poses [pose_j] = poses [pose_g];
+        poses [pose_k] = poses [pose_g];
+        poses [pose_r] = poses [pose_g];
+        poses [pose_s] = poses [pose_g];
+        poses [pose_u] = poses [pose_g];
+        poses [pose_f] = Utilities.createImageIcon ("blair/fv.gif");
+        poses [pose_v] = poses [pose_f];
+        poses [pose_l] = Utilities.createImageIcon ("blair/ldth.gif");
+        poses [pose_n] = poses [pose_l];
+        poses [pose_d] = poses [pose_l];
+        poses [pose_th] = poses [pose_l];
+        poses [pose_b] = Utilities.createImageIcon ("blair/mbp.gif");
+        poses [pose_m] = poses [pose_b];
+        poses [pose_p] = poses [pose_b];
+        poses [pose_o] = Utilities.createImageIcon ("blair/o.gif");
+        poses [pose_w] = Utilities.createImageIcon ("blair/wq.gif");
+        poses [pose_q] = poses [pose_w];
+        poses [pose_u] = Utilities.createImageIcon ("blair/u.gif");
+        Object blair [] = {"<none>", "A", "B", "C", "D", "E", "F", "G", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "TH", "U", "V", "W"};
+        phonemes = blair;
+    } else if (faces.equals ("extended")) {
+        poses [pose_rest] = Utilities.createImageIcon ("extended/rest.jpg");
+        poses [pose_a] = Utilities.createImageIcon ("extended/ai.jpg");
+        poses [pose_i] = poses [pose_a];
+        poses [pose_e] = Utilities.createImageIcon ("extended/e.jpg");
+        poses [pose_c] = Utilities.createImageIcon ("extended/etc.jpg");
+        poses [pose_d] = poses [pose_c];
+        poses [pose_g] = poses [pose_c];
+        poses [pose_k] = poses [pose_c];
+        poses [pose_n] = poses [pose_c];
+        poses [pose_r] = poses [pose_c];
+        poses [pose_s] = poses [pose_c];
+        poses [pose_y] = poses [pose_c];
+        poses [pose_z] = poses [pose_c];
+        poses [pose_f] = Utilities.createImageIcon ("extended/fv.jpg");
+        poses [pose_v] = poses [pose_f];
+        poses [pose_j] = Utilities.createImageIcon ("extended/jchsh.jpg");
+        poses [pose_ch] = poses [pose_j];
+        poses [pose_sh] = poses [pose_j];
+        poses [pose_l] = Utilities.createImageIcon ("extended/l.jpg");
+        poses [pose_t] = poses [pose_l];
+        poses [pose_b] = Utilities.createImageIcon ("extended/mbp.jpg");
+        poses [pose_m] = poses [pose_b];
+        poses [pose_p] = poses [pose_b];
+        poses [pose_o] = Utilities.createImageIcon ("extended/o.jpg");
+        poses [pose_th] = Utilities.createImageIcon ("extended/th.jpg");
+        poses [pose_w] = Utilities.createImageIcon ("extended/wq.jpg");
+        poses [pose_q] = poses [pose_w];
+        poses [pose_u] = Utilities.createImageIcon ("extended/u.jpg");
+        Object extended [] = {"<none>", "A", "B", "C", "CH", "D", "E", "F", "G", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "SH", "T", "TH", "U", "V", "W", "Z"};
+        phonemes = extended;
+    } else if (faces.equals ("clay")) {
+        poses [pose_a] = Utilities.createImageIcon ("clay/ai.gif");
+        poses [pose_i] = poses [pose_a];
+        poses [pose_c] = Utilities.createImageIcon ("clay/cdgk.gif");
+        poses [pose_e] = poses [pose_c];
+        poses [pose_g] = poses [pose_c];
+        poses [pose_k] = poses [pose_c];
+        poses [pose_n] = poses [pose_c];
+        poses [pose_r] = poses [pose_c];
+        poses [pose_s] = poses [pose_c];
+        poses [pose_t] = poses [pose_c];
+        poses [pose_rest] = Utilities.createImageIcon ("clay/closed.gif");
+        poses [pose_d] = Utilities.createImageIcon ("clay/d.gif");
+        poses [pose_e] = Utilities.createImageIcon ("clay/e.gif");
+        poses [pose_f] = Utilities.createImageIcon ("clay/fv.gif");
+        poses [pose_v] = poses [pose_f];
+        poses [pose_l] = Utilities.createImageIcon ("clay/lth.gif");
+        poses [pose_th] = poses [pose_l];
+        poses [pose_m] = Utilities.createImageIcon ("clay/mbp.gif");
+        poses [pose_b] = poses [pose_m];
+        poses [pose_p] = poses [pose_m];
+        poses [pose_o] = Utilities.createImageIcon ("clay/o.gif");
+        poses [pose_u] = Utilities.createImageIcon ("clay/u.gif");
+        poses [pose_w] = Utilities.createImageIcon ("clay/wq.gif");
+        poses [pose_q] = poses [pose_w];
+        Object defaultList [] = {"<none>", "A", "B", "C", "Closed", "D", "E", "F", "G", "I", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "SH", "T", "TH", "U", "V", "W"};
+        phonemes = defaultList;
+    }
+
+    for (int i = 0;
+    i < 30; i ++) {
+        ImageIcon pose = poses [i];
+        if (pose == null) {
+            smallPoses [i] = null;
+        } else {
+            smallPoses [i] = Utilities.createScaledImageIcon (pose);
+        }
+    }
+    setBorder (BorderFactory.createLineBorder (Color.black));
+    setFace ("Closed");
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/FacePanel.java" startline="410" endline="445">
+public int getFaceIndex (String s) {
+    int faceIndex = - 1;
+    if (s.equals ("<none>")) faceIndex = pose_rest;
+    else if (s.equals ("Closed")) faceIndex = pose_rest;
+    else if (s.equals ("A")) faceIndex = pose_a;
+    else if (s.equals ("B")) faceIndex = pose_b;
+    else if (s.equals ("C")) faceIndex = pose_c;
+    else if (s.equals ("CH")) faceIndex = pose_ch;
+    else if (s.equals ("D")) faceIndex = pose_d;
+    else if (s.equals ("E")) faceIndex = pose_e;
+    else if (s.equals ("F")) faceIndex = pose_f;
+    else if (s.equals ("G")) faceIndex = pose_g;
+    else if (s.equals ("I")) faceIndex = pose_i;
+    else if (s.equals ("J")) faceIndex = pose_j;
+    else if (s.equals ("K")) faceIndex = pose_k;
+    else if (s.equals ("L")) faceIndex = pose_l;
+    else if (s.equals ("M")) faceIndex = pose_m;
+    else if (s.equals ("N")) faceIndex = pose_n;
+    else if (s.equals ("O")) faceIndex = pose_o;
+    else if (s.equals ("P")) faceIndex = pose_p;
+    else if (s.equals ("Q")) faceIndex = pose_q;
+    else if (s.equals ("R")) faceIndex = pose_r;
+    else if (s.equals ("S")) faceIndex = pose_s;
+    else if (s.equals ("SH")) faceIndex = pose_sh;
+    else if (s.equals ("T")) faceIndex = pose_t;
+    else if (s.equals ("TH")) faceIndex = pose_th;
+    else if (s.equals ("U")) faceIndex = pose_u;
+    else if (s.equals ("V")) faceIndex = pose_v;
+    else if (s.equals ("W")) faceIndex = pose_w;
+    else if (s.equals ("Y")) faceIndex = pose_y;
+    else if (s.equals ("Z")) faceIndex = pose_z;
+
+    return faceIndex;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/FacePanel.java" startline="448" endline="458">
+public ImageIcon getFace (String s) {
+    int faceIndex = getFaceIndex (s);
+    if (faceIndex == - 1) {
+        return null;
+    } else {
+        return poses [faceIndex];
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/FacePanel.java" startline="461" endline="470">
+public ImageIcon getSmallFace (String s) {
+    int faceIndex = getFaceIndex (s);
+    if (faceIndex == - 1) {
+        return null;
+    } else {
+        return smallPoses [faceIndex];
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/FacePanel.java" startline="473" endline="480">
+public void setFace (String s) {
+    ImageIcon icon = getFace (s);
+    if (icon != null) {
+        setIcon (icon);
+        repaint ();
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="72" endline="75">
+public WavePanel () {
+    addMouseListener (this);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="78" endline="169">
+public void paintComponent (Graphics g) {
+    super.paintComponent (g);
+    int height = getHeight ();
+    int width = getWidth ();
+    g.setColor (Color.black);
+    g.fillRect (0, 0, width, height);
+    if (byteCount == 0) {
+        return;
+    }
+    int framesShown = (zoomEnd - zoomStart) + 1;
+    float pixelsPerFrame = (float) width / (float) framesShown;
+    if (markerStart != 0) {
+        int markerStartPixel = (int) ((markerStart - zoomStart) * pixelsPerFrame);
+        int markerWidth = (int) (((markerEnd - markerStart) + 1) * pixelsPerFrame);
+        if (markerWidth < 1) {
+            markerWidth = 2;
+        }
+        g.setColor (Color.red);
+        g.fillRect (markerStartPixel, 0, markerWidth, height);
+    }
+    g.setColor (Color.cyan);
+    int mid = (int) Math.floor (height / 2);
+    double scaleFactor = (double) mid / (double) maxAmplitude;
+    int zoomStartByte = ((zoomStart - 1) * bytesPerFrame);
+    int zoomEndByte = (zoomEnd * bytesPerFrame);
+    float stepSize = ((float) (zoomEndByte - zoomStartByte)) / (float) width;
+    for (int i = 0;
+    i < width; i ++) {
+        int iIndex = (int) (i * stepSize) + zoomStartByte;
+        if (iIndex >= 0 && iIndex < byteCount) {
+            int value = bytes [iIndex];
+            if (value < 0) {
+                value = maxAmplitude - Math.abs (value);
+                g.drawLine (i, mid, i, mid + value);
+            } else {
+                value = maxAmplitude - value;
+                g.drawLine (i, mid, i, mid - value);
+            }
+        }
+    }
+    g.setColor (Color.gray);
+    g.drawLine (0, mid, width, mid);
+    if (pixelsPerFrame > 2) {
+        for (int i = 0;
+        i < framesShown; i ++) {
+            int x = (int) (i * pixelsPerFrame);
+            g.drawLine (x, 0, x, height);
+        }
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="171" endline="173">
+public String getPath (File file) {
+    return file.getPath ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="176" endline="310">
+public void loadWave (File file) {
+    if (! file.canRead ()) {
+        int result = JOptionPane.showConfirmDialog (null, "Can't find the file '" + file.getName () + "'\nDo you want to find it manually?", "Unable to find .wav file", JOptionPane.YES_NO_OPTION);
+        if (result == JOptionPane.YES_OPTION) {
+            JFileChooser fc = Utilities.fileChooser (null);
+            fc.addChoosableFileFilter (new WavFilter ());
+            int returnVal = Utilities.showOpenDialog (this, fc);
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
+                file = fc.getSelectedFile ();
+            } else {
+                byteCount = 0;
+                return;
+            }
+        }
+    }
+    AudioInputStream sourceAudioInputStream = null;
+    try {
+        sourceAudioInputStream = AudioSystem.getAudioInputStream (file);
+    } catch (Exception e) {
+        errMessage ("Error reading file '" + file.getName () + "'");
+        byteCount = 0;
+        return;
+    }
+    AudioFormat sourceAudioFormat = sourceAudioInputStream.getFormat ();
+    audioFormat = new AudioFormat (AudioFormat.Encoding.PCM_UNSIGNED, sourceAudioFormat.getSampleRate (), 8, 1, sourceAudioFormat.getFrameSize (), sourceAudioFormat.getFrameRate (), false);
+    AudioInputStream audioInputStream;
+    try {
+        audioInputStream = AudioSystem.getAudioInputStream (audioFormat, sourceAudioInputStream);
+    } catch (Exception e) {
+        errMessage ("Can't convert file to 8 bit mono audio");
+        byteCount = 0;
+        return;
+    }
+    byteCount = (int) (audioInputStream.getFrameLength () * audioFormat.getFrameSize ());
+    calculateMetrics ();
+    bytes = new byte [byteCount];
+    try {
+        audioInputStream.read (bytes, 0, byteCount);
+    } catch (Exception e) {
+        errMessage ("Error reading the audio file");
+        byteCount = 0;
+        return;
+    }
+    for (int i = 0;
+    i < byteCount; i ++) {
+        if (bytes [i] > maxAmplitude) {
+            maxAmplitude = bytes [i];
+        } else if (- bytes [i] > maxAmplitude) {
+            maxAmplitude = - bytes [i];
+        }
+
+    }
+    fileName = file.getPath ();
+    repaint ();
+    sourceDataLine = null;
+    if (sourceDataLine == null) {
+        DataLine.Info info = new DataLine.Info (SourceDataLine.class, audioFormat);
+        try {
+            sourceDataLine = (SourceDataLine) AudioSystem.getLine (info);
+            sourceDataLine.open (audioFormat);
+            sourceDataLine.start ();
+        } catch (Exception e) {
+            errMessage ("Unable to open audio device" + e);
+            sourceDataLine = null;
+        }
+    } else {
+        if (! (sourceDataLine.isOpen ())) {
+            errMessage ("Data line is not open");
+            sourceDataLine = null;
+        }
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="313" endline="329">
+public void calculateMetrics () {
+    if (byteCount != 0) {
+        float seconds = byteCount / audioFormat.getSampleRate ();
+        frameCount = (int) Math.floor (framesPerSecond * seconds);
+        bytesPerFrame = (int) (byteCount / frameCount);
+    }
+    zoomAll ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="332" endline="362">
+public void playFrames (int startFrame, int endFrame) {
+    if (startFrame == 0) {
+        startFrame = 1;
+    }
+    if (endFrame == 0 || endFrame > frameCount) {
+        endFrame = frameCount;
+    }
+    int startByte = bytesPerFrame * (startFrame - 1);
+    int endByte = bytesPerFrame * endFrame;
+    if (startByte < 1) {
+        startByte = 1;
+    }
+    if (endByte > byteCount) {
+        endByte = byteCount;
+    }
+    try {
+        new PlayThread (startByte, endByte).start ();
+    } catch (Exception e) {
+        errMessage ("Error playing the wave file: " + e);
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="369" endline="373">
+public PlayThread (int startAtByte, int endAtByte) {
+    startPosition = startAtByte;
+    endPosition = endAtByte;
+    stopPlayingWave = false;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="375" endline="445">
+public void run () {
+    if (byteCount == 0) {
+        return;
+    }
+    if (sourceDataLine == null) {
+        errMessage ("Audio device failed. Try reloading file");
+        return;
+    }
+    if (! (sourceDataLine.isOpen ())) {
+        errMessage ("Data line is not open");
+        sourceDataLine = null;
+    }
+    int bufferSize = (1024 * 16);
+    int startOfBuffer = startPosition;
+    int counter = 0;
+    while (! stopPlayingWave) {
+        int currentPosition = startOfBuffer + bufferSize;
+        if ((startOfBuffer + bufferSize) >= endPosition) {
+            bufferSize = (endPosition) - startOfBuffer;
+        }
+        try {
+            sourceDataLine.start ();
+        } catch (Exception e) {
+            System.out.println ("Unable to start the line");
+        }
+        System.out.println ("Buffer size is " + bufferSize);
+        playingWave = true;
+        int nBytesWritten = sourceDataLine.write (bytes, startOfBuffer, bufferSize);
+        System.out.println ("wrote " + nBytesWritten + " bytes");
+        try {
+            sleep (1);
+        } catch (Exception e) {
+            System.out.println ("Exception triggered in sleep()");
+        }
+        startOfBuffer += bufferSize;
+        if (startOfBuffer >= endPosition) {
+            break;
+        }
+    }
+    sourceDataLine.drain ();
+    sourceDataLine.stop ();
+    sourceDataLine.flush ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="450" endline="464">
+void zoomToFit () {
+    if (markerStart != 0) {
+        zoomStart = markerStart;
+        zoomEnd = markerEnd;
+        markerStart = 0;
+        markerEnd = 0;
+        repaint ();
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="467" endline="478">
+void zoomAll () {
+    zoomStart = 1;
+    zoomEnd = frameCount;
+    markerStart = 0;
+    markerEnd = 0;
+    repaint ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="481" endline="509">
+void zoomIn () {
+    if (zoomStart != zoomEnd) {
+        int wide = (int) ((zoomEnd - zoomStart) / 4);
+        zoomStart += wide;
+        zoomEnd -= wide;
+        if (zoomStart > zoomEnd) {
+            int middle = wide;
+            if (middle < 0) {
+                middle = 1;
+            } else if (middle > frameCount) {
+                middle = frameCount;
+            }
+
+            zoomStart = middle;
+            zoomEnd = middle;
+        }
+    }
+    markerStart = 0;
+    markerEnd = 0;
+    repaint ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="512" endline="540">
+void zoomOut () {
+    int wide = (int) ((zoomEnd - zoomStart) / 2);
+    if (wide == 0) {
+        wide = 1;
+    }
+    zoomStart -= wide;
+    if (zoomStart < 1) {
+        zoomStart = 1;
+    }
+    zoomEnd += wide;
+    if (zoomEnd > frameCount) {
+        zoomEnd = frameCount;
+    }
+    markerStart = 0;
+    markerEnd = 0;
+    repaint ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="542" endline="576">
+void ensureFrameVisible (int frameNumber) {
+    if (frameNumber < 1 || frameNumber >= this.frameCount) {
+        return;
+    }
+    if (frameNumber >= this.zoomStart && frameNumber <= this.zoomEnd) {
+        return;
+    }
+    int framesShown = (zoomEnd - zoomStart) + 1;
+    if (frameNumber < this.zoomStart) {
+        this.zoomStart = frameNumber;
+        this.zoomEnd = this.zoomStart + framesShown - 1;
+    } else {
+        this.zoomEnd = frameNumber;
+        this.zoomStart = this.zoomEnd - framesShown + 1;
+    }
+    this.markerStart = frameNumber;
+    this.markerEnd = frameNumber;
+    this.repaint ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="578" endline="606">
+int mouseOnFrame (int x) {
+    int width = getWidth ();
+    if (x < 0) {
+        x = 0;
+    } else if (x > width) {
+        x = width;
+    }
+
+    int framesShown = (zoomEnd - zoomStart) + 1;
+    float pixelsPerFrame = (float) width / (float) framesShown;
+    int frame = zoomStart + (int) Math.floor (x / pixelsPerFrame);
+    if (frame > zoomEnd) {
+        frame = zoomEnd;
+    }
+    return frame;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="608" endline="642">
+public void mousePressed (MouseEvent e) {
+    if (e.getButton () == MouseEvent.BUTTON1) {
+        if (e.isShiftDown () || e.isControlDown ()) {
+            this.selecting = true;
+        } else {
+            this.selecting = false;
+        }
+        anchorStart = mouseOnFrame (e.getX ());
+        anchorEnd = anchorStart;
+        markerStart = anchorStart;
+        markerEnd = anchorStart;
+        repaint ();
+        addMouseMotionListener (this);
+        if (timeSheetTable != null) {
+            timeSheetTable.changeSelection (anchorStart - 1, TimeSheet.COLUMN_MOUTH, true, false);
+        }
+        this.stopPlayingWave = true;
+        this.playFrames (markerStart, markerStart);
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="644" endline="706">
+public void mouseDragged (MouseEvent e) {
+    int frame = mouseOnFrame (e.getX ());
+    if (frame != anchorEnd) {
+        anchorEnd = frame;
+        if (anchorEnd > anchorStart) {
+            markerStart = anchorStart;
+            markerEnd = anchorEnd;
+        } else {
+            markerStart = anchorEnd;
+            markerEnd = anchorStart;
+        }
+        if (! this.selecting && (e.isShiftDown () || e.isControlDown ())) {
+            markerStart = frame;
+            markerEnd = frame;
+            anchorStart = frame;
+            anchorEnd = frame;
+            this.selecting = true;
+        }
+        if (this.selecting && ! (e.isShiftDown () || e.isControlDown ())) {
+            this.selecting = false;
+        }
+        this.stopPlayingWave = true;
+        this.playFrames (frame, frame);
+        if (timeSheetTable != null) {
+            if (selecting) {
+                String face = (String) timeSheetTable.getValueAt (frame - 1, TimeSheet.COLUMN_MOUTH);
+                if (face.length () > 0) {
+                    facePanel.setFace (face);
+                }
+            } else {
+                timeSheetTable.changeSelection (frame - 1, TimeSheet.COLUMN_MOUTH, true, false);
+            }
+        }
+        repaint ();
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="708" endline="711">
+public void mouseReleased (MouseEvent e) {
+    removeMouseMotionListener (this);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="714" endline="715">
+public void mouseClicked (MouseEvent e) {
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="717" endline="718">
+public void mouseMoved (MouseEvent e) {
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="720" endline="721">
+public void mouseEntered (MouseEvent e) {
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="723" endline="724">
+public void mouseExited (MouseEvent e) {
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java" startline="726" endline="729">
+public void errMessage (String s) {
+    JOptionPane.showMessageDialog (null, s, "Error", JOptionPane.ERROR_MESSAGE);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/SimpleXmlReader.java" startline="20" endline="23">
+public SimpleXmlReader (File fileName) throws FileNotFoundException {
+    super (fileName);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/SimpleXmlReader.java" startline="26" endline="64">
+public String getCurrentTag () throws IOException {
+    if (tag.length () != 0) {
+        return tag;
+    }
+    int b = read ();
+    while (b == - 1 || b == '\n' || b == '\r' || b == '\t' || b == ' ') {
+        if (b == - 1) {
+            throw new IOException ("Unexpected end of file");
+        }
+        b = read ();
+    }
+    StringBuffer buffer = new StringBuffer ();
+    if ((char) b != '<') {
+        throw new IOException ("Expected start of XML tag, not " + (char) b + "(char #" + b + ")");
+    }
+    buffer.append ((char) b);
+    while ((char) b != '>') {
+        b = (int) read ();
+        if (b == - 1) {
+            throw new IOException ("Expected XML tag not " + buffer.toString () + "{EOF}");
+        }
+        buffer.append ((char) b);
+    }
+    tag = buffer.toString ();
+    return tag;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/SimpleXmlReader.java" startline="67" endline="120">
+public String getString (String expectedTag) throws IOException {
+    String value;
+    int b;
+    if (! getCurrentTag ().equals ("<" + expectedTag + ">")) {
+        throw new IOException ("Expected XML tag <" + expectedTag + ">, not " + getCurrentTag ());
+    }
+    StringBuffer buffer = new StringBuffer ();
+    while (true) {
+        b = read ();
+        if (b == - 1) {
+            throw new IOException ("Expected XML tag data for </" + expectedTag + ">, not end of file");
+        }
+        if ((char) b == '<') {
+            break;
+        } else {
+            buffer.append ((char) b);
+        }
+    }
+    value = buffer.toString ();
+    buffer = new StringBuffer ("<");
+    while ((char) b != '>') {
+        b = read ();
+        if (b == - 1) {
+            throw new IOException ("Expected tag </" + expectedTag + ">, not " + buffer.toString () + "{EOF}");
+        }
+        buffer.append ((char) b);
+    }
+    if (! buffer.toString ().equals ("</" + expectedTag + ">")) {
+        throw new IOException ("Expected XML tag </" + expectedTag + ">, not " + buffer.toString ());
+    }
+    tag = "";
+    return value;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/SimpleXmlReader.java" startline="125" endline="136">
+String getTag (String expectedTag) throws IOException {
+    String theTag = getCurrentTag ();
+    if (expectedTag.length () != 0 && ! expectedTag.equals (theTag)) {
+        throw new IOException ("Expected XML tag " + expectedTag + ", not " + theTag);
+    }
+    tag = "";
+    return theTag;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/SimpleXmlReader.java" startline="138" endline="141">
+public int getInt (String s) throws IOException {
+    return (int) getFloat (s);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/SimpleXmlReader.java" startline="143" endline="146">
+public float getFloat (String s) throws IOException {
+    return Float.valueOf (getString (s)).floatValue ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/SimpleXmlReader.java" startline="149" endline="159">
+public String getOptionalString (String s) throws IOException {
+    if (getCurrentTag ().equals ("<" + s + ">")) {
+        return getString (s);
+    }
+    return "";
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/TimeSheet.java" startline="38" endline="40">
+public TimeSheet (int frameCount, int framesPerSecond) {
+    this.init (frameCount, framesPerSecond);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/TimeSheet.java" startline="43" endline="65">
+public void init (int frameCount, int framesPerSecond) {
+    this.frameCount = frameCount;
+    this.mouth = new String [frameCount];
+    this.comment = new String [frameCount];
+    this.key = new boolean [frameCount];
+    for (int i = 0;
+    i < this.frameCount; i ++) {
+        this.mouth [i] = new String ("-");
+        this.comment [i] = new String ("");
+        this.key [i] = false;
+    }
+    this.framesPerSecond = framesPerSecond;
+    this.hourOffset = 0;
+    this.minuteOffset = 0;
+    this.secondOffset = 0;
+    this.framesOffset = 0;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/TimeSheet.java" startline="68" endline="116">
+public String calcTimeCode (int frame) {
+    StringBuffer s = new StringBuffer ("");
+    int frames = frame;
+    if (hourOffset > 0 || minuteOffset > 0 || secondOffset > 0 || framesOffset > 0) frames -= 1;
+
+    frames += (hourOffset * 3600 * framesPerSecond) + (minuteOffset * 60 * framesPerSecond) + (secondOffset * framesPerSecond) + framesOffset;
+    int seconds = frames / framesPerSecond;
+    int hours = seconds / 3600;
+    seconds -= hours * 3600;
+    int minutes = seconds / 60;
+    seconds -= minutes * 60;
+    frames -= (hours * 3600 * framesPerSecond) + (minutes * 60 * framesPerSecond) + (seconds * framesPerSecond);
+    if (hours < 10) s.append ("0");
+
+    s.append (hours);
+    s.append (":");
+    if (minutes < 10) s.append ("0");
+
+    s.append (minutes);
+    s.append (":");
+    if (seconds < 10) s.append ("0");
+
+    s.append (seconds);
+    s.append (":");
+    if (frames < 10) s.append ("0");
+
+    s.append (frames);
+    return JLipSync.padString (s.toString (), 12);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavFilter.java" startline="16" endline="26">
+public boolean accept (File f) {
+    if (f.isDirectory ()) {
+        return true;
+    }
+    String fileName = f.getName ().toLowerCase ();
+    if (fileName.endsWith (".wav")) {
+        return true;
+    }
+    return false;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavFilter.java" startline="29" endline="31">
+public String getDescription () {
+    return "Wave Audio Files";
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/Utilities.java" startline="20" endline="28">
+final static ImageIcon createImageIcon (String path) {
+    java.net.URL imgURL = JLipSync.class.getResource (path);
+    if (imgURL != null) {
+        return new ImageIcon (imgURL);
+    } else {
+        System.err.println ("Couldn't find Icon: " + path);
+        return null;
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/Utilities.java" startline="31" endline="44">
+final static ImageIcon createScaledImageIcon (ImageIcon icon) {
+    Image image = icon.getImage ();
+    ImageIcon scaledIcon = new ImageIcon ();
+    scaledIcon.setImage (image.getScaledInstance (32, 32, Image.SCALE_DEFAULT));
+    return scaledIcon;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/Utilities.java" startline="45" endline="48">
+final static void errMessage (String s) {
+    JOptionPane.showMessageDialog (null, s, "Error", JOptionPane.ERROR_MESSAGE);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/Utilities.java" startline="50" endline="61">
+final static void setPreference (String key, String value) {
+    Preferences userPrefs = Preferences.userRoot ().node ("/jlipsync/preferences");
+    try {
+        userPrefs.put (key, value);
+        userPrefs.flush ();
+    } catch (Exception e) {
+        errMessage ("Unable to store persistant settings.");
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/Utilities.java" startline="63" endline="69">
+final static String getPreference (String key) {
+    Preferences userPrefs = Preferences.userRoot ().node ("/jlipsync/preferences");
+    return userPrefs.get (key, "");
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/Utilities.java" startline="72" endline="99">
+final static JFileChooser fileChooser (File file) {
+    JFileChooser fc = new JFileChooser ();
+    String dirName = Utilities.getPreference ("defaultDirectory");
+    if (dirName.length () > 0) {
+        try {
+            fc.setCurrentDirectory (new File (dirName));
+        } catch (Exception e) {
+        }
+    }
+    if (file != null) {
+        try {
+            fc.setSelectedFile (file);
+        } catch (Exception e) {
+        }
+    }
+    return fc;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/Utilities.java" startline="102" endline="111">
+final static int showSaveDialog (Component c, JFileChooser fc) {
+    int returnVal = fc.showSaveDialog (c);
+    if (returnVal == JFileChooser.APPROVE_OPTION) {
+        String dirName = fc.getCurrentDirectory ().getAbsolutePath ();
+        Utilities.setPreference ("defaultDirectory", dirName);
+    }
+    return returnVal;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/Utilities.java" startline="114" endline="123">
+final static int showOpenDialog (Component c, JFileChooser fc) {
+    int returnVal = fc.showOpenDialog (c);
+    if (returnVal == JFileChooser.APPROVE_OPTION) {
+        String dirName = fc.getCurrentDirectory ().getAbsolutePath ();
+        Utilities.setPreference ("defaultDirectory", dirName);
+    }
+    return returnVal;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="109" endline="126">
+public JLipSync () {
+    super ("JLipSync 0.9 ");
+    setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+    setJMenuBar (createMenuBar ());
+    setContentPane (createContentPanel ());
+    setSize (Toolkit.getDefaultToolkit ().getScreenSize ());
+    setVisible (true);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="129" endline="165">
+public void playFrames (int startFrame, int endFrame) {
+    int endByte = wavePanel.bytesPerFrame * endFrame;
+    if (startFrame == 0) {
+        startFrame = 1;
+    }
+    if (endFrame == 0) {
+        endFrame = wavePanel.frameCount;
+    }
+    if (endByte > wavePanel.byteCount) {
+        endByte = wavePanel.byteCount;
+    }
+    try {
+        wavePanel.playingWave = false;
+        wavePanel.playFrames (startFrame, endFrame);
+        new PlayFaces (startFrame, endFrame).start ();
+    } catch (Exception e) {
+        Utilities.errMessage ("Error playing the wave file. " + e);
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="172" endline="176">
+public PlayFaces (int startAtIndex, int endAtIndex) {
+    startIndex = startAtIndex;
+    endIndex = endAtIndex;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="179" endline="226">
+public void run () {
+    try {
+        double startWait = System.currentTimeMillis ();
+        while (! wavePanel.playingWave) {
+            sleep (1);
+            if (System.currentTimeMillis () - startWait > 8000) {
+                break;
+            }
+        }
+        double startTime = System.currentTimeMillis ();
+        double sleepTime = 1000 / wavePanel.framesPerSecond;
+        double nextFrame = startTime;
+        if (trackOffset < 0) {
+            endIndex -= trackOffset;
+        }
+        for (int i = startIndex;
+        i <= endIndex; i ++) {
+            int frameIndex = trackOffset + i - 1;
+            if (frameIndex > - 1 && frameIndex < wavePanel.frameCount) {
+                String useMouth = timeSheet.mouth [frameIndex];
+                facePanel.setFace (useMouth);
+                nextFrame += sleepTime;
+                while (System.currentTimeMillis () <= nextFrame) {
+                    sleep (10);
+                }
+            }
+        }
+    } catch (Exception e) {
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="230" endline="237">
+public void eraseTimeSheet () {
+    timeSheet.init (wavePanel.frameCount, wavePanel.framesPerSecond);
+    trackOffset = 0;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="240" endline="279">
+public void rescaleTimeSheet (int newFramesPerSecond) {
+    int oldFrameCount = wavePanel.frameCount;
+    String priorMouth [] = new String [oldFrameCount];
+    String priorComment [] = new String [oldFrameCount];
+    boolean priorKey [] = new boolean [oldFrameCount];
+    for (int i = 0;
+    i < oldFrameCount; i ++) {
+        priorMouth [i] = timeSheet.mouth [i];
+        priorComment [i] = timeSheet.comment [i];
+        priorKey [i] = timeSheet.key [i];
+    }
+    wavePanel.framesPerSecond = newFramesPerSecond;
+    wavePanel.calculateMetrics ();
+    eraseTimeSheet ();
+    float delta = (float) wavePanel.frameCount / (float) oldFrameCount;
+    for (int i = 0;
+    i < oldFrameCount; i ++) {
+        int target = (int) (i * delta);
+        if (target > wavePanel.frameCount) {
+            target = wavePanel.frameCount - 1;
+        }
+        timeSheet.mouth [target] = priorMouth [i];
+        timeSheet.comment [target] = priorComment [i];
+        timeSheet.key [target] = priorKey [i];
+    }
+    timeSheetTable.repaint ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="282" endline="285">
+public void loadWave (File file) {
+    wavePanel.loadWave (file);
+    eraseTimeSheet ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="288" endline="423">
+void loadTimeSheet (File file) {
+    try {
+        SimpleXmlReader xml = new SimpleXmlReader (file);
+        String theHeader = xml.getTag ("");
+        if (! theHeader.substring (0, 6).equals ("<?xml ")) {
+            throw new Exception ("Not an XML file");
+        }
+        xml.getTag ("<jlipsync>");
+        String version = xml.getString ("version");
+        this.setTitle ("JLipSync " + version + "  -  " + file.getName ());
+        String waveFileName = xml.getString ("wavefile");
+        wavePanel.framesPerSecond = (int) xml.getFloat ("fps");
+        timeSheet.framesPerSecond = wavePanel.framesPerSecond;
+        if (wavePanel.framesPerSecond == 24) {
+            fps24.setSelected (true);
+        } else if (wavePanel.framesPerSecond == 25) {
+            fps25.setSelected (true);
+        } else if (wavePanel.framesPerSecond == 30) {
+            fps30.setSelected (true);
+        }
+
+        File waveFile;
+        try {
+            waveFile = new File (waveFileName);
+        } catch (Exception ex) {
+            throw new Exception ("Can't find file " + waveFileName);
+        }
+        if (waveFile != null) {
+            loadWave (waveFile);
+        }
+        wavePanel.frameCount = (int) xml.getFloat ("framecount");
+        timeSheet.init (wavePanel.frameCount, wavePanel.framesPerSecond);
+        if (xml.getCurrentTag ().equals ("<offset>")) {
+            xml.getTag ("<offset>");
+            trackOffset = xml.getInt ("track");
+            timeSheet.hourOffset = xml.getInt ("hour");
+            timeSheet.minuteOffset = xml.getInt ("minute");
+            timeSheet.secondOffset = xml.getInt ("second");
+            if (! xml.getCurrentTag ().equals ("</offset>")) timeSheet.framesOffset = xml.getInt ("frm");
+
+            xml.getTag ("</offset>");
+        } else {
+            trackOffset = 0;
+            timeSheet.hourOffset = 0;
+            timeSheet.minuteOffset = 0;
+            timeSheet.secondOffset = 0;
+            timeSheet.framesOffset = 0;
+        }
+        int widths [] = {10, 220, 20, 40, 100};
+        for (int i = 0;
+        i < 1; i ++) {
+            TableColumn column = timeSheetTable.getColumnModel ().getColumn (i);
+            column.setWidth (widths [i]);
+        }
+        xml.getTag ("<frames>");
+        for (int i = 0;
+        i < wavePanel.frameCount; i ++) {
+            xml.getTag ("<frame>");
+            timeSheet.mouth [i] = xml.getOptionalString ("mouth");
+            timeSheet.key [i] = xml.getOptionalString ("key").equals ("true");
+            timeSheet.comment [i] = xml.getOptionalString ("comment");
+            xml.getTag ("</frame>");
+        }
+        xml.getTag ("</frames>");
+        if (xml.getCurrentTag ().equals ("<pdf>")) {
+            xml.getTag ("<pdf>");
+            timeSheet.pdfLogo = xml.getOptionalString ("pdfLogo");
+            xml.getTag ("</pdf>");
+        }
+        xml.getTag ("</jlipsync>");
+    } catch (Exception e) {
+        Utilities.errMessage ("Error reading file: " + e);
+        wavePanel.frameCount = 20;
+        wavePanel.framesPerSecond = 24;
+        eraseTimeSheet ();
+    }
+    for (int i = 0;
+    i < wavePanel.frameCount; i ++) {
+        String s = timeSheet.mouth [i];
+        if (s.equalsIgnoreCase ("Closed") || s.isEmpty ()) timeSheet.mouth [i] = "-";
+
+    }
+    wavePanel.repaint ();
+    timeSheetTable.repaint ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="426" endline="513">
+void writeXML (File file) {
+    FileWriter stream;
+    try {
+        stream = new FileWriter (file);
+    } catch (Exception e) {
+        Utilities.errMessage ("Error writing file " + e);
+        return;
+    }
+    try {
+        stream.write ("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n");
+        stream.write ("<jlipsync>\n");
+        stream.write ("\t<version>0.9</version>\n");
+        stream.write ("\t<wavefile>" + wavePanel.fileName + "</wavefile>\n");
+        stream.write ("\t<fps>" + wavePanel.framesPerSecond + "</fps>\n");
+        stream.write ("\t<framecount>" + wavePanel.frameCount + "</framecount>\n");
+        stream.write ("\t<offset>\n");
+        stream.write ("\t\t<track>" + trackOffset + "</track>\n");
+        stream.write ("\t\t<hour>" + timeSheet.hourOffset + "</hour>\n");
+        stream.write ("\t\t<minute>" + timeSheet.minuteOffset + "</minute>\n");
+        stream.write ("\t\t<second>" + timeSheet.secondOffset + "</second>\n");
+        stream.write ("\t\t<frm>" + timeSheet.framesOffset + "</frm>\n");
+        stream.write ("\t</offset>\n");
+        stream.write ("\t<frames>\n");
+        for (int i = 0;
+        i < wavePanel.frameCount; i ++) {
+            stream.write ("\t\t<frame>");
+            if (timeSheet.mouth [i].length () > 0) {
+                stream.write ("<mouth>" + timeSheet.mouth [i] + "</mouth>");
+            }
+            if (timeSheet.key [i]) {
+                stream.write ("<key>true</key>");
+            }
+            if (timeSheet.comment [i].length () > 0) {
+                stream.write ("<comment>" + timeSheet.comment [i] + "</comment>");
+            }
+            stream.write ("</frame>\n");
+        }
+        stream.write ("\t</frames>\n");
+        stream.write ("\t<pdf>\n");
+        stream.write ("\t<pdfLogo>" + "" + "</pdfLogo>\n");
+        stream.write ("\t</pdf>\n");
+        stream.write ("</jlipsync>");
+        stream.close ();
+    } catch (Exception e) {
+        Utilities.errMessage ("Error writing file:" + e);
+        return;
+    }
+    openFile = file;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="516" endline="544">
+public boolean cancelledAutoSave () {
+    if (openFile == null) {
+        return false;
+    }
+    int result = JOptionPane.showConfirmDialog (null, "Save Current File First?", "Save File?", JOptionPane.YES_NO_CANCEL_OPTION);
+    if (result == JOptionPane.CANCEL_OPTION) {
+        return true;
+    } else if (result == JOptionPane.NO_OPTION) {
+        return false;
+    }
+
+    String fileName = openFile.getPath ();
+    fileName = addFileExtention (fileName, ".jls");
+    writeXML (new File (fileName));
+    return false;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="547" endline="578">
+public void fileOpen () {
+    if (cancelledAutoSave ()) {
+        return;
+    }
+    String dirName = Utilities.getPreference ("defaultDirectory");
+    JFileChooser fc = Utilities.fileChooser (null);
+    fc.addChoosableFileFilter (new WavFilter ());
+    fc.addChoosableFileFilter (new JlsFilter ());
+    int returnVal = Utilities.showOpenDialog (this, fc);
+    if (returnVal == JFileChooser.APPROVE_OPTION) {
+        openFile = fc.getSelectedFile ();
+        String fileName = openFile.getName ();
+        fileName = fileName.toLowerCase ();
+        if (fileName.endsWith (".jls")) {
+            loadTimeSheet (openFile);
+        } else {
+            loadWave (openFile);
+        }
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="581" endline="589">
+public String addFileExtention (String fileName, String extention) {
+    String lowerFileName = fileName.toLowerCase ();
+    if (! (lowerFileName.endsWith (extention))) {
+        return fileName + extention;
+    }
+    return fileName;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="591" endline="603">
+public void fileSave () {
+    if (this.openFile == null) {
+        fileSaveAs ();
+    } else {
+        String fileName = openFile.getPath ();
+        fileName = addFileExtention (fileName, ".jls");
+        writeXML (new File (fileName));
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="605" endline="620">
+public void fileSaveAs () {
+    JFileChooser fc = Utilities.fileChooser (openFile);
+    fc.addChoosableFileFilter (new JlsFilter ());
+    int returnVal = Utilities.showSaveDialog (this, fc);
+    if (returnVal == JFileChooser.APPROVE_OPTION) {
+        File file = fc.getSelectedFile ();
+        String fileName = file.getPath ();
+        fileName = addFileExtention (fileName, ".jls");
+        writeXML (new File (fileName));
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="623" endline="633">
+public void fileSaveAsPdf (String pdf) {
+    JFileChooser fc = Utilities.fileChooser (openFile);
+    int returnVal = Utilities.showSaveDialog (this, fc);
+    if (returnVal == JFileChooser.APPROVE_OPTION) {
+        File file = fc.getSelectedFile ();
+        JPdfWriter jpdf = new JPdfWriter ();
+        jpdf.JPdf (timeSheet, pdf, wavePanel.getPath (file));
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="636" endline="640">
+public static String padString (String s, int padSize) {
+    String padded = new String (s + "                                              ");
+    return padded.substring (0, padSize - 1);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="643" endline="682">
+public String magpieFormat () {
+    StringBuffer s = new StringBuffer ("Frame   Timecode   Key   Mouth name    Comments\n");
+    for (int i = 0;
+    i < wavePanel.frameCount; i ++) {
+        s.append ("  ");
+        int theFrame = i + 1;
+        if (theFrame < 100) s.append (" ");
+
+        if (theFrame < 10) s.append (" ");
+
+        s.append (theFrame);
+        s.append ("  ");
+        s.append (timeSheet.calcTimeCode (i + 1));
+        if (timeSheet.key [i]) {
+            s.append ("   X   ");
+        } else {
+            s.append ("       ");
+        }
+        s.append (padString (timeSheet.mouth [i], 15));
+        s.append (timeSheet.comment [i]);
+        s.append ("\n");
+    }
+    return s.toString ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="684" endline="716">
+public String csvFormat () {
+    StringBuffer s = new StringBuffer ("Frame,Timecode,Key,Mouth name,Comments\n");
+    for (int i = 0;
+    i < wavePanel.frameCount; i ++) {
+        int theFrame = i + 1;
+        s.append (theFrame);
+        s.append (",");
+        s.append (timeSheet.calcTimeCode (i + 1));
+        s.append (",");
+        if (timeSheet.key [i]) {
+            s.append ("X,");
+        } else {
+            s.append (",");
+        }
+        s.append (padString (timeSheet.mouth [i], 15));
+        s.append (",");
+        s.append (timeSheet.comment [i]);
+        s.append ("\n");
+    }
+    return s.toString ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="718" endline="721">
+public String pdfFormat (TimeSheet t) {
+    String s = "t.txt";
+    return s;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="723" endline="735">
+public String mohoFormat () {
+    StringBuffer s = new StringBuffer ("MohoSwitch1\n");
+    for (int i = 0;
+    i < wavePanel.frameCount; i ++) {
+        String mouthShape = timeSheet.mouth [i];
+        if (mouthShape.length () > 0) {
+            s.append ((i + 1) + " " + mouthShape + "\n");
+        }
+    }
+    return s.toString ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="737" endline="792">
+public String gameStudioFormat () {
+    StringBuffer s = new StringBuffer ();
+    s.append (wavePanel.frameCount + " " + wavePanel.framesPerSecond + "\n");
+    int hour = timeSheet.hourOffset;
+    int minute = timeSheet.minuteOffset;
+    int second = timeSheet.secondOffset;
+    int tick = 0;
+    for (int i = 0;
+    i < wavePanel.frameCount; i ++) {
+        tick ++;
+        if (tick > wavePanel.framesPerSecond) {
+            tick = 1;
+            second ++;
+            if (second > 59) {
+                second = 0;
+                minute ++;
+                if (minute > 59) {
+                    minute = 0;
+                    hour ++;
+                }
+            }
+        }
+        s.append ((i + 1) + " ");
+        s.append (hour + " " + minute + " " + second + " ");
+        if (timeSheet.key [i]) {
+            s.append ("1 ");
+        } else {
+            s.append ("0 ");
+        }
+        String mouth = timeSheet.mouth [i];
+        if (mouth.length () == 0) {
+            s.append ("none, ");
+        } else {
+            s.append (mouth + ", ");
+        }
+    }
+    return s.toString ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="794" endline="844">
+public void exportFile (int fileType) {
+    JFileChooser fc = Utilities.fileChooser (null);
+    int returnVal = Utilities.showSaveDialog (this, fc);
+    if (returnVal == JFileChooser.APPROVE_OPTION) {
+        File file = fc.getSelectedFile ();
+        String exte = "";
+        if (fileType == 3) exte = ".csv";
+        else exte = ".txt";
+
+        FileWriter stream;
+        try {
+            stream = new FileWriter (file + exte);
+        } catch (Exception e) {
+            Utilities.errMessage ("Error writing file " + e);
+            return;
+        }
+        String contents = new String ();
+        try {
+            switch (fileType) {
+                case FORMAT_MAGPIE :
+                    contents = magpieFormat ();
+                    break;
+                case FORMAT_MOHO :
+                    contents = mohoFormat ();
+                    break;
+                case FORMAT_GAMESTUDIO :
+                    contents = gameStudioFormat ();
+                    break;
+                case FORMAT_CSV :
+                    contents = csvFormat ();
+                    break;
+            }
+            stream.write (contents);
+            stream.close ();
+        } catch (Exception e) {
+            Utilities.errMessage ("Error writing file:" + e);
+            return;
+        }
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="846" endline="856">
+public void copyToClipboard () {
+    Clipboard clipboard = clipboard = Toolkit.getDefaultToolkit ().getSystemClipboard ();
+    StringSelection contents = new StringSelection (magpieFormat ());
+    clipboard.setContents (contents, null);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="859" endline="878">
+public static boolean hasAlpha (Image image) {
+    if (image instanceof BufferedImage) {
+        BufferedImage bimage = (BufferedImage) image;
+        return bimage.getColorModel ().hasAlpha ();
+    }
+    PixelGrabber pg = new PixelGrabber (image, 0, 0, 1, 1, false);
+    try {
+        pg.grabPixels ();
+    } catch (InterruptedException e) {
+    }
+    ColorModel cm = pg.getColorModel ();
+    return cm.hasAlpha ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="881" endline="934">
+public static BufferedImage toBufferedImage (Image image) {
+    if (image instanceof BufferedImage) {
+        return (BufferedImage) image;
+    }
+    image = new ImageIcon (image).getImage ();
+    boolean hasAlpha = hasAlpha (image);
+    BufferedImage bimage = null;
+    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment ();
+    try {
+        int transparency = Transparency.OPAQUE;
+        if (hasAlpha) {
+            transparency = Transparency.BITMASK;
+        }
+        GraphicsDevice gs = ge.getDefaultScreenDevice ();
+        GraphicsConfiguration gc = gs.getDefaultConfiguration ();
+        bimage = gc.createCompatibleImage (image.getWidth (null), image.getHeight (null), transparency);
+    } catch (HeadlessException e) {
+    }
+    if (bimage == null) {
+        int type = BufferedImage.TYPE_INT_RGB;
+        if (hasAlpha) {
+            type = BufferedImage.TYPE_INT_ARGB;
+        }
+        bimage = new BufferedImage (image.getWidth (null), image.getHeight (null), type);
+    }
+    Graphics g = bimage.createGraphics ();
+    g.drawImage (image, 0, 0, null);
+    g.dispose ();
+    return bimage;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="937" endline="959">
+public void writeAviFile () {
+    if (wavePanel == null || wavePanel.fileName.equals ("")) {
+        Utilities.errMessage ("Audio file must be selected first.");
+        return;
+    }
+    JFileChooser fc = Utilities.fileChooser (null);
+    fc.addChoosableFileFilter (new AviFilter ());
+    int returnVal = Utilities.showSaveDialog (this, fc);
+    if (returnVal == JFileChooser.APPROVE_OPTION) {
+        File file = fc.getSelectedFile ();
+        String fileName = file.getPath ();
+        fileName = addFileExtention (fileName, ".avi");
+        new CreateAviFile (fileName).start ();
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="966" endline="969">
+public CreateAviFile (String theFileName) {
+    fileName = theFileName;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="971" endline="1039">
+public void run () {
+    AviWriter theWriter;
+    String priorFace = "<none>";
+    ImageIcon icon = facePanel.getFace (priorFace);
+    BufferedImage bufferedImage = toBufferedImage (icon.getImage ());
+    int frames = wavePanel.frameCount;
+    int fps = wavePanel.framesPerSecond;
+    int height = 116;
+    int width = 126;
+    try {
+        theWriter = new AviWriter (fileName, wavePanel.fileName, height, width, frames, fps);
+        for (int i = 0;
+        i < frames; i ++) {
+            statusBar.setText ("Frame #" + (i + 1));
+            String useFace = timeSheet.mouth [i];
+            if (! useFace.equals (priorFace) && ! useFace.equals ("")) {
+                ImageIcon nextIcon = facePanel.getFace (useFace);
+                if (nextIcon != null) {
+                    bufferedImage = toBufferedImage (nextIcon.getImage ());
+                    for (int x = 0;
+                    x < icon.getIconWidth (); x ++) {
+                        for (int y = 0;
+                        y < icon.getIconHeight (); y ++) {
+                            int rgb = bufferedImage.getRGB (x, y);
+                            int r = (0xff & (rgb>> 16));
+                            int g = (0xff & (rgb>> 8));
+                            int b = (0xff & rgb);
+                            theWriter.setPixel (x, y, r, g, b);
+                        }
+                    }
+                }
+            }
+            theWriter.addFrame ();
+        }
+        statusBar.setText ("Writing the AVI file...");
+        theWriter.close ();
+        statusBar.setText ("Created AVI file");
+    } catch (Exception e1) {
+        Utilities.errMessage ("Error creating .AVI file: " + e1);
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1042" endline="1541">
+public JMenuBar createMenuBar () {
+    JMenuBar menuBar;
+    JMenu menu, subMenu;
+    JMenuItem menuItem, subMenuItem;
+    JRadioButtonMenuItem rbMenuItem;
+    JCheckBoxMenuItem cbMenuItem;
+    menuBar = new JMenuBar ();
+    menu = new JMenu ("File");
+    menu.setMnemonic (KeyEvent.VK_F);
+    menu.getAccessibleContext ().setAccessibleDescription ("Open and Save options");
+    menuBar.add (menu);
+    menuItem = new JMenuItem ("New...", KeyEvent.VK_O);
+    menuItem.setAccelerator (KeyStroke.getKeyStroke (KeyEvent.VK_N, ActionEvent.ALT_MASK));
+    menuItem.getAccessibleContext ().setAccessibleDescription ("Create a new timesheet");
+    menu.add (menuItem);
+    menuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            if (cancelledAutoSave ()) {
+                return;
+            }
+            eraseTimeSheet ();
+        }}
+
+    );
+    menuItem = new JMenuItem ("Open...", KeyEvent.VK_O);
+    menuItem.setAccelerator (KeyStroke.getKeyStroke (KeyEvent.VK_O, ActionEvent.ALT_MASK));
+    menuItem.getAccessibleContext ().setAccessibleDescription ("Load a file from disk");
+    menu.add (menuItem);
+    menuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            fileOpen ();
+        }}
+
+    );
+    menuItem = new JMenuItem ("Save", KeyEvent.VK_S);
+    menuItem.setAccelerator (KeyStroke.getKeyStroke (KeyEvent.VK_S, ActionEvent.ALT_MASK));
+    menuItem.getAccessibleContext ().setAccessibleDescription ("Save the current file to disk");
+    menu.add (menuItem);
+    menuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            fileSave ();
+        }}
+
+    );
+    menuItem = new JMenuItem ("Save As...", KeyEvent.VK_A);
+    menuItem.getAccessibleContext ().setAccessibleDescription ("Save to disk with a new filename");
+    menuItem.addActionListener (this);
+    menu.add (menuItem);
+    menuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            fileSaveAs ();
+        }}
+
+    );
+    menu.addSeparator ();
+    subMenu = new JMenu ("Export To File");
+    menu.add (subMenu);
+    subMenuItem = new JMenuItem ("Magpie...", KeyEvent.VK_M);
+    subMenu.add (subMenuItem);
+    subMenuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            exportFile (FORMAT_MAGPIE);
+        }}
+
+    );
+    subMenuItem = new JMenuItem ("Moho...", KeyEvent.VK_H);
+    subMenu.add (subMenuItem);
+    subMenuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            exportFile (FORMAT_MOHO);
+        }}
+
+    );
+    subMenuItem = new JMenuItem ("3D GameStudio...", KeyEvent.VK_3);
+    subMenu.add (subMenuItem);
+    subMenuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            exportFile (FORMAT_GAMESTUDIO);
+        }}
+
+    );
+    subMenuItem = new JMenuItem ("Comma sep...", KeyEvent.VK_C);
+    subMenu.add (subMenuItem);
+    subMenuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            exportFile (FORMAT_CSV);
+        }}
+
+    );
+    menuItem = new JMenuItem ("Copy Timesheet To Clipboard", KeyEvent.VK_C);
+    menuItem.setAccelerator (KeyStroke.getKeyStroke (KeyEvent.VK_C, ActionEvent.CTRL_MASK));
+    menuItem.getAccessibleContext ().setAccessibleDescription ("Copy the exposure sheet to the clipboard");
+    menu.add (menuItem);
+    menuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            copyToClipboard ();
+        }}
+
+    );
+    menuItem = new JMenuItem ("Create AVI File...", KeyEvent.VK_C);
+    menuItem.getAccessibleContext ().setAccessibleDescription ("Create an AVI file of the animation");
+    menuItem.addActionListener (this);
+    menu.add (menuItem);
+    menuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            writeAviFile ();
+        }}
+
+    );
+    menu.addSeparator ();
+    menuItem = new JMenuItem ("Exit", KeyEvent.VK_X);
+    menuItem.getAccessibleContext ().setAccessibleDescription ("Copy the exposure sheet to the clipboard");
+    menuItem.addActionListener (this);
+    menu.add (menuItem);
+    menuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            if (cancelledAutoSave ()) {
+                return;
+            }
+            System.exit (0);
+        }}
+
+    );
+    menu = new JMenu ("Waveform");
+    menu.setMnemonic (KeyEvent.VK_W);
+    menu.getAccessibleContext ().setAccessibleDescription ("Waveform options");
+    menuBar.add (menu);
+    menuItem = new JMenuItem ("Play the waveform", KeyEvent.VK_P);
+    menuItem.setAccelerator (KeyStroke.getKeyStroke (KeyEvent.VK_P, ActionEvent.CTRL_MASK));
+    menuItem.getAccessibleContext ().setAccessibleDescription ("Play the entire waveform");
+    menu.add (menuItem);
+    menuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            playFrames (1, wavePanel.frameCount);
+        }}
+
+    );
+    menuItem = new JMenuItem ("Play the selection", KeyEvent.VK_L);
+    menuItem.getAccessibleContext ().setAccessibleDescription ("Play the selected portion of the waveform");
+    menu.add (menuItem);
+    menuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            playFrames (wavePanel.markerStart, wavePanel.markerEnd);
+        }}
+
+    );
+    menuItem = new JMenuItem ("Play from selection", KeyEvent.VK_F);
+    menuItem.setAccelerator (KeyStroke.getKeyStroke (KeyEvent.VK_F, ActionEvent.CTRL_MASK));
+    menuItem.getAccessibleContext ().setAccessibleDescription ("Play the waveform starting from the current selection to the end");
+    menu.add (menuItem);
+    menuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            playFrames (wavePanel.markerStart, wavePanel.frameCount);
+        }}
+
+    );
+    menuItem = new JMenuItem ("Play to selection", KeyEvent.VK_T);
+    menuItem.setAccelerator (KeyStroke.getKeyStroke (KeyEvent.VK_T, ActionEvent.CTRL_MASK));
+    menuItem.getAccessibleContext ().setAccessibleDescription ("Play the waveform from the beginning to the end of the current selection");
+    menu.add (menuItem);
+    menuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            playFrames (1, wavePanel.markerEnd);
+        }}
+
+    );
+    menu.addSeparator ();
+    menuItem = new JMenuItem ("Zoom to selection", KeyEvent.VK_Z);
+    menuItem.getAccessibleContext ().setAccessibleDescription ("Display the selected portion of the wave");
+    menu.add (menuItem);
+    menuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            wavePanel.zoomToFit ();
+        }}
+
+    );
+    menuItem = new JMenuItem ("Zoom back", KeyEvent.VK_B);
+    menuItem.getAccessibleContext ().setAccessibleDescription ("Display the entire wave");
+    menu.add (menuItem);
+    menuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            wavePanel.zoomAll ();
+        }}
+
+    );
+    menu = new JMenu ("PDF");
+    menu.setMnemonic (KeyEvent.VK_P);
+    menu.getAccessibleContext ().setAccessibleDescription ("Pdf export options");
+    menuBar.add (menu);
+    ButtonGroup pdfGroup = new ButtonGroup ();
+    letter = new JRadioButtonMenuItem ("Letter");
+    letter.setMnemonic (KeyEvent.VK_L);
+    letter.getAccessibleContext ().setAccessibleDescription ("Uses Letter - mainly American paper size");
+    letter.setSelected (true);
+    pdfGroup.add (letter);
+    menu.add (letter);
+    letter.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            fileSaveAsPdf ("LETTER");
+        }}
+
+    );
+    a4 = new JRadioButtonMenuItem ("A4");
+    a4.setMnemonic (KeyEvent.VK_A);
+    a4.getAccessibleContext ().setAccessibleDescription ("Uses A4 - mainly European papir size");
+    pdfGroup.add (a4);
+    menu.add (a4);
+    a4.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            fileSaveAsPdf ("A4");
+        }}
+
+    );
+    menu = new JMenu ("Options");
+    menu.setMnemonic (KeyEvent.VK_O);
+    menu.getAccessibleContext ().setAccessibleDescription ("Configuration options and settings");
+    menuBar.add (menu);
+    menuItem = new JMenuItem ("Base timecode...", KeyEvent.VK_B);
+    menuItem.getAccessibleContext ().setAccessibleDescription ("Set the starting time of the soundclip");
+    menu.add (menuItem);
+    menuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            StringBuilder baseTime = new StringBuilder ();
+            if (timeSheet.hourOffset < 10) baseTime.append ("0");
+
+            baseTime.append (timeSheet.hourOffset + ":");
+            if (timeSheet.minuteOffset < 10) baseTime.append ("0");
+
+            baseTime.append (timeSheet.minuteOffset + ":");
+            if (timeSheet.secondOffset < 10) baseTime.append ("0");
+
+            baseTime.append (timeSheet.secondOffset + ":");
+            if (timeSheet.framesOffset < 10) baseTime.append ("0");
+
+            baseTime.append (timeSheet.framesOffset);
+            String s = JOptionPane.showInputDialog (null, "Enter the new base time:", baseTime.toString ());
+            if (s != null) {
+                try {
+                    String value [] = s.toString ().split (":", 0);
+                    int newHour = Integer.parseInt (value [0]);
+                    int newMinute = Integer.parseInt (value [1]);
+                    int newSecond = Integer.parseInt (value [2]);
+                    int newFrames = Integer.parseInt (value [3]);
+                    if (newHour > - 1 && newHour < 99 && newMinute > - 1 && newMinute < 60 && newSecond > - 1 && newSecond < 60 && newFrames > - 1 && newFrames < timeSheet.framesPerSecond) {
+                        timeSheet.hourOffset = newHour;
+                        timeSheet.minuteOffset = newMinute;
+                        timeSheet.secondOffset = newSecond;
+                        timeSheet.framesOffset = newFrames;
+                        timeSheetTable.repaint ();
+                    } else {
+                        throw new Exception ("Bad time format");
+                    }
+                } catch (Exception e1) {
+                    Utilities.errMessage ("Bad time format '" + s + "' - use HH:MM:SS:FR" + e1);
+                }
+            }
+        }}
+
+    );
+    menuItem = new JMenuItem ("Audio/Video sync...", KeyEvent.VK_S);
+    menuItem.getAccessibleContext ().setAccessibleDescription ("Set the audio/video sync");
+    menu.add (menuItem);
+    menuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            String s = JOptionPane.showInputDialog (null, "Enter the audio track offset in frames:", new String (trackOffset + ""));
+            if (s != null) {
+                try {
+                    trackOffset = Integer.parseInt (s);
+                } catch (Exception e1) {
+                    String message = new String ("'" + s + "' is not an integer");
+                    JOptionPane.showMessageDialog (null, message, "Bad Track Offset", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }}
+
+    );
+    menu.addSeparator ();
+    ButtonGroup group = new ButtonGroup ();
+    fps24 = new JRadioButtonMenuItem ("Film (24 fps)");
+    fps24.setSelected (true);
+    fps24.setMnemonic (KeyEvent.VK_F);
+    fps24.getAccessibleContext ().setAccessibleDescription ("Use 24 frames per second (standard film rate)");
+    group.add (fps24);
+    menu.add (fps24);
+    fps24.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            rescaleTimeSheet (24);
+            wavePanel.repaint ();
+        }}
+
+    );
+    fps25 = new JRadioButtonMenuItem ("PAL (25 fps)");
+    fps25.setMnemonic (KeyEvent.VK_F);
+    fps25.getAccessibleContext ().setAccessibleDescription ("Use 25 frames per second (standard PAL video rate)");
+    group.add (fps25);
+    menu.add (fps25);
+    fps25.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            rescaleTimeSheet (25);
+            wavePanel.repaint ();
+        }}
+
+    );
+    fps30 = new JRadioButtonMenuItem ("NTSC (30 fps)");
+    fps30.setMnemonic (KeyEvent.VK_F);
+    fps30.getAccessibleContext ().setAccessibleDescription ("Use 30 frames per second (standard NTSC video rate)");
+    group.add (fps30);
+    menu.add (fps30);
+    fps30.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            rescaleTimeSheet (30);
+            wavePanel.repaint ();
+        }}
+
+    );
+    menu = new JMenu ("Help");
+    menu.setMnemonic (KeyEvent.VK_H);
+    menu.getAccessibleContext ().setAccessibleDescription ("Help options");
+    menuItem.addActionListener (this);
+    menuBar.add (menu);
+    menuItem = new JMenuItem ("About JLipSync...", KeyEvent.VK_A);
+    menuItem.getAccessibleContext ().setAccessibleDescription ("About this program");
+    menu.add (menuItem);
+    menuItem.addActionListener (new ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            About aboutDialog = new About (null, JLIPSYNC_VERSION);
+        }}
+
+    );
+    return menuBar;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1067" endline="1076">
+public void actionPerformed (ActionEvent e) {
+    if (cancelledAutoSave ()) {
+        return;
+    }
+    eraseTimeSheet ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1087" endline="1089">
+public void actionPerformed (ActionEvent e) {
+    fileOpen ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1100" endline="1102">
+public void actionPerformed (ActionEvent e) {
+    fileSave ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1112" endline="1114">
+public void actionPerformed (ActionEvent e) {
+    fileSaveAs ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1126" endline="1128">
+public void actionPerformed (ActionEvent e) {
+    exportFile (FORMAT_MAGPIE);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1133" endline="1135">
+public void actionPerformed (ActionEvent e) {
+    exportFile (FORMAT_MOHO);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1140" endline="1142">
+public void actionPerformed (ActionEvent e) {
+    exportFile (FORMAT_GAMESTUDIO);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1147" endline="1149">
+public void actionPerformed (ActionEvent e) {
+    exportFile (FORMAT_CSV);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1160" endline="1162">
+public void actionPerformed (ActionEvent e) {
+    copyToClipboard ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1172" endline="1174">
+public void actionPerformed (ActionEvent e) {
+    writeAviFile ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1187" endline="1194">
+public void actionPerformed (ActionEvent e) {
+    if (cancelledAutoSave ()) {
+        return;
+    }
+    System.exit (0);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1212" endline="1214">
+public void actionPerformed (ActionEvent e) {
+    playFrames (1, wavePanel.frameCount);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1223" endline="1225">
+public void actionPerformed (ActionEvent e) {
+    playFrames (wavePanel.markerStart, wavePanel.markerEnd);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1238" endline="1240">
+public void actionPerformed (ActionEvent e) {
+    playFrames (wavePanel.markerStart, wavePanel.frameCount);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1253" endline="1255">
+public void actionPerformed (ActionEvent e) {
+    playFrames (1, wavePanel.markerEnd);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1267" endline="1269">
+public void actionPerformed (ActionEvent e) {
+    wavePanel.zoomToFit ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1278" endline="1280">
+public void actionPerformed (ActionEvent e) {
+    wavePanel.zoomAll ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1298" endline="1300">
+public void actionPerformed (ActionEvent e) {
+    fileSaveAsPdf ("LETTER");
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1310" endline="1312">
+public void actionPerformed (ActionEvent e) {
+    fileSaveAsPdf ("A4");
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1373" endline="1433">
+public void actionPerformed (ActionEvent e) {
+    StringBuilder baseTime = new StringBuilder ();
+    if (timeSheet.hourOffset < 10) baseTime.append ("0");
+
+    baseTime.append (timeSheet.hourOffset + ":");
+    if (timeSheet.minuteOffset < 10) baseTime.append ("0");
+
+    baseTime.append (timeSheet.minuteOffset + ":");
+    if (timeSheet.secondOffset < 10) baseTime.append ("0");
+
+    baseTime.append (timeSheet.secondOffset + ":");
+    if (timeSheet.framesOffset < 10) baseTime.append ("0");
+
+    baseTime.append (timeSheet.framesOffset);
+    String s = JOptionPane.showInputDialog (null, "Enter the new base time:", baseTime.toString ());
+    if (s != null) {
+        try {
+            String value [] = s.toString ().split (":", 0);
+            int newHour = Integer.parseInt (value [0]);
+            int newMinute = Integer.parseInt (value [1]);
+            int newSecond = Integer.parseInt (value [2]);
+            int newFrames = Integer.parseInt (value [3]);
+            if (newHour > - 1 && newHour < 99 && newMinute > - 1 && newMinute < 60 && newSecond > - 1 && newSecond < 60 && newFrames > - 1 && newFrames < timeSheet.framesPerSecond) {
+                timeSheet.hourOffset = newHour;
+                timeSheet.minuteOffset = newMinute;
+                timeSheet.secondOffset = newSecond;
+                timeSheet.framesOffset = newFrames;
+                timeSheetTable.repaint ();
+            } else {
+                throw new Exception ("Bad time format");
+            }
+        } catch (Exception e1) {
+            Utilities.errMessage ("Bad time format '" + s + "' - use HH:MM:SS:FR" + e1);
+        }
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1442" endline="1456">
+public void actionPerformed (ActionEvent e) {
+    String s = JOptionPane.showInputDialog (null, "Enter the audio track offset in frames:", new String (trackOffset + ""));
+    if (s != null) {
+        try {
+            trackOffset = Integer.parseInt (s);
+        } catch (Exception e1) {
+            String message = new String ("'" + s + "' is not an integer");
+            JOptionPane.showMessageDialog (null, message, "Bad Track Offset", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1472" endline="1475">
+public void actionPerformed (ActionEvent e) {
+    rescaleTimeSheet (24);
+    wavePanel.repaint ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1485" endline="1488">
+public void actionPerformed (ActionEvent e) {
+    rescaleTimeSheet (25);
+    wavePanel.repaint ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1498" endline="1501">
+public void actionPerformed (ActionEvent e) {
+    rescaleTimeSheet (30);
+    wavePanel.repaint ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1533" endline="1538">
+public void actionPerformed (ActionEvent e) {
+    About aboutDialog = new About (null, JLIPSYNC_VERSION);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1543" endline="1554">
+public void actionPerformed (ActionEvent e) {
+    String s;
+    if (e.getSource () instanceof JList) {
+        JList source = (JList) (e.getSource ());
+        s = (String) source.getSelectedValue ();
+        return;
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1556" endline="1561">
+public void valueChanged (ListSelectionEvent e) {
+    JList list = (JList) e.getSource ();
+    String s = (String) list.getSelectedValue ();
+    facePanel.setFace (s);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1563" endline="1565">
+public void itemStateChanged (ItemEvent e) {
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1568" endline="1572">
+protected String getClassName (Object o) {
+    String classString = o.getClass ().getName ();
+    int dotIndex = classString.lastIndexOf (".");
+    return classString.substring (dotIndex + 1);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1574" endline="2023">
+public Container createContentPanel () {
+    JButton button;
+    JPanel contentPanel = new JPanel (new BorderLayout ());
+    contentPanel.setPreferredSize (new Dimension (200, 200));
+    contentPanel.setOpaque (true);
+    JToolBar toolbar = new JToolBar ();
+    toolbar.setPreferredSize (new Dimension (200, 30));
+    contentPanel.add ("North", toolbar);
+    button = new JButton (createImageIcon ("images/open.gif"));
+    button.setToolTipText ("Load a file from disk");
+    toolbar.add (button);
+    button.addActionListener (new java.awt.event.ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            fileOpen ();
+        }}
+
+    );
+    button = new JButton (createImageIcon ("images/save.gif"));
+    button.setToolTipText ("Save the current file disk");
+    toolbar.add (button);
+    button.addActionListener (new java.awt.event.ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            fileSave ();
+        }}
+
+    );
+    button = new JButton (createImageIcon ("images/copy.gif"));
+    button.setToolTipText ("Copy the exposure sheet to the clipboard");
+    toolbar.add (button);
+    button.addActionListener (new java.awt.event.ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            copyToClipboard ();
+        }}
+
+    );
+    toolbar.addSeparator ();
+    button = new JButton (createImageIcon ("images/play.gif"));
+    button.setToolTipText ("Play the entire waveform");
+    toolbar.add (button);
+    button.addActionListener (new java.awt.event.ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            playFrames (1, wavePanel.frameCount);
+        }}
+
+    );
+    button = new JButton (createImageIcon ("images/play_selection.gif"));
+    button.setToolTipText ("Play the selected portion of the waveform");
+    toolbar.add (button);
+    button.addActionListener (new java.awt.event.ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            playFrames (wavePanel.markerStart, wavePanel.markerEnd);
+        }}
+
+    );
+    button = new JButton (createImageIcon ("images/play_from.gif"));
+    button.setToolTipText ("Play the waveform starting from the current selection to the end");
+    toolbar.add (button);
+    button.addActionListener (new java.awt.event.ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            playFrames (wavePanel.markerStart, wavePanel.frameCount);
+        }}
+
+    );
+    button = new JButton (createImageIcon ("images/play_to.gif"));
+    button.setToolTipText ("Play the waveform from the beginning to the end of the current selection");
+    toolbar.add (button);
+    button.addActionListener (new java.awt.event.ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            playFrames (1, wavePanel.markerEnd);
+        }}
+
+    );
+    toolbar.addSeparator ();
+    button = new JButton (createImageIcon ("images/zoom_fit.gif"));
+    button.setToolTipText ("Display the selected portion of the wave");
+    toolbar.add (button);
+    button.addActionListener (new java.awt.event.ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            wavePanel.zoomToFit ();
+        }}
+
+    );
+    button = new JButton (createImageIcon ("images/zoom_1.gif"));
+    button.setToolTipText ("Display the entire wave");
+    toolbar.add (button);
+    button.addActionListener (new java.awt.event.ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            wavePanel.zoomAll ();
+        }}
+
+    );
+    button = new JButton (createImageIcon ("images/zoom_in.gif"));
+    button.setToolTipText ("Zoom in on the wave");
+    toolbar.add (button);
+    button.addActionListener (new java.awt.event.ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            wavePanel.zoomIn ();
+        }}
+
+    );
+    button = new JButton (createImageIcon ("images/zoom_out.gif"));
+    button.setToolTipText ("Zoom out on the wave");
+    toolbar.add (button);
+    button.addActionListener (new java.awt.event.ActionListener () {
+        public void actionPerformed (ActionEvent e) {
+            wavePanel.zoomOut ();
+        }}
+
+    );
+    class MyCellRenderer extends JLabel implements ListCellRenderer {
+        public Component getListCellRendererComponent (JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+            String s = value.toString ();
+            setText (s);
+            if (facePanel != null) {
+                Icon faceIcon = facePanel.getSmallFace (s);
+                if (faceIcon != null) {
+                    setIcon (faceIcon);
+                }
+            }
+            if (isSelected) {
+                setBackground (list.getSelectionBackground ());
+                setForeground (list.getSelectionForeground ());
+            } else {
+                setBackground (list.getBackground ());
+                setForeground (list.getForeground ());
+            }
+            setEnabled (list.isEnabled ());
+            setFont (list.getFont ());
+            setOpaque (true);
+            return this;
+        }}
+
+    String phonemeNames [] = {"<none>"};
+    JList phonemeList = new JList (phonemeNames);
+    phonemeList.setCellRenderer (new MyCellRenderer ());
+    phonemeList.setVisibleRowCount (25);
+    JScrollPane phonemeScrollPane = new JScrollPane ();
+    phonemeScrollPane.setViewportView (phonemeList);
+    phonemeScrollPane.setPreferredSize (new Dimension (100, 200));
+    contentPanel.add ("West", phonemeScrollPane);
+    phonemeList.addListSelectionListener (new ListSelectionListener () {
+        public void valueChanged (ListSelectionEvent e) {
+            JList list = (JList) e.getSource ();
+            String s = (String) list.getSelectedValue ();
+            facePanel.setFace (s);
+        }}
+
+    );
+    phonemeList.addMouseListener (new MouseAdapter () {
+        @Override
+        public void mouseClicked (MouseEvent e) {
+            if (e.getClickCount () == 2) {
+                ListSelectionModel lsm = timeSheetTable.getSelectionModel ();
+                if (! lsm.isSelectionEmpty ()) {
+                    int selectedRow = lsm.getMinSelectionIndex ();
+                    JList list = (JList) e.getSource ();
+                    String s = (String) list.getSelectedValue ();
+                    if (s.equals ("<none>")) {
+                        s = "";
+                    }
+                    timeSheet.mouth [selectedRow] = s;
+                    timeSheetTable.repaint ();
+                }
+            }
+        }}
+
+    );
+    JPanel midPanel = new JPanel (new BorderLayout ());
+    contentPanel.add ("Center", midPanel);
+    JPanel waveAndFacePanel = new JPanel (new BorderLayout ());
+    midPanel.add ("North", waveAndFacePanel);
+    facePanel = new FacePanel ("default");
+    waveAndFacePanel.add ("East", facePanel);
+    wavePanel = new WavePanel ();
+    wavePanel.setPreferredSize (new Dimension (128, 128));
+    waveAndFacePanel.add ("Center", wavePanel);
+    phonemeList.setListData (facePanel.phonemes);
+    timeSheet = new TimeSheet (wavePanel.frameCount, wavePanel.framesPerSecond);
+    TimeSheetTableModel timeSheetTableModel = new TimeSheetTableModel (timeSheet);
+    timeSheetTable = new JTable (timeSheetTableModel);
+    timeSheetTable.setPreferredScrollableViewportSize (new Dimension (425, 200));
+    timeSheetTable.setSelectionMode (ListSelectionModel.SINGLE_SELECTION);
+    timeSheetTable.revalidate ();
+    JScrollPane scrollPane = new JScrollPane (timeSheetTable);
+    wavePanel.timeSheetTable = timeSheetTable;
+    wavePanel.facePanel = facePanel;
+    ListSelectionModel rowSM = timeSheetTable.getSelectionModel ();
+    rowSM.addListSelectionListener (new ListSelectionListener () {
+        public void valueChanged (ListSelectionEvent e) {
+            if (e.getValueIsAdjusting ()) {
+                return;
+            }
+            ListSelectionModel lsm = (ListSelectionModel) e.getSource ();
+            if (lsm.isSelectionEmpty ()) {
+            } else {
+                int selectedRow = lsm.getMinSelectionIndex ();
+                wavePanel.markerStart = selectedRow + 1;
+                wavePanel.markerEnd = selectedRow + 1;
+                wavePanel.repaint ();
+                facePanel.setFace (timeSheet.mouth [selectedRow]);
+                wavePanel.ensureFrameVisible (selectedRow + 1);
+            }
+        }}
+
+    );
+    timeSheetTable.addKeyListener (new KeyListener () {
+        public void keyTyped (KeyEvent e) {
+            int selectedColumn = timeSheetTable.getSelectedColumn ();
+            if (selectedColumn == TimeSheet.COLUMN_COMMENTS) {
+                return;
+            }
+            int selectedRow = timeSheetTable.getSelectedRow ();
+            char c = e.getKeyChar ();
+            if (selectedColumn == TimeSheet.COLUMN_KEY) {
+                if (c == ' ' || c == 'x' || c == 'X') {
+                    timeSheet.key [selectedRow] = ! timeSheet.key [selectedRow];
+                    timeSheetTable.repaint ();
+                }
+                return;
+            }
+            if (c == ' ') {
+                wavePanel.playFrames (selectedRow + 1, selectedRow + 4);
+                return;
+            }
+            if (c > 'z') {
+                return;
+            }
+            String s = new String (c + "").toUpperCase ();
+            if (s.equals ("H")) {
+                String currentValue = timeSheet.mouth [selectedRow];
+                if (currentValue.equals ("C")) {
+                    s = "CH";
+                } else if (currentValue.equals ("S")) {
+                    s = "SH";
+                } else if (currentValue.equals ("T")) {
+                    s = "TH";
+                }
+
+            } else if (s.equals ("X")) {
+                s = "-";
+            }
+
+            timeSheet.mouth [selectedRow] = new String (s);
+            timeSheetTable.repaint ();
+            facePanel.setFace (s);
+        } public void keyPressed (KeyEvent e) {
+            int selectedRow = timeSheetTable.getSelectedRow ();
+            int rows = timeSheetTable.getRowCount ();
+            int c = e.getKeyCode ();
+            if (c == KeyEvent.VK_INSERT) {
+                for (int i = rows - 1;
+                i > selectedRow; i --) {
+                    timeSheet.mouth [i] = timeSheet.mouth [i - 1];
+                    timeSheet.comment [i] = timeSheet.comment [i - 1];
+                    timeSheet.key [i] = timeSheet.key [i - 1];
+                }
+                timeSheet.mouth [selectedRow] = "";
+                timeSheet.comment [selectedRow] = "";
+                timeSheet.key [selectedRow] = false;
+                timeSheetTable.repaint ();
+            }
+            if (c == KeyEvent.VK_DELETE) {
+                for (int i = selectedRow;
+                i < rows - 1; i ++) {
+                    timeSheet.mouth [i] = timeSheet.mouth [i + 1];
+                    timeSheet.comment [i] = timeSheet.comment [i + 1];
+                    timeSheet.key [i] = timeSheet.key [i + 1];
+                }
+                timeSheet.mouth [rows - 1] = new String ("");
+                timeSheet.comment [rows - 1] = new String ("");
+                timeSheet.key [rows - 1] = false;
+                timeSheetTable.repaint ();
+            }
+        } public void keyReleased (KeyEvent e) {
+        }}
+
+    );
+    timeSheetTable.addMouseListener (new MouseAdapter () {
+        @Override
+        public void mouseClicked (MouseEvent e) {
+            int selectedColumn = timeSheetTable.getSelectedColumn ();
+            if (selectedColumn != TimeSheet.COLUMN_KEY) {
+                return;
+            }
+            int selectedRow = timeSheetTable.getSelectedRow ();
+            timeSheet.key [selectedRow] = ! timeSheet.key [selectedRow];
+            timeSheetTable.repaint ();
+        }}
+
+    );
+    midPanel.add ("Center", scrollPane);
+    statusBar = new JLabel ("Welcome to JLipSync!");
+    JPanel statusPanel = new JPanel ();
+    statusPanel.setLayout (new FlowLayout ());
+    statusPanel.add (statusBar);
+    statusBar.setBorder (BorderFactory.createEtchedBorder ());
+    contentPanel.add ("South", statusBar);
+    return contentPanel;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1591" endline="1593">
+public void actionPerformed (ActionEvent e) {
+    fileOpen ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1601" endline="1603">
+public void actionPerformed (ActionEvent e) {
+    fileSave ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1611" endline="1613">
+public void actionPerformed (ActionEvent e) {
+    copyToClipboard ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1622" endline="1624">
+public void actionPerformed (ActionEvent e) {
+    playFrames (1, wavePanel.frameCount);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1631" endline="1633">
+public void actionPerformed (ActionEvent e) {
+    playFrames (wavePanel.markerStart, wavePanel.markerEnd);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1641" endline="1643">
+public void actionPerformed (ActionEvent e) {
+    playFrames (wavePanel.markerStart, wavePanel.frameCount);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1651" endline="1653">
+public void actionPerformed (ActionEvent e) {
+    playFrames (1, wavePanel.markerEnd);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1662" endline="1664">
+public void actionPerformed (ActionEvent e) {
+    wavePanel.zoomToFit ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1671" endline="1673">
+public void actionPerformed (ActionEvent e) {
+    wavePanel.zoomAll ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1680" endline="1682">
+public void actionPerformed (ActionEvent e) {
+    wavePanel.zoomIn ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1689" endline="1691">
+public void actionPerformed (ActionEvent e) {
+    wavePanel.zoomOut ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1698" endline="1731">
+public Component getListCellRendererComponent (JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+    String s = value.toString ();
+    setText (s);
+    if (facePanel != null) {
+        Icon faceIcon = facePanel.getSmallFace (s);
+        if (faceIcon != null) {
+            setIcon (faceIcon);
+        }
+    }
+    if (isSelected) {
+        setBackground (list.getSelectionBackground ());
+        setForeground (list.getSelectionForeground ());
+    } else {
+        setBackground (list.getBackground ());
+        setForeground (list.getForeground ());
+    }
+    setEnabled (list.isEnabled ());
+    setFont (list.getFont ());
+    setOpaque (true);
+    return this;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1747" endline="1753">
+public void valueChanged (ListSelectionEvent e) {
+    JList list = (JList) e.getSource ();
+    String s = (String) list.getSelectedValue ();
+    facePanel.setFace (s);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1759" endline="1789">
+public void mouseClicked (MouseEvent e) {
+    if (e.getClickCount () == 2) {
+        ListSelectionModel lsm = timeSheetTable.getSelectionModel ();
+        if (! lsm.isSelectionEmpty ()) {
+            int selectedRow = lsm.getMinSelectionIndex ();
+            JList list = (JList) e.getSource ();
+            String s = (String) list.getSelectedValue ();
+            if (s.equals ("<none>")) {
+                s = "";
+            }
+            timeSheet.mouth [selectedRow] = s;
+            timeSheetTable.repaint ();
+        }
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1834" endline="1860">
+public void valueChanged (ListSelectionEvent e) {
+    if (e.getValueIsAdjusting ()) {
+        return;
+    }
+    ListSelectionModel lsm = (ListSelectionModel) e.getSource ();
+    if (lsm.isSelectionEmpty ()) {
+    } else {
+        int selectedRow = lsm.getMinSelectionIndex ();
+        wavePanel.markerStart = selectedRow + 1;
+        wavePanel.markerEnd = selectedRow + 1;
+        wavePanel.repaint ();
+        facePanel.setFace (timeSheet.mouth [selectedRow]);
+        wavePanel.ensureFrameVisible (selectedRow + 1);
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1866" endline="1933">
+public void keyTyped (KeyEvent e) {
+    int selectedColumn = timeSheetTable.getSelectedColumn ();
+    if (selectedColumn == TimeSheet.COLUMN_COMMENTS) {
+        return;
+    }
+    int selectedRow = timeSheetTable.getSelectedRow ();
+    char c = e.getKeyChar ();
+    if (selectedColumn == TimeSheet.COLUMN_KEY) {
+        if (c == ' ' || c == 'x' || c == 'X') {
+            timeSheet.key [selectedRow] = ! timeSheet.key [selectedRow];
+            timeSheetTable.repaint ();
+        }
+        return;
+    }
+    if (c == ' ') {
+        wavePanel.playFrames (selectedRow + 1, selectedRow + 4);
+        return;
+    }
+    if (c > 'z') {
+        return;
+    }
+    String s = new String (c + "").toUpperCase ();
+    if (s.equals ("H")) {
+        String currentValue = timeSheet.mouth [selectedRow];
+        if (currentValue.equals ("C")) {
+            s = "CH";
+        } else if (currentValue.equals ("S")) {
+            s = "SH";
+        } else if (currentValue.equals ("T")) {
+            s = "TH";
+        }
+
+    } else if (s.equals ("X")) {
+        s = "-";
+    }
+
+    timeSheet.mouth [selectedRow] = new String (s);
+    timeSheetTable.repaint ();
+    facePanel.setFace (s);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1935" endline="1981">
+public void keyPressed (KeyEvent e) {
+    int selectedRow = timeSheetTable.getSelectedRow ();
+    int rows = timeSheetTable.getRowCount ();
+    int c = e.getKeyCode ();
+    if (c == KeyEvent.VK_INSERT) {
+        for (int i = rows - 1;
+        i > selectedRow; i --) {
+            timeSheet.mouth [i] = timeSheet.mouth [i - 1];
+            timeSheet.comment [i] = timeSheet.comment [i - 1];
+            timeSheet.key [i] = timeSheet.key [i - 1];
+        }
+        timeSheet.mouth [selectedRow] = "";
+        timeSheet.comment [selectedRow] = "";
+        timeSheet.key [selectedRow] = false;
+        timeSheetTable.repaint ();
+    }
+    if (c == KeyEvent.VK_DELETE) {
+        for (int i = selectedRow;
+        i < rows - 1; i ++) {
+            timeSheet.mouth [i] = timeSheet.mouth [i + 1];
+            timeSheet.comment [i] = timeSheet.comment [i + 1];
+            timeSheet.key [i] = timeSheet.key [i + 1];
+        }
+        timeSheet.mouth [rows - 1] = new String ("");
+        timeSheet.comment [rows - 1] = new String ("");
+        timeSheet.key [rows - 1] = false;
+        timeSheetTable.repaint ();
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1983" endline="1985">
+public void keyReleased (KeyEvent e) {
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="1992" endline="2009">
+public void mouseClicked (MouseEvent e) {
+    int selectedColumn = timeSheetTable.getSelectedColumn ();
+    if (selectedColumn != TimeSheet.COLUMN_KEY) {
+        return;
+    }
+    int selectedRow = timeSheetTable.getSelectedRow ();
+    timeSheet.key [selectedRow] = ! timeSheet.key [selectedRow];
+    timeSheetTable.repaint ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="2026" endline="2036">
+protected static ImageIcon createImageIcon (String path) {
+    java.net.URL imgURL = JLipSync.class.getResource (path);
+    if (imgURL != null) {
+        return new ImageIcon (imgURL);
+    } else {
+        String message = new String ("Couldn't find file: " + path);
+        JOptionPane.showMessageDialog (null, message, "Error", JOptionPane.ERROR_MESSAGE);
+        return null;
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java" startline="2039" endline="2050">
+public static void main (String [] args) {
+    try {
+        UIManager.setLookAndFeel (UIManager.getSystemLookAndFeelClassName ());
+    } catch (Exception e) {
+    }
+    JLipSync app = new JLipSync ();
+    app.repaint ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/TimeSheetTableModel.java" startline="26" endline="29">
+public TimeSheetTableModel (TimeSheet timeSheet) {
+    this.timeSheet = timeSheet;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/TimeSheetTableModel.java" startline="31" endline="33">
+public int getColumnCount () {
+    return columnNames.length;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/TimeSheetTableModel.java" startline="35" endline="37">
+public int getRowCount () {
+    return timeSheet.frameCount;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/TimeSheetTableModel.java" startline="40" endline="42">
+public String getColumnName (int col) {
+    return columnNames [col];
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/TimeSheetTableModel.java" startline="44" endline="70">
+public Object getValueAt (int row, int col) {
+    switch (col) {
+        case TimeSheet.COLUMN_FRAME :
+            return row + 1 + "";
+        case TimeSheet.COLUMN_TIMECODE :
+            return timeSheet.calcTimeCode (row + 1);
+        case TimeSheet.COLUMN_KEY :
+            if (timeSheet.key [row]) {
+                return checkMark;
+            } else {
+                return noCheckMark;
+            }
+        case TimeSheet.COLUMN_MOUTH :
+            return timeSheet.mouth [row];
+        case TimeSheet.COLUMN_COMMENTS :
+            return timeSheet.comment [row];
+    }
+    return "";
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/TimeSheetTableModel.java" startline="73" endline="76">
+public boolean isCellEditable (int row, int col) {
+    return (col == TimeSheet.COLUMN_COMMENTS);
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/TimeSheetTableModel.java" startline="79" endline="95">
+public void setValueAt (Object value, int row, int col) {
+    switch (col) {
+        case TimeSheet.COLUMN_KEY :
+            Boolean flag = (Boolean) value;
+            timeSheet.key [row] = (flag == Boolean.TRUE);
+            break;
+        case TimeSheet.COLUMN_MOUTH :
+            timeSheet.mouth [row] = (String) value;
+            break;
+        case TimeSheet.COLUMN_COMMENTS :
+            timeSheet.comment [row] = (String) value;
+            break;
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/TimeSheetTableModel.java" startline="98" endline="100">
+public Class getColumnClass (int c) {
+    return getValueAt (0, c).getClass ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JPdfWriter.java" startline="30" endline="135">
+void JPdf (TimeSheet t, String pdf, String w) {
+    String s = "";
+    Document document = new Document ();
+    BaseFont bf = FontFactory.getFont (FontFactory.COURIER).getCalculatedBaseFont (false);
+    Integer framesRest = t.frameCount;
+    Integer pageNo = 1;
+    try {
+        PdfWriter writer = PdfWriter.getInstance (document, new FileOutputStream (w + ".pdf"));
+        if (pdf.equalsIgnoreCase ("A4")) document.setPageSize (PageSize.A4);
+        else {
+            document.setPageSize (PageSize.LETTER);
+        }
+        document.open ();
+        PdfContentByte pc = writer.getDirectContent ();
+        while (framesRest > 0) {
+            framesRest = framesRest - 50;
+            pc.rectangle (30, 30, 530, 720);
+            int i;
+            for (i = 1; i <= 50; i ++) {
+                pc.moveTo (30, 18 + i * 12);
+                pc.lineTo (560, 18 + i * 12);
+                pc.stroke ();
+            }
+            for (i = 1; i <= 50; i ++) {
+                Integer actualFr = i + (50 * (pageNo - 1));
+                s = Integer.toString (actualFr);
+                pc.beginText ();
+                pc.setFontAndSize (bf, 9);
+                pc.showTextAligned (PdfContentByte.ALIGN_LEFT, s, 200, 632 - i * 12, 0);
+                if (actualFr <= t.frameCount) pc.showTextAligned (PdfContentByte.ALIGN_LEFT, t.mouth [actualFr - 1], 230, 632 - i * 12, 0);
+
+                pc.endText ();
+            }
+            for (i = 1; i <= 9; i ++) {
+                pc.moveTo (176 + i * 24, 30);
+                pc.lineTo (176 + i * 24, 654);
+                pc.stroke ();
+            }
+            pc.beginText ();
+            pc.showTextAligned (PdfContentByte.ALIGN_LEFT, "Animator:", 36, 740, 0);
+            pc.showTextAligned (PdfContentByte.ALIGN_LEFT, "Scene:", 400, 740, 0);
+            pc.showTextAligned (PdfContentByte.ALIGN_LEFT, "Seq:", 480, 740, 0);
+            pc.showTextAligned (PdfContentByte.ALIGN_LEFT, "Production:", 36, 715, 0);
+            pc.showTextAligned (PdfContentByte.ALIGN_LEFT, "Length:", 400, 715, 0);
+            pc.showTextAligned (PdfContentByte.ALIGN_LEFT, "Page:", 480, 715, 0);
+            pc.showTextAligned (PdfContentByte.ALIGN_LEFT, "Notes:", 36, 690, 0);
+            pc.showTextAligned (PdfContentByte.ALIGN_LEFT, "ACTION", 120, 640, 0);
+            pc.showTextAligned (PdfContentByte.ALIGN_LEFT, "#", 210, 640, 0);
+            pc.showTextAligned (PdfContentByte.ALIGN_LEFT, "dial", 224, 640, 0);
+            pc.showTextAligned (PdfContentByte.ALIGN_LEFT, "BG", 374, 640, 0);
+            pc.showTextAligned (PdfContentByte.ALIGN_LEFT, "CAMERA", 464, 640, 0);
+            pc.endText ();
+            pc.setLineWidth (2);
+            pc.moveTo (30, 630);
+            pc.lineTo (560, 630);
+            pc.stroke ();
+            pc.moveTo (30, 654);
+            pc.lineTo (560, 654);
+            pc.stroke ();
+            pc.moveTo (30, 702);
+            pc.lineTo (560, 702);
+            pc.stroke ();
+            pageNo = pageNo + 1;
+            if (framesRest > 0) document.newPage ();
+
+        }
+    } catch (DocumentException de) {
+        System.err.println (de.getMessage ());
+    } catch (IOException ioe) {
+        System.err.println (ioe.getMessage ());
+    }
+    document.close ();
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JPdfWriter.java" startline="136" endline="139">
+public String actionPerformed (ActionEvent e) {
+    String s = e.getActionCommand ();
+    return s;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JPdfWriter.java" startline="142" endline="143">
+public void pdfWriteHeader () {
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/AviWriter.java" startline="49" endline="302">
+public AviWriter (String fileName, String waveFileName, int width, int height, int nFrames, int framesPerSecond) throws Exception {
+    frameWidth = width;
+    frameHeight = height;
+    frameCount = nFrames;
+    frameRate = framesPerSecond;
+    int headerSize = 204;
+    bitCount = 24;
+    int streamCount = 1;
+    if (((frameWidth & 3) != 0) | ((frameHeight & 1) != 0)) {
+        throw new Exception ("Bad frame format. Width must be divisible by 4, and height by 2");
+    }
+    fileOutputStream = new FileOutputStream (fileName);
+    frameBufferSize = frameWidth * frameHeight * (int) Math.floor ((bitCount + 1) / 8);
+    frameBuffer = new byte [frameBufferSize];
+    frameDataIndex = new int [frameCount];
+    if (! (waveFileName.equals (""))) {
+        try {
+            File waveFile = new File (waveFileName);
+            audioInputStream = AudioSystem.getAudioInputStream (waveFile);
+            hasAudio = true;
+        } catch (Exception e) {
+            errMessage ("Unable to open audio file " + waveFileName);
+            hasAudio = false;
+        }
+    }
+    if (hasAudio) {
+        streamCount = 2;
+        AudioFormat audioFormat = audioInputStream.getFormat ();
+        waveBitsPerSample = audioFormat.getSampleSizeInBits ();
+        waveSamplesPerSecond = (int) audioFormat.getSampleRate ();
+        waveSamplesPerFrame = waveSamplesPerSecond / framesPerSecond;
+        waveBufferSize = waveSamplesPerFrame * (waveBitsPerSample / 8);
+        int byteCount = byteCount = (int) (audioInputStream.getFrameLength () * audioFormat.getFrameSize ());
+        waveBufferSize = 1024;
+        waveFrameCount = (int) Math.floor (byteCount / waveBufferSize);
+        if ((byteCount % waveBufferSize) != 0) {
+            waveFrameCount ++;
+        }
+        waveDataIndex = new int [waveFrameCount];
+        waveDataSize = new int [waveFrameCount];
+        waveBuffer = new byte [waveBufferSize];
+        for (int i = 0;
+        i < waveBufferSize; i ++) {
+            waveBuffer [i] = 0;
+        }
+        if ((waveBufferSize % 2) != 0) {
+            waveBufferPadding = 1;
+        }
+    }
+    int flags = 2064;
+    int listChunkSize = 192;
+    int indexesSize = (frameCount * 16) + 8;
+    int dataSize = ((frameBufferSize + 8) * frameCount) + 12;
+    int totalFileSize;
+    if (hasAudio) {
+        indexesSize += (waveFrameCount * 16);
+        dataSize += ((waveBufferSize + waveBufferPadding + 8) * waveFrameCount);
+        headerSize += 100;
+        flags = 272;
+        listChunkSize = 292;
+    }
+    headerSize = 304;
+    totalFileSize = headerSize + dataSize + indexesSize;
+    ccOut ("RIFF");
+    dWordOut (totalFileSize);
+    ccOut ("AVI ");
+    ccOut ("LIST");
+    dWordOut (listChunkSize);
+    ccOut ("hdrl");
+    ccOut ("avih");
+    dWordOut (0x38);
+    dWordOut ((int) Math.floor (1000000 / frameRate));
+    dWordOut (frameBufferSize * frameRate);
+    dWordOut (0);
+    dWordOut (flags);
+    dWordOut (frameCount);
+    dWordOut (0);
+    dWordOut (streamCount);
+    dWordOut (frameBufferSize);
+    dWordOut (frameWidth);
+    dWordOut (frameHeight);
+    dWordOut (0);
+    dWordOut (0);
+    dWordOut (0);
+    dWordOut (0);
+    ccOut ("LIST");
+    dWordOut (0x74);
+    ccOut ("strl");
+    ccOut ("strh");
+    dWordOut (0x38);
+    ccOut ("vids");
+    dWordOut (0);
+    dWordOut (0);
+    wordOut (0);
+    wordOut (0);
+    dWordOut (0);
+    dWordOut (1);
+    dWordOut (frameRate);
+    dWordOut (0);
+    dWordOut (frameCount);
+    dWordOut (frameBufferSize);
+    dWordOut (0);
+    dWordOut (0);
+    wordOut (0);
+    wordOut (0);
+    wordOut (frameWidth);
+    wordOut (frameHeight);
+    ccOut ("strf");
+    dWordOut (40);
+    dWordOut (40);
+    dWordOut (frameWidth);
+    dWordOut (frameHeight);
+    wordOut (1);
+    wordOut (bitCount);
+    dWordOut (0);
+    dWordOut (frameBufferSize);
+    dWordOut (0);
+    dWordOut (0);
+    dWordOut (0);
+    dWordOut (0);
+    if (hasAudio) {
+        ccOut ("LIST");
+        dWordOut (92);
+        ccOut ("strl");
+        ccOut ("strh");
+        dWordOut (56);
+        ccOut ("auds");
+        ccOut ("    ");
+        dWordOut (0);
+        wordOut (0);
+        wordOut (0);
+        dWordOut (0);
+        dWordOut (1);
+        dWordOut (waveSamplesPerSecond);
+        dWordOut (0);
+        dWordOut (waveBufferSize * frameCount);
+        dWordOut (waveBufferSize);
+        dWordOut (0);
+        dWordOut (1);
+        wordOut (0);
+        wordOut (0);
+        wordOut (0);
+        wordOut (0);
+        ccOut ("strf");
+        dWordOut (16);
+        wordOut (1);
+        wordOut (1);
+        dWordOut (waveSamplesPerSecond);
+        dWordOut (waveSamplesPerSecond);
+        wordOut (1);
+        wordOut (waveBitsPerSample);
+    }
+    ccOut ("LIST");
+    dWordOut (dataSize - 8);
+    ccOut ("movi");
+    dataOffset = 4;
+    currentFrameNumber = 0;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/AviWriter.java" startline="306" endline="330">
+void addFrame () throws Exception {
+    if (currentFrameNumber >= frameCount) {
+        throw new Exception ("Can't add frame " + (currentFrameNumber + 1) + ", only " + frameCount + " allocated");
+    }
+    frameDataIndex [currentFrameNumber] = dataOffset;
+    ccOut ("00db");
+    dWordOut (frameBufferSize);
+    fileOutputStream.write (frameBuffer);
+    dataOffset += 8 + frameBufferSize;
+    currentFrameNumber += 1;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/AviWriter.java" startline="335" endline="348">
+public void wordOut (int i) throws Exception {
+    int i1 = i & 0xFF;
+    i = i>> 8;
+    int i2 = i & 0xFF;
+    fileOutputStream.write (i1);
+    fileOutputStream.write (i2);
+    posInFile += 2;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/AviWriter.java" startline="352" endline="369">
+public void dWordOut (int i) throws Exception {
+    int i1 = i & 0xFF;
+    i = i>> 8;
+    int i2 = i & 0xFF;
+    i = i>> 8;
+    int i3 = i & 0xFF;
+    i = i>> 8;
+    int i4 = i & 0xFF;
+    fileOutputStream.write (i1);
+    fileOutputStream.write (i2);
+    fileOutputStream.write (i3);
+    fileOutputStream.write (i4);
+    posInFile += 4;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/AviWriter.java" startline="373" endline="376">
+public void ccOut (String text) throws Exception {
+    fileOutputStream.write (text.getBytes ());
+    posInFile += 4;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/AviWriter.java" startline="380" endline="458">
+public void close () throws Exception {
+    if (hasAudio) {
+        for (int i = 0;
+        i < waveFrameCount; i ++) {
+            waveDataIndex [i] = dataOffset;
+            ccOut ("01wb");
+            dWordOut (waveBufferSize);
+            waveDataSize [i] = audioInputStream.read (waveBuffer, 0, waveBufferSize);
+            fileOutputStream.write (waveBuffer);
+            dataOffset += 8 + waveBufferSize;
+            if (waveBufferPadding != 0) {
+                fileOutputStream.write (0);
+                dataOffset += 1;
+            }
+        }
+    }
+    int dataSize = frameCount * 16;
+    if (hasAudio) {
+        dataSize += waveFrameCount * 16;
+    }
+    ccOut ("idx1");
+    dWordOut (dataSize);
+    for (int i = 0;
+    i < frameCount; i ++) {
+        ccOut ("00db");
+        dWordOut (0x10);
+        dWordOut (frameDataIndex [i]);
+        dWordOut (frameBufferSize);
+    }
+    if (hasAudio) {
+        for (int i = 0;
+        i < waveFrameCount; i ++) {
+            ccOut ("01wb");
+            dWordOut (0x10);
+            if (waveDataSize [i] == - 1) {
+                dWordOut (0);
+                dWordOut (0);
+            } else {
+                dWordOut (waveDataIndex [i]);
+                dWordOut (waveDataSize [i]);
+            }
+        }
+    }
+    fileOutputStream.close ();
+    if (hasAudio) {
+        audioInputStream.close ();
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/AviWriter.java" startline="462" endline="481">
+public void setPixel (int x, int y, int r, int g, int b) {
+    y = frameHeight - (y + 1);
+    if (x < 0 | y < 0 | x > frameWidth | y > frameHeight) {
+        return;
+    }
+    int offset = ((y * frameWidth) + x) * 3;
+    frameBuffer [offset] = (byte) b;
+    frameBuffer [offset + 1] = (byte) g;
+    frameBuffer [offset + 2] = (byte) r;
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/AviWriter.java" startline="484" endline="494">
+void clearFrame (int r, int g, int b) {
+    for (int i = 0;
+    i < frameBufferSize; i += 3) {
+        frameBuffer [i] = (byte) b;
+        frameBuffer [i + 1] = (byte) g;
+        frameBuffer [i + 2] = (byte) r;
+    }
+}
+</source>
+<source file="/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/AviWriter.java" startline="496" endline="499">
+public void errMessage (String s) {
+    JOptionPane.showMessageDialog (null, s, "Error", JOptionPane.ERROR_MESSAGE);
+}
+</source>

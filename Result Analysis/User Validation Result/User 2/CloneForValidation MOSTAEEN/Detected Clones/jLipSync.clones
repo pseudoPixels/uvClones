@@ -1,0 +1,138 @@
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JlsFilter.java 16 26
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/AviFilter.java 16 26
+----------------------------------------
+
+public boolean accept (File f) {
+    if (f.isDirectory ()) {
+        return true;
+    }
+    String fileName = f.getName ().toLowerCase ();
+    if (fileName.endsWith (".jls")) {
+        return true;
+    }
+    return false;
+}
+
+----------------------------------------
+
+public boolean accept (File f) {
+    if (f.isDirectory ()) {
+        return true;
+    }
+    String fileName = f.getName ().toLowerCase ();
+    if (fileName.endsWith (".avi")) {
+        return true;
+    }
+    return false;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JlsFilter.java 16 26
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavFilter.java 16 26
+----------------------------------------
+
+public boolean accept (File f) {
+    if (f.isDirectory ()) {
+        return true;
+    }
+    String fileName = f.getName ().toLowerCase ();
+    if (fileName.endsWith (".jls")) {
+        return true;
+    }
+    return false;
+}
+
+----------------------------------------
+
+public boolean accept (File f) {
+    if (f.isDirectory ()) {
+        return true;
+    }
+    String fileName = f.getName ().toLowerCase ();
+    if (fileName.endsWith (".wav")) {
+        return true;
+    }
+    return false;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/AviFilter.java 16 26
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavFilter.java 16 26
+----------------------------------------
+
+public boolean accept (File f) {
+    if (f.isDirectory ()) {
+        return true;
+    }
+    String fileName = f.getName ().toLowerCase ();
+    if (fileName.endsWith (".avi")) {
+        return true;
+    }
+    return false;
+}
+
+----------------------------------------
+
+public boolean accept (File f) {
+    if (f.isDirectory ()) {
+        return true;
+    }
+    String fileName = f.getName ().toLowerCase ();
+    if (fileName.endsWith (".wav")) {
+        return true;
+    }
+    return false;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/Utilities.java 20 28
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java 2026 2036
+----------------------------------------
+
+final static ImageIcon createImageIcon (String path) {
+    java.net.URL imgURL = JLipSync.class.getResource (path);
+    if (imgURL != null) {
+        return new ImageIcon (imgURL);
+    } else {
+        System.err.println ("Couldn't find Icon: " + path);
+        return null;
+    }
+}
+
+----------------------------------------
+
+protected static ImageIcon createImageIcon (String path) {
+    java.net.URL imgURL = JLipSync.class.getResource (path);
+    if (imgURL != null) {
+        return new ImageIcon (imgURL);
+    } else {
+        String message = new String ("Couldn't find file: " + path);
+        JOptionPane.showMessageDialog (null, message, "Error", JOptionPane.ERROR_MESSAGE);
+        return null;
+    }
+}
+
+----------------------------------------
+
+
+****************************************************
+*************Clone Analysis Stats ******************
+****************************************************
+Total Potential Clones ==> 158
+Minimum Line ==> 11
+Maximum Line ==> 700
+Threshold ==> 0.7
+Clones Found ==> 4
+****************************************************

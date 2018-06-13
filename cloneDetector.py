@@ -238,10 +238,10 @@ lang = 'java'
 # 			print src2
 
 
-potential_clones = 'google_guava.xml'
+potential_clones = 'atunes.xml'
 minLine = 11
-maxLine = 2500
-threshold = 0.5
+maxLine = 700
+threshold = 0.75
 
 
 
@@ -254,47 +254,55 @@ with open(potential_clones) as fp:
 all_potential_clones = soup.find_all('source')
 
 total_pcs = len(all_potential_clones)
-#print l
+print total_pcs
 number_of_clones_found = 0
 print "Detecting Clones..."
 for i in range(0, total_pcs):
 	src1 = all_potential_clones[i].text
 	src1_lines = src1.count('\n')
+	if src1_lines <= minLine or src1_lines > maxLine:
+		continue
 	#print "Progress ", i*100/l , "%"
 	for j in range(i+1, total_pcs):
 		src2 = all_potential_clones[j].text
 		src2_lines = src2.count('\n')
+		if src2_lines <= minLine or src2_lines > maxLine:
+			continue
 
+		lowerBound = src1_lines - src1_lines*(1-threshold)
+		upperBound = src1_lines + src1_lines*(1-threshold)
 
+		#if src2_lines >= lowerBound and src2_lines <= upperBound:
+		#if (src1_lines >= minLine and src2_lines >= minLine) and (src1_lines <= maxLine and src2_lines <= maxLine):
+		if src2_lines >= lowerBound and src2_lines <= upperBound:
+			#print "HERE ", src1
+			#print " src1 => ", src1_lines, " src2 => ", src2_lines
+			# #print "src1 => ", src1.count('\n'), " src2 => ", src2.count('\n'), " min=> ", min(src1.count('\n'), src2.count('\n'))
+			trueCloneProb = getValidationScore(src1, src2, 'java')
+			#print '++++++++++++++++++++++++++++++++++++++'
+			#print src1
+			#print src2
+			#print trueCloneProb
+			#print '++++++++++++++++++++++++++++++++++++++'
+			#print trueCloneProb
+			if trueCloneProb > threshold:
+				number_of_clones_found = number_of_clones_found + 1
+				#print
+				#print "===============================> ",trueCloneProb
 
-		if (src1_lines >= minLine or src2_lines >= minLine) and (src1_lines <= maxLine or src2_lines <= maxLine):
-			if min(src1_lines, src2_lines)*2 >= max(src1_lines, src2_lines):
-				#print "HERE ", src1
-				#print " src1 => ", src1_lines, " src2 => ", src2_lines
-				# #print "src1 => ", src1.count('\n'), " src2 => ", src2.count('\n'), " min=> ", min(src1.count('\n'), src2.count('\n'))
-				trueCloneProb = getValidationScore(src1, src2, 'java')
-				#print '++++++++++++++++++++++++++++++++++++++'
-				#print src1
-				#print src2
-				#print trueCloneProb
-				#print '++++++++++++++++++++++++++++++++++++++'
-				#print trueCloneProb
-				if trueCloneProb > threshold:
-					number_of_clones_found = number_of_clones_found + 1
+				with open(potential_clones+".clones", "a") as fo:
+					#fo.write(out)
+					fo.write( '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n')
+					fo.write( '0\n' )
+					fo.write( '0\n' )
+					fo.write( all_potential_clones[i].attrs['file'] + " " + all_potential_clones[i].attrs['startline'] + " " + all_potential_clones[i].attrs['endline'] + "\n")
+					fo.write( all_potential_clones[j].attrs['file'] +  " " + all_potential_clones[j].attrs['startline'] + " " + all_potential_clones[j].attrs['endline'] + "\n")
 
-					with open(potential_clones+".clones", "a") as fo:
-						#fo.write(out)
-						fo.write( '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n')
-						fo.write( '0\n' )
-						fo.write( '0\n' )
-						fo.write( all_potential_clones[i].attrs['file'] + " " + all_potential_clones[i].attrs['startline'] + " " + all_potential_clones[i].attrs['endline'] + "\n")
-						fo.write( all_potential_clones[j].attrs['file'] +  " " + all_potential_clones[j].attrs['startline'] + " " + all_potential_clones[j].attrs['endline'] + "\n")
-
-						fo.write( '----------------------------------------\n')
-						fo.write( src1 +"\n")
-						fo.write( '----------------------------------------\n')
-						fo.write( src2 +"\n")
-						fo.write( '----------------------------------------\n')
+					fo.write( '----------------------------------------\n')
+					fo.write( src1 +"\n")
+					fo.write( '----------------------------------------\n')
+					fo.write( src2 +"\n")
+					fo.write( '----------------------------------------\n')
 
 
 	print "Progress : ", str(i * 100 / total_pcs), "%"

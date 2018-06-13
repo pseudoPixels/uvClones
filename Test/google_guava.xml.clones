@@ -1,0 +1,1618 @@
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 56 86
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 60 84
+----------------------------------------
+
+public final Iterable  children (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public Iterator  iterator () {
+            return new AbstractIterator  () {
+                boolean doneLeft;
+                boolean doneRight;
+                @Override
+                protected T computeNext () {
+                    if (! doneLeft) {
+                        doneLeft = true;
+                        Optional  left = leftChild (root);
+                        if (left.isPresent ()) {
+                            return left.get ();
+                        }
+                    }
+                    if (! doneRight) {
+                        doneRight = true;
+                        Optional  right = rightChild (root);
+                        if (right.isPresent ()) {
+                            return right.get ();
+                        }
+                    }
+                    return endOfData ();
+                }}
+
+            ;
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public Iterator  iterator () {
+    return new AbstractIterator  () {
+        boolean doneLeft;
+        boolean doneRight;
+        @Override
+        protected T computeNext () {
+            if (! doneLeft) {
+                doneLeft = true;
+                Optional  left = leftChild (root);
+                if (left.isPresent ()) {
+                    return left.get ();
+                }
+            }
+            if (! doneRight) {
+                doneRight = true;
+                Optional  right = rightChild (root);
+                if (right.isPresent ()) {
+                    return right.get ();
+                }
+            }
+            return endOfData ();
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 60 84
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 66 82
+----------------------------------------
+
+public Iterator  iterator () {
+    return new AbstractIterator  () {
+        boolean doneLeft;
+        boolean doneRight;
+        @Override
+        protected T computeNext () {
+            if (! doneLeft) {
+                doneLeft = true;
+                Optional  left = leftChild (root);
+                if (left.isPresent ()) {
+                    return left.get ();
+                }
+            }
+            if (! doneRight) {
+                doneRight = true;
+                Optional  right = rightChild (root);
+                if (right.isPresent ()) {
+                    return right.get ();
+                }
+            }
+            return endOfData ();
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+protected T computeNext () {
+    if (! doneLeft) {
+        doneLeft = true;
+        Optional  left = leftChild (root);
+        if (left.isPresent ()) {
+            return left.get ();
+        }
+    }
+    if (! doneRight) {
+        doneRight = true;
+        Optional  right = rightChild (root);
+        if (right.isPresent ()) {
+            return right.get ();
+        }
+    }
+    return endOfData ();
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/AbstractMapBasedMultimap.java 1195 1202
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+Iterator  valueIterator () {
+    return new Itr  () {
+        @Override
+        V output (K key, V value) {
+            return value;
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/AbstractMapBasedMultimap.java 1234 1241
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+Iterator  > entryIterator () {
+    return new Itr  > () {
+        @Override
+        Entry  output (K key, V value) {
+            return Maps.immutableEntry (key, value);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/Synchronized.java 1257 1265
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public Iterator  > iterator () {
+    return new TransformedIterator , Collection  > (super.iterator ()) {
+        @Override
+        Collection  transform (Collection  from) {
+            return typePreservingCollection (from, mutex);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/MultimapBuilder.java 94 102
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public static MultimapBuilderWithKeys  hashKeys (final int expectedKeys) {
+    checkNonnegative (expectedKeys, "expectedKeys");
+    return new MultimapBuilderWithKeys  () {
+        @Override
+        Map  > createMap () {
+            return Maps.newHashMapWithExpectedSize (expectedKeys);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/MultimapBuilder.java 125 133
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public static MultimapBuilderWithKeys  linkedHashKeys (final int expectedKeys) {
+    checkNonnegative (expectedKeys, "expectedKeys");
+    return new MultimapBuilderWithKeys  () {
+        @Override
+        Map  > createMap () {
+            return newLinkedHashMapWithExpectedSize (expectedKeys);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/MultimapBuilder.java 163 171
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public static  MultimapBuilderWithKeys  treeKeys (final Comparator  comparator) {
+    checkNotNull (comparator);
+    return new MultimapBuilderWithKeys  () {
+        @Override
+        Map  > createMap () {
+            return new TreeMap  > (comparator);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/MultimapBuilder.java 176 188
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public static  > MultimapBuilderWithKeys  enumKeys (final Class  keyClass) {
+    checkNotNull (keyClass);
+    return new MultimapBuilderWithKeys  () {
+        @SuppressWarnings("unchecked")
+        @Override
+        Map  > createMap () {
+            return (Map  >) new EnumMap  > (keyClass);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/MultimapBuilder.java 299 309
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public ListMultimapBuilder  arrayListValues (final int expectedValuesPerKey) {
+    checkNonnegative (expectedValuesPerKey, "expectedValuesPerKey");
+    return new ListMultimapBuilder  () {
+        @Override
+        public  ListMultimap  build () {
+            return Multimaps.newListMultimap (MultimapBuilderWithKeys.this. createMap (), new ArrayListSupplier  (expectedValuesPerKey));
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/MultimapBuilder.java 314 322
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public ListMultimapBuilder  linkedListValues () {
+    return new ListMultimapBuilder  () {
+        @Override
+        public  ListMultimap  build () {
+            return Multimaps.newListMultimap (MultimapBuilderWithKeys.this. createMap (), LinkedListSupplier. instance ());
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/MultimapBuilder.java 337 347
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public SetMultimapBuilder  hashSetValues (final int expectedValuesPerKey) {
+    checkNonnegative (expectedValuesPerKey, "expectedValuesPerKey");
+    return new SetMultimapBuilder  () {
+        @Override
+        public  SetMultimap  build () {
+            return Multimaps.newSetMultimap (MultimapBuilderWithKeys.this. createMap (), new HashSetSupplier  (expectedValuesPerKey));
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/MultimapBuilder.java 362 372
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public SetMultimapBuilder  linkedHashSetValues (final int expectedValuesPerKey) {
+    checkNonnegative (expectedValuesPerKey, "expectedValuesPerKey");
+    return new SetMultimapBuilder  () {
+        @Override
+        public  SetMultimap  build () {
+            return Multimaps.newSetMultimap (MultimapBuilderWithKeys.this. createMap (), new LinkedHashSetSupplier  (expectedValuesPerKey));
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/MultimapBuilder.java 388 397
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public  SortedSetMultimapBuilder  treeSetValues (final Comparator  comparator) {
+    checkNotNull (comparator, "comparator");
+    return new SortedSetMultimapBuilder  () {
+        @Override
+        public  SortedSetMultimap  build () {
+            return Multimaps.newSortedSetMultimap (MultimapBuilderWithKeys.this. createMap (), new TreeSetSupplier  (comparator));
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/MultimapBuilder.java 402 415
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public  > SetMultimapBuilder  enumSetValues (final Class  valueClass) {
+    checkNotNull (valueClass, "valueClass");
+    return new SetMultimapBuilder  () {
+        @Override
+        public  SetMultimap  build () {
+            @SuppressWarnings ({"unchecked", "rawtypes"})
+            Supplier  > factory = (Supplier) new EnumSetSupplier  (valueClass);
+            return Multimaps.newSetMultimap (MultimapBuilderWithKeys.this. createMap (), factory);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/Iterators.java 744 753
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public static  Iterator  transform (final Iterator  fromIterator, final Function  function) {
+    checkNotNull (function);
+    return new TransformedIterator  (fromIterator) {
+        @Override
+        T transform (F from) {
+            return function.apply (from);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/ImmutableList.java 328 335
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public UnmodifiableListIterator  listIterator (int index) {
+    return new AbstractIndexedListIterator  (size (), index) {
+        @Override
+        protected E get (int index) {
+            return ImmutableList.this.get (index);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/Sets.java 1355 1362
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public Iterator  > iterator () {
+    return new AbstractIndexedListIterator  > (size ()) {
+        @Override
+        protected Set  get (final int setBits) {
+            return new SubSet  (inputSet, setBits);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/Iterables.java 570 580
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public static  Iterable  filter (final Iterable  unfiltered, final Predicate  retainIfTrue) {
+    checkNotNull (unfiltered);
+    checkNotNull (retainIfTrue);
+    return new FluentIterable  () {
+        @Override
+        public Iterator  iterator () {
+            return Iterators.filter (unfiltered.iterator (), retainIfTrue);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/Iterables.java 588 597
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public static  Iterable  filter (final Iterable  unfiltered, final Class  desiredType) {
+    checkNotNull (unfiltered);
+    checkNotNull (desiredType);
+    return new FluentIterable  () {
+        @Override
+        public Iterator  iterator () {
+            return Iterators.filter (unfiltered.iterator (), desiredType);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/Iterables.java 682 692
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public static  Iterable  transform (final Iterable  fromIterable, final Function  function) {
+    checkNotNull (fromIterable);
+    checkNotNull (function);
+    return new FluentIterable  () {
+        @Override
+        public Iterator  iterator () {
+            return Iterators.transform (fromIterable.iterator (), function);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/Iterables.java 888 897
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public static  Iterable  limit (final Iterable  iterable, final int limitSize) {
+    checkNotNull (iterable);
+    checkArgument (limitSize >= 0, "limit is negative");
+    return new FluentIterable  () {
+        @Override
+        public Iterator  iterator () {
+            return Iterators.limit (iterable.iterator (), limitSize);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/Iterables.java 997 1004
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+static  Function , Iterator  > toIterator () {
+    return new Function , Iterator  > () {
+        @Override
+        public Iterator  apply (Iterable  iterable) {
+            return iterable.iterator ();
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/ImmutableMultimap.java 589 596
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+UnmodifiableIterator  > entryIterator () {
+    return new Itr  > () {
+        @Override
+        Entry  output (K key, V value) {
+            return Maps.immutableEntry (key, value);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/ImmutableMultimap.java 665 672
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+UnmodifiableIterator  valueIterator () {
+    return new Itr  () {
+        @Override
+        V output (K key, V value) {
+            return value;
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/Tables.java 394 402
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+Function , Cell  > cellFunction () {
+    return new Function , Cell  > () {
+        @Override
+        public Cell  apply (Cell  cell) {
+            return immutableCell (cell.getRowKey (), cell.getColumnKey (), function.apply (cell.getValue ()));
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/Tables.java 425 434
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public Map  > rowMap () {
+    Function , Map  > rowFunction = new Function , Map  > () {
+        @Override
+        public Map  apply (Map  row) {
+            return Maps.transformValues (row, function);
+        }}
+
+    ;
+    return Maps.transformValues (fromTable.rowMap (), rowFunction);
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/Tables.java 437 446
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public Map  > columnMap () {
+    Function , Map  > columnFunction = new Function , Map  > () {
+        @Override
+        public Map  apply (Map  column) {
+            return Maps.transformValues (column, function);
+        }}
+
+    ;
+    return Maps.transformValues (fromTable.columnMap (), columnFunction);
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/Lists.java 588 595
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public ListIterator  listIterator (final int index) {
+    return new TransformedListIterator  (fromList.listIterator (index)) {
+        @Override
+        T transform (F from) {
+            return function.apply (from);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/Lists.java 634 641
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public ListIterator  listIterator (int index) {
+    return new TransformedListIterator  (fromList.listIterator (index)) {
+        @Override
+        T transform (F from) {
+            return function.apply (from);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/MapConstraints.java 465 472
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public Iterator  > iterator () {
+    return new TransformedIterator , Entry  > (entries.iterator ()) {
+        @Override
+        Entry  transform (Entry  from) {
+            return constrainedEntry (from, constraint);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/MapConstraints.java 549 557
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public Iterator  > > iterator () {
+    return new TransformedIterator  >, Entry  > > (entries.iterator ()) {
+        @Override
+        Entry  > transform (Entry  > from) {
+            return constrainedAsMapEntry (from, constraint);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/RegularContiguousSet.java 78 87
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public UnmodifiableIterator  iterator () {
+    return new AbstractSequentialIterator  (first ()) {
+        final C last = last ();
+        @Override
+        protected C computeNext (C previous) {
+            return equalsOrThrow (previous, last) ? null : domain.next (previous);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/RegularContiguousSet.java 91 100
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public UnmodifiableIterator  descendingIterator () {
+    return new AbstractSequentialIterator  (last ()) {
+        final C first = first ();
+        @Override
+        protected C computeNext (C previous) {
+            return equalsOrThrow (previous, first) ? null : domain.previous (previous);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/HashBiMap.java 442 449
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public Iterator  iterator () {
+    return new Itr  () {
+        @Override
+        K output (BiEntry  entry) {
+            return entry.key;
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/HashBiMap.java 604 611
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public Iterator  iterator () {
+    return new Itr  () {
+        @Override
+        V output (BiEntry  entry) {
+            return entry.value;
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/TreeTraverser.java 79 88
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public static  TreeTraverser  using (final Function  > nodeToChildrenFunction) {
+    checkNotNull (nodeToChildrenFunction);
+    return new TreeTraverser  () {
+        @Override
+        public Iterable  children (T root) {
+            return nodeToChildrenFunction.apply (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/TreeTraverser.java 102 110
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public final FluentIterable  preOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return preOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/TreeTraverser.java 152 160
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public final FluentIterable  postOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return postOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/TreeTraverser.java 212 220
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public final FluentIterable  breadthFirstTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new BreadthFirstIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/Multisets.java 968 975
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public Iterator  iterator () {
+    return new TransformedIterator , E > (multiset ().entrySet ().iterator ()) {
+        @Override
+        E transform (Entry  entry) {
+            return entry.getElement ();
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/FluentIterable.java 140 149
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public static  FluentIterable  from (final Iterable  iterable) {
+    return (iterable instanceof FluentIterable) ? (FluentIterable ) iterable : new FluentIterable  (iterable) {
+        @Override
+        public Iterator  iterator () {
+            return iterable.iterator ();
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/BinaryTreeTraverser.java 167 175
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/FluentIterable.java 272 281
+----------------------------------------
+
+public final FluentIterable  inOrderTraversal (final T root) {
+    checkNotNull (root);
+    return new FluentIterable  () {
+        @Override
+        public UnmodifiableIterator  iterator () {
+            return new InOrderIterator (root);
+        }}
+
+    ;
+}
+
+----------------------------------------
+
+public static  FluentIterable  concat (final Iterable  > inputs) {
+    checkNotNull (inputs);
+    return new FluentIterable  () {
+        @Override
+        public Iterator  iterator () {
+            return Iterators.concat (Iterables.transform (inputs, Iterables. toIterator ()).iterator ());
+        }}
+
+    ;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/AbstractMapBasedMultimap.java 270 282
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/Multimaps.java 854 863
+----------------------------------------
+
+Collection  unmodifiableCollectionSubclass (Collection  collection) {
+    if (collection instanceof SortedSet) {
+        return Collections.unmodifiableSortedSet ((SortedSet ) collection);
+    } else if (collection instanceof Set) {
+        return Collections.unmodifiableSet ((Set ) collection);
+    } else if (collection instanceof List) {
+        return Collections.unmodifiableList ((List ) collection);
+    } else {
+        return Collections.unmodifiableCollection (collection);
+    }
+
+}
+
+----------------------------------------
+
+private static  Collection  unmodifiableValueCollection (Collection  collection) {
+    if (collection instanceof SortedSet) {
+        return Collections.unmodifiableSortedSet ((SortedSet ) collection);
+    } else if (collection instanceof Set) {
+        return Collections.unmodifiableSet ((Set ) collection);
+    } else if (collection instanceof List) {
+        return Collections.unmodifiableList ((List ) collection);
+    }
+
+    return Collections.unmodifiableCollection (collection);
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/AbstractMapBasedMultimap.java 270 282
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/Constraints.java 313 324
+----------------------------------------
+
+Collection  unmodifiableCollectionSubclass (Collection  collection) {
+    if (collection instanceof SortedSet) {
+        return Collections.unmodifiableSortedSet ((SortedSet ) collection);
+    } else if (collection instanceof Set) {
+        return Collections.unmodifiableSet ((Set ) collection);
+    } else if (collection instanceof List) {
+        return Collections.unmodifiableList ((List ) collection);
+    } else {
+        return Collections.unmodifiableCollection (collection);
+    }
+
+}
+
+----------------------------------------
+
+static  Collection  constrainedTypePreservingCollection (Collection  collection, Constraint  constraint) {
+    if (collection instanceof SortedSet) {
+        return constrainedSortedSet ((SortedSet ) collection, constraint);
+    } else if (collection instanceof Set) {
+        return constrainedSet ((Set ) collection, constraint);
+    } else if (collection instanceof List) {
+        return constrainedList ((List ) collection, constraint);
+    } else {
+        return constrainedCollection (collection, constraint);
+    }
+
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/AbstractMapBasedMultimap.java 426 432
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/NullsLastOrdering.java 64 73
+----------------------------------------
+
+public boolean equals (@Nullable
+Object object) {
+    if (object == this) {
+        return true;
+    }
+    refreshIfEmpty ();
+    return delegate.equals (object);
+}
+
+----------------------------------------
+
+public boolean equals (@Nullable
+Object object) {
+    if (object == this) {
+        return true;
+    }
+    if (object instanceof NullsLastOrdering) {
+        NullsLastOrdering  that = (NullsLastOrdering ) object;
+        return this.ordering.equals (that.ordering);
+    }
+    return false;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/AbstractMapBasedMultimap.java 426 432
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/ReverseOrdering.java 94 103
+----------------------------------------
+
+public boolean equals (@Nullable
+Object object) {
+    if (object == this) {
+        return true;
+    }
+    refreshIfEmpty ();
+    return delegate.equals (object);
+}
+
+----------------------------------------
+
+public boolean equals (@Nullable
+Object object) {
+    if (object == this) {
+        return true;
+    }
+    if (object instanceof ReverseOrdering) {
+        ReverseOrdering  that = (ReverseOrdering ) object;
+        return this.forwardOrder.equals (that.forwardOrder);
+    }
+    return false;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/AbstractMapBasedMultimap.java 426 432
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/ImmutableSet.java 317 327
+----------------------------------------
+
+public boolean equals (@Nullable
+Object object) {
+    if (object == this) {
+        return true;
+    }
+    refreshIfEmpty ();
+    return delegate.equals (object);
+}
+
+----------------------------------------
+
+public boolean equals (@Nullable
+Object object) {
+    if (object == this) {
+        return true;
+    } else if (object instanceof ImmutableSet && isHashCodeFast () && ((ImmutableSet ) object).isHashCodeFast () && hashCode () != object.hashCode ()) {
+        return false;
+    }
+
+    return Sets.equalsImpl (this, object);
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/AbstractMapBasedMultimap.java 426 432
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/google-guava/src/com/google/common/collect/LexicographicalOrdering.java 57 66
+----------------------------------------
+
+public boolean equals (@Nullable
+Object object) {
+    if (object == this) {
+        return true;
+    }
+    refreshIfEmpty ();
+    return delegate.equals (object);
+}
+
+----------------------------------------
+
+public boolean equals (@Nullable
+Object object) {
+    if (object == this) {
+        return true;
+    }
+    if (object instanceof LexicographicalOrdering) {
+        LexicographicalOrdering  that = (LexicographicalOrdering ) object;
+        return this.elementOrder.equals (that.elementOrder);
+    }
+    return false;
+}
+
+----------------------------------------

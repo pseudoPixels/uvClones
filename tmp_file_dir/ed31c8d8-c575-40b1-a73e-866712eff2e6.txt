@@ -1,0 +1,11 @@
+public RawSocket () {
+    __socket = __UNDEFINED;
+    __family = __UNDEFINED;
+    __stimeout = new TimeVal ();
+    __rtimeout = new TimeVal ();
+    String os = System.getProperty ("os.name");
+    if (os != null && os.startsWith ("SunOS")) setUseSelectTimeout (true);
+    else setUseSelectTimeout (false);
+
+}
+

@@ -1,0 +1,19 @@
+
+protected void x1 (final x2 x3, final x4 x5, final x6 x7) throws x8 {
+    x9 x10 = x9.x11 (x3.x12 ().x13 ());
+    x14 x15 = x16 (x10);
+    x17 x18 = x15.x19 (x10.x20 ());
+    x21 x22 = x23 (x10);
+    final x24 x25 = x26 (x18, x22);
+    x5.x27 (x28.x29);
+    x30 x31 = new x30 (new x32 () {
+        public void x33 (final x34 x35) throws x36 {
+            x37 x38 = new x37 (x35, "UTF-8");
+            x38.x39 (x25.x40 ());
+            x38.x41 ();
+        }}
+
+    );
+    x31.x42 (x43 (x22));
+    x5.x44 (x31);
+}

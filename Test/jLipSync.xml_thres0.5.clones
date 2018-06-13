@@ -1,0 +1,187 @@
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JlsFilter.java 16 26
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/AviFilter.java 16 26
+----------------------------------------
+
+public boolean accept (File f) {
+    if (f.isDirectory ()) {
+        return true;
+    }
+    String fileName = f.getName ().toLowerCase ();
+    if (fileName.endsWith (".jls")) {
+        return true;
+    }
+    return false;
+}
+
+----------------------------------------
+
+public boolean accept (File f) {
+    if (f.isDirectory ()) {
+        return true;
+    }
+    String fileName = f.getName ().toLowerCase ();
+    if (fileName.endsWith (".avi")) {
+        return true;
+    }
+    return false;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JlsFilter.java 16 26
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavFilter.java 16 26
+----------------------------------------
+
+public boolean accept (File f) {
+    if (f.isDirectory ()) {
+        return true;
+    }
+    String fileName = f.getName ().toLowerCase ();
+    if (fileName.endsWith (".jls")) {
+        return true;
+    }
+    return false;
+}
+
+----------------------------------------
+
+public boolean accept (File f) {
+    if (f.isDirectory ()) {
+        return true;
+    }
+    String fileName = f.getName ().toLowerCase ();
+    if (fileName.endsWith (".wav")) {
+        return true;
+    }
+    return false;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/AviFilter.java 16 26
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavFilter.java 16 26
+----------------------------------------
+
+public boolean accept (File f) {
+    if (f.isDirectory ()) {
+        return true;
+    }
+    String fileName = f.getName ().toLowerCase ();
+    if (fileName.endsWith (".avi")) {
+        return true;
+    }
+    return false;
+}
+
+----------------------------------------
+
+public boolean accept (File f) {
+    if (f.isDirectory ()) {
+        return true;
+    }
+    String fileName = f.getName ().toLowerCase ();
+    if (fileName.endsWith (".wav")) {
+        return true;
+    }
+    return false;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/WavePanel.java 332 362
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java 129 165
+----------------------------------------
+
+public void playFrames (int startFrame, int endFrame) {
+    if (startFrame == 0) {
+        startFrame = 1;
+    }
+    if (endFrame == 0 || endFrame > frameCount) {
+        endFrame = frameCount;
+    }
+    int startByte = bytesPerFrame * (startFrame - 1);
+    int endByte = bytesPerFrame * endFrame;
+    if (startByte  byteCount) {
+        endByte = byteCount;
+    }
+    try {
+        new PlayThread (startByte, endByte).start ();
+    } catch (Exception e) {
+        errMessage ("Error playing the wave file: " + e);
+    }
+}
+
+----------------------------------------
+
+public void playFrames (int startFrame, int endFrame) {
+    int endByte = wavePanel.bytesPerFrame * endFrame;
+    if (startFrame == 0) {
+        startFrame = 1;
+    }
+    if (endFrame == 0) {
+        endFrame = wavePanel.frameCount;
+    }
+    if (endByte > wavePanel.byteCount) {
+        endByte = wavePanel.byteCount;
+    }
+    try {
+        wavePanel.playingWave = false;
+        wavePanel.playFrames (startFrame, endFrame);
+        new PlayFaces (startFrame, endFrame).start ();
+    } catch (Exception e) {
+        Utilities.errMessage ("Error playing the wave file. " + e);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/Utilities.java 20 28
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/JLipSync/JLipSync.java 2026 2036
+----------------------------------------
+
+final static ImageIcon createImageIcon (String path) {
+    java.net.URL imgURL = JLipSync.class.getResource (path);
+    if (imgURL != null) {
+        return new ImageIcon (imgURL);
+    } else {
+        System.err.println ("Couldn't find Icon: " + path);
+        return null;
+    }
+}
+
+----------------------------------------
+
+protected static ImageIcon createImageIcon (String path) {
+    java.net.URL imgURL = JLipSync.class.getResource (path);
+    if (imgURL != null) {
+        return new ImageIcon (imgURL);
+    } else {
+        String message = new String ("Couldn't find file: " + path);
+        JOptionPane.showMessageDialog (null, message, "Error", JOptionPane.ERROR_MESSAGE);
+        return null;
+    }
+}
+
+----------------------------------------
+
+
+****************************************************
+*************Clone Analysis Stats ******************
+****************************************************
+Total Potential Clones ==> 158
+Minimum Line ==> 11
+Maximum Line ==> 700
+Threshold ==> 0.5
+Clones Found ==> 5
+****************************************************

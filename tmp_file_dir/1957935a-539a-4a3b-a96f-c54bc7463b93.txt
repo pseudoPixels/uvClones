@@ -1,0 +1,13 @@
+
+public boolean add (V value) {
+    refreshIfEmpty ();
+    boolean wasEmpty = delegate.isEmpty ();
+    boolean changed = delegate.add (value);
+    if (changed) {
+        totalSize ++;
+        if (wasEmpty) {
+            addToMap ();
+        }
+    }
+    return changed;
+}

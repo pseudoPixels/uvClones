@@ -1,0 +1,644 @@
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/plugins/webinterface/src/main/java/net/sourceforge/atunes/plugins/webinterface/VelocityRequest.java 19 54
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/plugins/webinterface/src/main/java/net/sourceforge/atunes/plugins/webinterface/ImageRequest.java 16 48
+----------------------------------------
+
+public static VelocityRequest getRequest (String uri) {
+    VelocityRequest result = null;
+    String action = null;
+    String template = null;
+    Map  aditionalParameters = null;
+    if (uri.indexOf ('?') != - 1) {
+        String parameterString = uri.substring (uri.indexOf ('?') + 1);
+        String [] parameters = parameterString.split ("&");
+        for (String parameter : parameters) {
+            String [] parameterTokens = parameter.split ("=");
+            if (parameterTokens.length == 2) {
+                String name = parameterTokens [0];
+                String value = parameterTokens [1];
+                if (name.equalsIgnoreCase ("action")) {
+                    action = value;
+                } else if (name.equalsIgnoreCase ("template")) {
+                    template = value;
+                } else {
+                    if (aditionalParameters == null) {
+                        aditionalParameters = new HashMap  ();
+                    }
+                    aditionalParameters.put (name, value);
+                }
+
+            }
+        }
+    }
+    if (action != null && template != null) {
+        result = new VelocityRequest (action, template);
+        result.aditionalParameters = aditionalParameters;
+    }
+    return result;
+}
+
+----------------------------------------
+
+public static ImageRequest getRequest (String uri) {
+    ImageRequest result = null;
+    String action = null;
+    Map  aditionalParameters = null;
+    if (uri.indexOf ('?') != - 1) {
+        String parameterString = uri.substring (uri.indexOf ('?') + 1);
+        String [] parameters = parameterString.split ("&");
+        for (String parameter : parameters) {
+            String [] parameterTokens = parameter.split ("=");
+            if (parameterTokens.length == 2) {
+                String name = parameterTokens [0];
+                String value = parameterTokens [1];
+                if (name.equalsIgnoreCase ("action")) {
+                    action = value;
+                } else {
+                    if (aditionalParameters == null) {
+                        aditionalParameters = new HashMap  ();
+                    }
+                    aditionalParameters.put (name, value);
+                }
+            }
+        }
+    }
+    if (action != null) {
+        result = new ImageRequest (action);
+        result.aditionalParameters = aditionalParameters;
+    }
+    return result;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/plugins/webinterface/src/main/java/net/sourceforge/atunes/plugins/webinterface/ImagesHttpHandler.java 26 41
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/plugins/webinterface/src/main/java/net/sourceforge/atunes/plugins/webinterface/VelocityHttpHandler.java 49 70
+----------------------------------------
+
+protected boolean isResourceFound (HttpRequest request) {
+    String uri = request.getRequestLine ().getUri ();
+    ImageRequest imageRequest = ImageRequest.getRequest (uri);
+    if (request != null) {
+        try {
+            getAction (imageRequest);
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+    return false;
+}
+
+----------------------------------------
+
+protected boolean isResourceFound (HttpRequest request) {
+    String uri = request.getRequestLine ().getUri ();
+    VelocityRequest velocityRequest = VelocityRequest.getRequest (uri);
+    if (request != null) {
+        try {
+            getAction (velocityRequest);
+        } catch (Exception e) {
+            return false;
+        }
+        File template = getTemplate (velocityRequest);
+        if (template == null) {
+            return false;
+        }
+        return true;
+    }
+    return false;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/StopAfterCurrentAudioObjectAction.java 76 85
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+public void setStopAfterCurrentAudioObject (final boolean stopAfterCurrentAudioObject) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            putValue (SELECTED_KEY, stopAfterCurrentAudioObject);
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/playlist/PlayListTabController.java 93 101
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+void forceSwitchTo (final int index) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            PlayListTabController.this.playListSelectorWrapper.forceSwitchTo (index);
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/playlist/PlayListTabController.java 109 117
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+void newPlayList (final String name, final IColorMutableImageIcon icon) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            PlayListTabController.this.playListSelectorWrapper.newPlayList (name, icon);
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/player/PlayerControlsController.java 93 101
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+void setAudioObjectLength (final long length) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            getComponentControlled ().getProgressSlider ().setMaximum ((int) length);
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/player/PlayerControlsController.java 120 129
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+void setCurrentAudioObjectTimePlayed (final long timePlayed, final long totalTime, final boolean fading) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            setCurrentAudioObjectTimePlayedEDT (timePlayed, totalTime, fading);
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/player/PlayerControlsController.java 145 152
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+void setVolume (final int value) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            getComponentControlled ().setVolume (value);
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/ui/UIHandler.java 257 265
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+public void playbackStateChanged (final PlaybackState newState, final IAudioObject currentAudioObject) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            playbackStateChangedEDT (newState, currentAudioObject);
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/repository/RepositoryReadLoader.java 57 66
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+protected void runTasksBeforeLoadRepository () {
+    this.totalFilesToLoad = countFilesInDir (getFolders ());
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            getRepositoryLoaderListener ().notifyFilesInRepository (RepositoryReadLoader.this.totalFilesToLoad);
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/repository/RepositoryReadLoader.java 98 106
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+protected void notifyFinishLoader () {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            getRepositoryLoaderListener ().notifyFinishRead (RepositoryReadLoader.this);
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/repository/ShowRepositoryDataHelper.java 57 66
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+void showRepositoryAudioFileNumber (final long size, final long sizeInBytes, final long duration) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            frame.setCenterStatusBarText (getText (size), getToolTip (size, sizeInBytes, duration));
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/repository/RepositoryRefreshLoader.java 143 151
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+protected void notifyFinishLoader () {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            getRepositoryLoaderListener ().notifyFinishRefresh (RepositoryRefreshLoader.this);
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/tray/SystemTrayHandler.java 360 368
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+public void playbackStateChanged (final PlaybackState newState, final IAudioObject currentAudioObject) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            playbackStateChangedEDT (newState, currentAudioObject);
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/os/OsManager.java 258 265
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+public void manageNoPlayerEngine (final IFrame frame) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            OsManager.this.adapter.manageNoPlayerEngine (frame);
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/gui/views/controls/NavigationTree.java 191 198
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+public void expandNode (final ITreeNode node) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            expandPath (new TreePath (node.getNode ().getPath ()));
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/gui/views/controls/NavigationTree.java 206 213
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+public void reload () {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            ((DefaultTreeModel) getModel ()).reload ();
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/gui/views/controls/PlayPauseButton.java 90 97
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+public void setPlaying (final boolean playing) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            setPlayingState (playing);
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/ExceptionHandler.java 112 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/gui/views/controls/FullScreenPlayPauseButton.java 82 89
+----------------------------------------
+
+public void showErrorReport (final String errorDescription, final Throwable e) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            IErrorReport report = beanFactory.getBean (IErrorReportCreator.class).createReport (errorDescription, e);
+            ExceptionHandler.this.dialogFactory.newDialog (IErrorReportDialog.class).showErrorReport (stateCore.getErrorReportsResponseMail (), report, beanFactory.getBean (IErrorReporter.class));
+        }}
+
+    );
+}
+
+----------------------------------------
+
+public void setPlaying (final boolean playing) {
+    GuiUtils.callInEventDispatchThread (new Runnable () {
+        @Override
+        public void run () {
+            setPlayingState (playing);
+        }}
+
+    );
+}
+
+----------------------------------------

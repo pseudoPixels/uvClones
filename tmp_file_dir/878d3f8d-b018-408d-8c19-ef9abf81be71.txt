@@ -1,0 +1,7 @@
+
+private SynchronizedBiMap (BiMap  delegate,@Nullable
+Object mutex,@Nullable
+BiMap  inverse) {
+    super (delegate, mutex);
+    this.inverse = inverse;
+}

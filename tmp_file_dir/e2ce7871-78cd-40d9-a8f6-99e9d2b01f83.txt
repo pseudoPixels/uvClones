@@ -1,0 +1,11 @@
+
+public Escaper build () {
+    return new ArrayBasedCharEscaper (replacementMap, safeMin, safeMax) {
+        private final char [] replacementChars = unsafeReplacement != null ? unsafeReplacement.toCharArray () : null;
+        @Override
+        protected char [] escapeUnsafe (char c) {
+            return replacementChars;
+        }}
+
+    ;
+}

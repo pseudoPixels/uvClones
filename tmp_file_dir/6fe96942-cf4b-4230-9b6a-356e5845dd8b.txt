@@ -1,0 +1,8 @@
+
+public void clear () {
+    for (Collection  collection : map.values ()) {
+        collection.clear ();
+    }
+    map.clear ();
+    totalSize = 0;
+}

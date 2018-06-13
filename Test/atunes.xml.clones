@@ -1,0 +1,3374 @@
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/plugins/webinterface/src/main/java/net/sourceforge/atunes/plugins/webinterface/VelocityRequest.java 19 54
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/plugins/webinterface/src/main/java/net/sourceforge/atunes/plugins/webinterface/ImageRequest.java 16 48
+----------------------------------------
+
+public static VelocityRequest getRequest (String uri) {
+    VelocityRequest result = null;
+    String action = null;
+    String template = null;
+    Map  aditionalParameters = null;
+    if (uri.indexOf ('?') != - 1) {
+        String parameterString = uri.substring (uri.indexOf ('?') + 1);
+        String [] parameters = parameterString.split ("&");
+        for (String parameter : parameters) {
+            String [] parameterTokens = parameter.split ("=");
+            if (parameterTokens.length == 2) {
+                String name = parameterTokens [0];
+                String value = parameterTokens [1];
+                if (name.equalsIgnoreCase ("action")) {
+                    action = value;
+                } else if (name.equalsIgnoreCase ("template")) {
+                    template = value;
+                } else {
+                    if (aditionalParameters == null) {
+                        aditionalParameters = new HashMap  ();
+                    }
+                    aditionalParameters.put (name, value);
+                }
+
+            }
+        }
+    }
+    if (action != null && template != null) {
+        result = new VelocityRequest (action, template);
+        result.aditionalParameters = aditionalParameters;
+    }
+    return result;
+}
+
+----------------------------------------
+
+public static ImageRequest getRequest (String uri) {
+    ImageRequest result = null;
+    String action = null;
+    Map  aditionalParameters = null;
+    if (uri.indexOf ('?') != - 1) {
+        String parameterString = uri.substring (uri.indexOf ('?') + 1);
+        String [] parameters = parameterString.split ("&");
+        for (String parameter : parameters) {
+            String [] parameterTokens = parameter.split ("=");
+            if (parameterTokens.length == 2) {
+                String name = parameterTokens [0];
+                String value = parameterTokens [1];
+                if (name.equalsIgnoreCase ("action")) {
+                    action = value;
+                } else {
+                    if (aditionalParameters == null) {
+                        aditionalParameters = new HashMap  ();
+                    }
+                    aditionalParameters.put (name, value);
+                }
+            }
+        }
+    }
+    if (action != null) {
+        result = new ImageRequest (action);
+        result.aditionalParameters = aditionalParameters;
+    }
+    return result;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/utils/ReflectionUtils.java 96 108
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/os/MacOSXAppReOpenedListener.java 53 65
+----------------------------------------
+
+public static Method getMethod (final Class  clazz, final String methodName, final Class ...arguments) {
+    try {
+        return clazz.getDeclaredMethod (methodName, arguments);
+    } catch (IllegalArgumentException e) {
+        Logger.error (e);
+    } catch (SecurityException e) {
+        Logger.error (e);
+    } catch (NoSuchMethodException e) {
+        Logger.error (e);
+    }
+    return null;
+}
+
+----------------------------------------
+
+public Object invoke (final Object proxy, final Method method, final Object [] args) {
+    try {
+        targetMethod.invoke (targetObject, (Object []) null);
+    } catch (IllegalArgumentException e) {
+        Logger.error (e);
+    } catch (IllegalAccessException e) {
+        Logger.error (e);
+    } catch (InvocationTargetException e) {
+        Logger.error (e);
+    }
+    return null;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/SearchArtistAtAction.java 119 134
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/SetPlayListSelectionAsFavoriteAlbumAction.java 92 104
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IArtist) || unknownObjectChecker.isUnknownArtist ((IArtist) node.getUserObject ())) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+
+public boolean isEnabledForPlayListSelection (final List  selection) {
+    if (selection == null || selection.isEmpty ()) {
+        return false;
+    }
+    for (IAudioObject ao : selection) {
+        if (ao instanceof IRadio || ao instanceof IPodcastFeedEntry) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/AutoSetTagFromFileNamePatternAction.java 84 100
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/AutoSetTagFromFolderNamePatternAction.java 94 110
+----------------------------------------
+
+protected void executeAction (final List  objects) {
+    PatternInputDialog inputDialog = this.dialogFactory.newDialog ("nonMassivePatternInputDialog", PatternInputDialog.class);
+    inputDialog.show (this.patterns.getRecognitionPatterns (), objects.get (0).getNameWithoutExtension ());
+    String pattern = inputDialog.getResult ();
+    if (pattern != null) {
+        EditTagFromFileNamePatternProcess process = (EditTagFromFileNamePatternProcess) this.processFactory.getProcessByName ("editTagFromFileNamePatternProcess");
+        process.setFilesToChange (objects);
+        process.setPattern (pattern);
+        process.execute ();
+    }
+}
+
+----------------------------------------
+
+protected void executeAction (final List  objects) {
+    PatternInputDialog inputDialog = this.dialogFactory.newDialog ("nonMassivePatternInputDialog", PatternInputDialog.class);
+    inputDialog.show (this.patterns.getRecognitionPatterns (), this.fileManager.getFolderPath (objects.get (0)));
+    String pattern = inputDialog.getResult ();
+    if (pattern != null) {
+        EditTagFromFolderNamePatternProcess process = (EditTagFromFolderNamePatternProcess) this.processFactory.getProcessByName ("editTagFromFolderNamePatternProcess");
+        process.setFilesToChange (objects);
+        process.setPattern (pattern);
+        process.execute ();
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/SetPlayListSelectionAsFavoriteAlbumAction.java 92 104
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/SetPlayListSelectionAsFavoriteArtistAction.java 92 104
+----------------------------------------
+
+public boolean isEnabledForPlayListSelection (final List  selection) {
+    if (selection == null || selection.isEmpty ()) {
+        return false;
+    }
+    for (IAudioObject ao : selection) {
+        if (ao instanceof IRadio || ao instanceof IPodcastFeedEntry) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+
+public boolean isEnabledForPlayListSelection (final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    for (IAudioObject ao : selection) {
+        if (ao instanceof IRadio || ao instanceof IPodcastFeedEntry) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/RefreshFolderFromNavigatorAction.java 74 91
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/SetFavoriteArtistFromNavigatorAction.java 86 103
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    if (stateNavigation.getViewMode () != ViewMode.FOLDER) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IFolder)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    if (this.stateNavigation.getViewMode () == ViewMode.FOLDER) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IArtist)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/LoadPlayListAction.java 99 135
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/LoadNewPlayListAction.java 120 157
+----------------------------------------
+
+protected void executeAction () {
+    IFileSelectorDialog dialog = this.dialogFactory.newDialog (IFileSelectorDialog.class);
+    dialog.setFileFilter (this.playListIOService.getAllAcceptedPlaylistsFileFilter ());
+    File file = dialog.loadFile (this.statePlaylist.getLoadPlaylistPath ());
+    if (file != null) {
+        if (file.exists ()) {
+            this.statePlaylist.setLoadPlaylistPath (FileUtils.getPath (file.getParentFile ()));
+            if (this.playListIOService.isDynamicPlayList (file)) {
+                this.playListIOService.readDynamicPlayList (file);
+            } else {
+                List  filesToLoad = this.playListIOService.read (file);
+                if (filesToLoad != null) {
+                    LoadPlayListProcess process = (LoadPlayListProcess) this.processFactory.getProcessByName ("loadPlayListProcess");
+                    process.setFilenamesToLoad (filesToLoad);
+                    process.setReplacePlayList (this.replacePlayList);
+                    process.setPlayListName (FilenameUtils.getBaseName (file.getName ()));
+                    process.execute ();
+                }
+            }
+        } else {
+            this.dialogFactory.newDialog (IErrorDialog.class).showErrorDialog (I18nUtils.getString ("FILE_NOT_FOUND"));
+        }
+    }
+}
+
+----------------------------------------
+
+protected void executeAction () {
+    IFileSelectorDialog dialog = this.dialogFactory.newDialog (IFileSelectorDialog.class);
+    dialog.setFileFilter (this.playListIOService.getAllAcceptedPlaylistsFileFilter ());
+    File file = dialog.loadFile (this.statePlaylist.getLoadPlaylistPath ());
+    if (file != null) {
+        if (file.exists ()) {
+            this.statePlaylist.setLoadPlaylistPath (FileUtils.getPath (file.getParentFile ()));
+            if (this.playListIOService.isDynamicPlayList (file)) {
+                this.playListIOService.readDynamicPlayList (file);
+            } else {
+                List  filesToLoad = this.playListIOService.read (file);
+                if (filesToLoad != null) {
+                    LoadPlayListProcess process = (LoadPlayListProcess) this.processFactory.getProcessByName ("loadPlayListProcess");
+                    process.setFilenamesToLoad (filesToLoad);
+                    process.setReplacePlayList (this.replacePlayList);
+                    process.setPlayListName (FilenameUtils.getBaseName (file.getName ()));
+                    process.execute ();
+                }
+            }
+        } else {
+            this.dialogFactory.newDialog (IErrorDialog.class).showErrorDialog (I18nUtils.getString ("FILE_NOT_FOUND"));
+        }
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/RepairTrackNumbersAction.java 138 165
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/AutoSetTracksAction.java 117 144
+----------------------------------------
+
+private int getTrackNumber (final ILocalAudioObject audioFile) {
+    String fileName = audioFile.getNameWithoutExtension ();
+    String [] aux = NUMBER_SEPARATOR_PATTERN.split (fileName);
+    int trackNumber = 0;
+    int i = 0;
+    while (trackNumber == 0 && i = 1000) {
+                trackNumber = 0;
+            }
+        } catch (NumberFormatException e) {
+        }
+        i ++;
+    }
+    if (trackNumber == 0) {
+        trackNumber = webServicesHandler.getTrackNumber (audioFile);
+    }
+    return trackNumber;
+}
+
+----------------------------------------
+
+private int getTrackNumber (final ILocalAudioObject audioFile) {
+    String fileName = audioFile.getNameWithoutExtension ();
+    String [] aux = NUMBER_SEPARATOR_PATTERN.split (fileName);
+    int trackNumber = 0;
+    int i = 0;
+    while (trackNumber == 0 && i = 1000) {
+                trackNumber = 0;
+            }
+        } catch (NumberFormatException e) {
+        }
+        i ++;
+    }
+    if (trackNumber == 0) {
+        trackNumber = webServicesHandler.getTrackNumber (audioFile);
+    }
+    return trackNumber;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/EditTitlesAction.java 63 76
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/SetFavoriteAlbumFromNavigatorAction.java 86 103
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IAlbum)) {
+            return false;
+        }
+    }
+    return selection.size () == 1;
+}
+
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    if (stateNavigation.getViewMode () == ViewMode.FOLDER) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IAlbum)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/SetPlayListSelectionAsFavoriteArtistAction.java 92 104
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/AddArtistTopTracksToPlayListAction.java 167 180
+----------------------------------------
+
+public boolean isEnabledForPlayListSelection (final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    for (IAudioObject ao : selection) {
+        if (ao instanceof IRadio || ao instanceof IPodcastFeedEntry) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IArtist) || this.unknownObjectChecker.isUnknownArtist ((IArtist) node.getUserObject ())) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/SetFavoriteArtistFromNavigatorAction.java 86 103
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/SetFavoriteAlbumFromNavigatorAction.java 86 103
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    if (this.stateNavigation.getViewMode () == ViewMode.FOLDER) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IArtist)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    if (stateNavigation.getViewMode () == ViewMode.FOLDER) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IAlbum)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/ClearCachesAction.java 85 109
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/AddBannedSongInLastFMAction.java 104 126
+----------------------------------------
+
+protected void executeAction () {
+    setEnabled (false);
+    ((JPanel) ((JButton) getSource ()).getParent ()).setCursor (Cursor.getPredefinedCursor (Cursor.WAIT_CURSOR));
+    IBackgroundWorker  backgroundWorker = this.backgroundWorkerFactory.getWorker ();
+    backgroundWorker.setBackgroundActions (new Callable  () {
+        @Override
+        public Void call () {
+            ClearCachesAction.this.webServicesHandler.clearCache ();
+            return null;
+        }}
+
+    );
+    backgroundWorker.setActionsWhenDone (new IBackgroundWorker.IActionsWithBackgroundResult  () {
+        @Override
+        public void call (final Void result) {
+            ((JPanel) ((JButton) getSource ()).getParent ()).setCursor (Cursor.getDefaultCursor ());
+            setEnabled (true);
+        }}
+
+    );
+    backgroundWorker.execute (this.taskService);
+}
+
+----------------------------------------
+
+protected void executeAction () {
+    setEnabled (false);
+    IBackgroundWorker  backgroundWorker = this.backgroundWorkerFactory.getWorker ();
+    backgroundWorker.setBackgroundActions (new Callable  () {
+        @Override
+        public Void call () {
+            AddBannedSongInLastFMAction.this.webServicesHandler.addBannedSong (AddBannedSongInLastFMAction.this.contextHandler.getCurrentAudioObject ());
+            return null;
+        }}
+
+    );
+    backgroundWorker.setActionsWhenDone (new IBackgroundWorker.IActionsWithBackgroundResult  () {
+        @Override
+        public void call (final Void result) {
+            setEnabled (true);
+        }}
+
+    );
+    backgroundWorker.execute (this.taskService);
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/AutoSetTracksAction.java 117 144
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/process/ImportFilesProcess.java 271 299
+----------------------------------------
+
+private int getTrackNumber (final ILocalAudioObject audioFile) {
+    String fileName = audioFile.getNameWithoutExtension ();
+    String [] aux = NUMBER_SEPARATOR_PATTERN.split (fileName);
+    int trackNumber = 0;
+    int i = 0;
+    while (trackNumber == 0 && i = 1000) {
+                trackNumber = 0;
+            }
+        } catch (NumberFormatException e) {
+        }
+        i ++;
+    }
+    if (trackNumber == 0) {
+        trackNumber = webServicesHandler.getTrackNumber (audioFile);
+    }
+    return trackNumber;
+}
+
+----------------------------------------
+
+private int getTrackNumber (final ILocalAudioObject audioFile) {
+    String fileName = audioFile.getNameWithoutExtension ();
+    String [] aux = NUMBER_SEPARATOR_PATTERN.split (fileName);
+    int trackNumber = 0;
+    int i = 0;
+    while (trackNumber == 0 && i = 1000) {
+                trackNumber = 0;
+            }
+        } catch (NumberFormatException e) {
+        }
+        i ++;
+    }
+    if (trackNumber == 0) {
+        trackNumber = this.webServicesHandler.getTrackNumber (audioFile);
+    }
+    return trackNumber;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/SetFavoriteAlbumFromNavigatorAction.java 86 103
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/AddArtistTopTracksToPlayListAction.java 167 180
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    if (stateNavigation.getViewMode () == ViewMode.FOLDER) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IAlbum)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IArtist) || this.unknownObjectChecker.isUnknownArtist ((IArtist) node.getUserObject ())) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/AddArtistTopTracksToPlayListAction.java 167 180
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/SetPlayListSelectionAsFavoriteSongAction.java 92 104
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IArtist) || this.unknownObjectChecker.isUnknownArtist ((IArtist) node.getUserObject ())) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+
+public boolean isEnabledForPlayListSelection (final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    for (IAudioObject ao : selection) {
+        if (ao instanceof IRadio || ao instanceof IPodcastFeedEntry) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/CopyToDeviceAction.java 147 164
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/RemoveFromDiskAction.java 193 207
+----------------------------------------
+
+public boolean isEnabledForNavigationTableSelection (final List  selection) {
+    if (! this.deviceHandler.isDeviceConnected ()) {
+        return false;
+    }
+    if (this.navigationHandler.getCurrentView ().equals (this.podcastNavigationView)) {
+        for (IAudioObject ao : selection) {
+            if (! ((IPodcastFeedEntry) ao).isDownloaded ()) {
+                return false;
+            }
+        }
+        return true;
+    }
+    return ! selection.isEmpty ();
+}
+
+----------------------------------------
+
+public boolean isEnabledForNavigationTableSelection (final List  selection) {
+    if (this.navigationHandler.getCurrentView ().equals (this.podcastNavigationView)) {
+        for (IAudioObject ao : selection) {
+            if (ao instanceof IPodcastFeedEntry) {
+                if (! ((IPodcastFeedEntry) ao).isDownloaded ()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    return ! selection.isEmpty ();
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/ShowNavigationTreeAction.java 88 98
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/ShowNavigationTableAction.java 88 98
+----------------------------------------
+
+private void checkOptionsState (final boolean show) {
+    if (! show) {
+        this.showNavigationTableAction.setEnabled (false);
+    } else if (! this.stateNavigation.isShowNavigationTable ()) {
+        this.setEnabled (false);
+    } else {
+        this.showNavigationTableAction.setEnabled (true);
+        this.setEnabled (true);
+    }
+
+}
+
+----------------------------------------
+
+private void checkOptionsState (final boolean show) {
+    if (! show) {
+        this.showNavigationTreeAction.setEnabled (false);
+    } else if (! this.stateNavigation.isShowNavigationTree ()) {
+        this.setEnabled (false);
+    } else {
+        this.showNavigationTreeAction.setEnabled (true);
+        this.setEnabled (true);
+    }
+
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/ShowRecommendedEventsFromLastFMAction.java 94 124
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/ImportLovedTracksFromLastFMAction.java 104 135
+----------------------------------------
+
+protected void executeAction () {
+    IBackgroundWorker , Void > worker = this.backgroundWorkerFactory.getWorker ();
+    worker.setActionsBeforeBackgroundStarts (new Runnable () {
+        @Override
+        public void run () {
+            ShowRecommendedEventsFromLastFMAction.this.dialog = ShowRecommendedEventsFromLastFMAction.this.dialogFactory.newDialog (IIndeterminateProgressDialog.class);
+            ShowRecommendedEventsFromLastFMAction.this.dialog.setTitle (I18nUtils.getString ("PLEASE_WAIT"));
+            ShowRecommendedEventsFromLastFMAction.this.dialog.showDialog ();
+        }}
+
+    );
+    worker.setBackgroundActions (new Callable  > () {
+        @Override
+        public List  call () {
+            return webServicesHandler.getRecommendedEvents ();
+        }}
+
+    );
+    worker.setActionsWhenDone (new IBackgroundWorker.IActionsWithBackgroundResult  > () {
+        @Override
+        public void call (final List  events) {
+            finishAction (events);
+        }}
+
+    );
+    worker.execute (this.taskService);
+}
+
+----------------------------------------
+
+protected void executeAction () {
+    IBackgroundWorker , Void > worker = this.backgroundWorkerFactory.getWorker ();
+    worker.setActionsBeforeBackgroundStarts (new Runnable () {
+        @Override
+        public void run () {
+            ImportLovedTracksFromLastFMAction.this.dialog = ImportLovedTracksFromLastFMAction.this.dialogFactory.newDialog (IIndeterminateProgressDialog.class);
+            ImportLovedTracksFromLastFMAction.this.dialog.setTitle (I18nUtils.getString ("GETTING_LOVED_TRACKS_FROM_LASTFM"));
+            ImportLovedTracksFromLastFMAction.this.dialog.showDialog ();
+        }}
+
+    );
+    worker.setBackgroundActions (new Callable  > () {
+        @Override
+        public List  call () {
+            return fetchFavorites ();
+        }}
+
+    );
+    worker.setActionsWhenDone (new IBackgroundWorker.IActionsWithBackgroundResult  > () {
+        @Override
+        public void call (final List  lovedTracks) {
+            finishAction (lovedTracks);
+        }}
+
+    );
+    worker.execute (this.taskService);
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/SetPlayListSelectionAsFavoriteSongAction.java 92 104
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/RemoveRadioAction.java 64 77
+----------------------------------------
+
+public boolean isEnabledForPlayListSelection (final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    for (IAudioObject ao : selection) {
+        if (ao instanceof IRadio || ao instanceof IPodcastFeedEntry) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (rootSelected) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IRadio)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/RemoveRadioAction.java 64 77
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/SearchArtistAction.java 122 135
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (rootSelected) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IRadio)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IArtist) || unknownObjectChecker.isUnknownArtist ((IArtist) node.getUserObject ())) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/RemoveFromFavoritesAction.java 135 153
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/MoveFolderFromNavigatorAction.java 235 252
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof ITreeObject )) {
+            return false;
+        }
+        if (node.getUserObject () instanceof IAlbum) {
+            if (this.favoritesHandler.isArtistFavorite (((IAlbum) node.getUserObject ()).getArtist ())) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (selection.size () != 1) {
+        return false;
+    }
+    if (this.stateNavigation.getViewMode () != ViewMode.FOLDER) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IFolder)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/SearchArtistAction.java 122 135
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/AddFavoriteRadioAction.java 72 85
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IArtist) || unknownObjectChecker.isUnknownArtist ((IArtist) node.getUserObject ())) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (rootSelected) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IRadio)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/AddFavoriteRadioAction.java 72 85
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/AbstractActionOverSelectedObjects.java 148 160
+----------------------------------------
+
+public boolean isEnabledForNavigationTreeSelection (final boolean rootSelected, final List  selection) {
+    if (rootSelected) {
+        return false;
+    }
+    for (ITreeNode node : selection) {
+        if (! (node.getUserObject () instanceof IRadio)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+
+public final boolean isEnabledForPlayListSelection (List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    for (IAudioObject ao : selection) {
+        if (! clazz.isAssignableFrom (ao.getClass ())) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/CreatePlayListWithSelectedArtistsAction.java 99 112
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/AddAlbumWithSelectedArtistsAction.java 100 115
+----------------------------------------
+
+protected void executeAction (final List  objects) {
+    List  selectedArtists = new ArrayList  ();
+    for (IAudioObject ao : objects) {
+        String artist = ao.getArtist (this.unknownObjectChecker);
+        IArtist a = this.repositoryHandler.getArtist (artist);
+        if (a != null && ! selectedArtists.contains (a)) {
+            selectedArtists.add (a);
+        }
+    }
+    createPlayLists (selectedArtists);
+}
+
+----------------------------------------
+
+protected void executeAction (final List  objects) {
+    List  selectedArtists = new ArrayList  ();
+    for (IAudioObject ao : objects) {
+        String artistName = ao.getArtist (this.unknownObjectChecker);
+        IArtist a = this.repositoryHandler.getArtist (artistName);
+        if (a != null && ! selectedArtists.contains (a)) {
+            selectedArtists.add (a);
+        }
+    }
+    for (IArtist artist : selectedArtists) {
+        showAddArtistDragDialog (artist);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/actions/AbstractActionOverSelectedObjects.java 148 160
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/tags/TagHandler.java 253 267
+----------------------------------------
+
+public final boolean isEnabledForPlayListSelection (List  selection) {
+    if (selection.isEmpty ()) {
+        return false;
+    }
+    for (IAudioObject ao : selection) {
+        if (! clazz.isAssignableFrom (ao.getClass ())) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+
+private boolean hasTagAttributesFilled (final ILocalAudioObject localAudioObject, final List  tagAttributesToCheck) {
+    if (localAudioObject.getTag () == null) {
+        return false;
+    }
+    for (TextTagAttribute ta : tagAttributesToCheck) {
+        if (! analyzeAttribute (localAudioObject, ta)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/playlist/PlayListWriter.java 82 102
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/playlist/M3UPlayListWriter.java 84 110
+----------------------------------------
+
+boolean write (final List  audioObjects, final File file) {
+    FileWriter writer = null;
+    try {
+        if (file.exists () && ! file.delete ()) {
+            Logger.error (StringUtils.getString (file, " not deleted"));
+        }
+        writer = new FileWriter (file);
+        List  repositoryFolders = this.repositoryHandler.getFolders ();
+        for (IAudioObject f : audioObjects) {
+            writer.append (StringUtils.getString (getRelativePath (repositoryFolders, f), this.osManager.getLineTerminator ()));
+        }
+        writer.flush ();
+        return true;
+    } catch (IOException e) {
+        return false;
+    } finally {
+        ClosingUtils.close (writer);
+    }
+}
+
+----------------------------------------
+
+boolean writeM3U (final List  audioObjects, final File file) {
+    FileWriter writer = null;
+    try {
+        if (file.exists () && ! file.delete ()) {
+            Logger.error (StringUtils.getString (file, " not deleted"));
+        }
+        writer = new FileWriter (file);
+        writer.append (StringUtils.getString (M3U_HEADER, this.osManager.getLineTerminator ()));
+        for (IAudioObject f : audioObjects) {
+            if (f instanceof ILocalAudioObject) {
+                writer.append (StringUtils.getString (this.fileManager.getSystemPath ((ILocalAudioObject) f), this.osManager.getLineTerminator ()));
+            } else {
+                writer.append (StringUtils.getString (f.getUrl (), this.osManager.getLineTerminator ()));
+            }
+        }
+        writer.flush ();
+        return true;
+    } catch (IOException e) {
+        return false;
+    } finally {
+        ClosingUtils.close (writer);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/playlist/PlayList.java 173 197
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/playlist/DynamicPlayList.java 187 211
+----------------------------------------
+
+public void remove (final Collection  list) {
+    List  playListAudioObjects = new ArrayList  ();
+    for (IAudioObject ao : list) {
+        List  clonedList = new ArrayList  (this.audioObjects.getList ());
+        while (clonedList.indexOf (ao) != - 1) {
+            int index = clonedList.indexOf (ao);
+            PlayListAudioObject playListAudioObject = new PlayListAudioObject ();
+            playListAudioObject.setPosition (index);
+            playListAudioObject.setAudioObject (ao);
+            playListAudioObjects.add (playListAudioObject);
+            clonedList = clonedList.subList (index + 1, clonedList.size ());
+        }
+    }
+    Collections.sort (playListAudioObjects, new PlayListAudioObjectComparator ());
+    for (IPlayListAudioObject plao : playListAudioObjects) {
+        this.audioObjects.remove (plao.getPosition ());
+    }
+    notifyAudioObjectsRemoved (playListAudioObjects);
+}
+
+----------------------------------------
+
+public void remove (final Collection  list) {
+    List  playListAudioObjects = new ArrayList  ();
+    for (IAudioObject ao : list) {
+        List  clonedList = new ArrayList  (this.audioObjects.getList ());
+        while (clonedList.indexOf (ao) != - 1) {
+            int index = clonedList.indexOf (ao);
+            PlayListAudioObject playListAudioObject = new PlayListAudioObject ();
+            playListAudioObject.setPosition (index);
+            playListAudioObject.setAudioObject (ao);
+            playListAudioObjects.add (playListAudioObject);
+            clonedList = clonedList.subList (index + 1, clonedList.size ());
+        }
+    }
+    Collections.sort (playListAudioObjects, new PlayListAudioObjectComparator ());
+    for (IPlayListAudioObject plao : playListAudioObjects) {
+        this.audioObjects.remove (plao.getPosition ());
+    }
+    notifyAudioObjectsRemoved (playListAudioObjects);
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/playlist/PlaybackHistory.java 93 103
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/playlist/PlaybackHistory.java 105 115
+----------------------------------------
+
+IAudioObject moveToPreviousInHistory () {
+    IAudioObject ao = previousHeap.pop ();
+    if (ao != null) {
+        if (currentAudioObject != null) {
+            nextHeap.push (currentAudioObject);
+        }
+        currentAudioObject = ao;
+        return ao;
+    }
+    return null;
+}
+
+----------------------------------------
+
+IAudioObject moveToNextInHistory () {
+    IAudioObject ao = nextHeap.pop ();
+    if (ao != null) {
+        if (currentAudioObject != null) {
+            previousHeap.push (currentAudioObject);
+            currentAudioObject = ao;
+        }
+        return ao;
+    }
+    return null;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/playlist/PlayListMode.java 89 116
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/playlist/PlayListMode.java 119 145
+----------------------------------------
+
+public IAudioObject moveToPreviousAudioObject () {
+    if (this.playList.isEmpty ()) {
+        return null;
+    }
+    IAudioObject previosulyPlayedObject = this.playbackHistory.moveToPreviousInHistory ();
+    if (previosulyPlayedObject != null) {
+        int index = this.playList.indexOf (previosulyPlayedObject);
+        this.playList.getAudioObjectsPointedList ().setPointer (index);
+        return previosulyPlayedObject;
+    }
+    if (isShuffle ()) {
+        Integer previousIndex = this.shufflePlayList.moveToPreviousObject ();
+        if (previousIndex == null) {
+            return null;
+        }
+        this.playList.setCurrentAudioObjectIndex (previousIndex);
+        return this.playList.get (previousIndex);
+    }
+    return this.playList.getAudioObjectsPointedList ().moveToPreviousObject ();
+}
+
+----------------------------------------
+
+public IAudioObject moveToNextAudioObject () {
+    if (this.playList.isEmpty ()) {
+        return null;
+    }
+    IAudioObject nextPreviouslyPlayedObject = this.playbackHistory.moveToNextInHistory ();
+    if (nextPreviouslyPlayedObject != null) {
+        int index = this.playList.indexOf (nextPreviouslyPlayedObject);
+        this.playList.getAudioObjectsPointedList ().setPointer (index);
+        return nextPreviouslyPlayedObject;
+    }
+    if (isShuffle ()) {
+        Integer nextIndex = this.shufflePlayList.moveToNextObject ();
+        if (nextIndex == null) {
+            return null;
+        }
+        this.playList.setCurrentAudioObjectIndex (nextIndex);
+        return this.playList.get (nextIndex);
+    }
+    return this.playList.getAudioObjectsPointedList ().moveToNextObject ();
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/playlist/PlayListMode.java 148 171
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/playlist/PlayListMode.java 174 195
+----------------------------------------
+
+public IAudioObject getPreviousAudioObject (final int index) {
+    if (this.playList.isEmpty ()) {
+        return null;
+    }
+    IAudioObject previosulyPlayedObject = this.playbackHistory.getPreviousInHistory (index);
+    if (previosulyPlayedObject != null) {
+        return previosulyPlayedObject;
+    }
+    if (isShuffle ()) {
+        Integer previousIndex = this.shufflePlayList.getPreviousObject (index);
+        if (previousIndex == null) {
+            return null;
+        }
+        return this.playList.get (previousIndex);
+    }
+    return this.playList.getAudioObjectsPointedList ().getPreviousObject (index);
+}
+
+----------------------------------------
+
+public IAudioObject getNextAudioObject (final int index) {
+    if (this.playList.isEmpty ()) {
+        return null;
+    }
+    IAudioObject nextPreviouslyPlayedObject = this.playbackHistory.getNextInHistory (index);
+    if (nextPreviouslyPlayedObject != null) {
+        return nextPreviouslyPlayedObject;
+    }
+    if (isShuffle ()) {
+        Integer nextIndex = this.shufflePlayList.getNextObject (index);
+        if (nextIndex == null) {
+            return null;
+        }
+        return this.playList.get (nextIndex);
+    }
+    return this.playList.getAudioObjectsPointedList ().getNextObject (index);
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/search/AndLogicalSearchOperator.java 48 62
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/search/OrLogicalSearchOperator.java 48 61
+----------------------------------------
+
+public Collection  evaluate (List  operands) {
+    Collection  intersection = null;
+    for (ISearchNode operand : operands) {
+        Collection  operandResult = operand.evaluate ();
+        if (operandResult != null) {
+            if (intersection == null) {
+                intersection = operandResult;
+            } else {
+                intersection = CollectionUtils.intersection (intersection, operandResult);
+            }
+        }
+    }
+    return intersection;
+}
+
+----------------------------------------
+
+public Collection  evaluate (List  operands) {
+    Collection  union = null;
+    for (ISearchNode operand : operands) {
+        Collection  operandResult = operand.evaluate ();
+        if (operandResult != null) {
+            if (union == null) {
+                union = operandResult;
+            } else {
+                union = CollectionUtils.union (union, operandResult);
+            }
+        }
+    }
+    return union;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/process/ExportProcessListener.java 51 63
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/repository/DeviceHandler.java 96 113
+----------------------------------------
+
+public void processFinished (final boolean ok, final List  result) {
+    SwingUtilities.invokeLater (new Runnable () {
+        @Override
+        public void run () {
+            if (! ok) {
+                ExportProcessListener.this.dialogFactory.newDialog (IErrorDialog.class).showErrorDialog (I18nUtils.getString ("ERRORS_IN_EXPORT_PROCESS"));
+            }
+        }}
+
+    );
+}
+
+----------------------------------------
+
+public void processFinished (final boolean ok, final List  result) {
+    SwingUtilities.invokeLater (new Runnable () {
+        @Override
+        public void run () {
+            refreshDevice ();
+            DeviceHandler.this.filesCopiedToDevice = result.size ();
+            if (! ok) {
+                DeviceHandler.this.dialogFactory.newDialog (IErrorDialog.class).showErrorDialog (I18nUtils.getString ("ERRORS_IN_EXPORT_PROCESS"));
+            }
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/process/RemoveCommonSuffixProcess.java 73 96
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/process/RemoveCommonPrefixProcess.java 73 96
+----------------------------------------
+
+private Map  getTitlesForFiles (final Collection  files) {
+    List  titles = new ArrayList  ();
+    for (ILocalAudioObject file : files) {
+        titles.add (file.getTitleOrFileName ());
+    }
+    String suffix = StringUtils.getCommonSuffix (titles.toArray (new String [titles.size ()]));
+    Map  result = new HashMap  ();
+    for (ILocalAudioObject f : files) {
+        String title = org.apache.commons.lang.StringUtils.removeEnd (f.getTitleOrFileName (), suffix);
+        if (title != null) {
+            result.put (f, title);
+        }
+    }
+    return result;
+}
+
+----------------------------------------
+
+private Map  getTitlesForFiles (final Collection  files) {
+    List  titles = new ArrayList  ();
+    for (ILocalAudioObject file : files) {
+        titles.add (file.getTitleOrFileName ());
+    }
+    String prefix = StringUtils.getCommonPrefix (titles.toArray (new String [titles.size ()]));
+    Map  result = new HashMap  ();
+    for (ILocalAudioObject f : files) {
+        String title = org.apache.commons.lang.StringUtils.removeStart (f.getTitleOrFileName (), prefix);
+        if (title != null) {
+            result.put (f, title);
+        }
+    }
+    return result;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/process/EditTagFromFileNamePatternProcess.java 69 81
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/process/EditTagFromFolderNamePatternProcess.java 80 92
+----------------------------------------
+
+protected void retrieveInformationBeforeChangeTags () {
+    super.retrieveInformationBeforeChangeTags ();
+    if (filesAndTags == null) {
+        filesAndTags = new HashMap  > ();
+        for (ILocalAudioObject file : getFilesToChange ()) {
+            Map  matches = patternMatcher.getPatternMatches (pattern, file.getNameWithoutExtension (), false);
+            Map  editTagInfo = patterns.getEditTagInfoFromMatches (matches);
+            filesAndTags.put (file, editTagInfo);
+        }
+    }
+}
+
+----------------------------------------
+
+protected void retrieveInformationBeforeChangeTags () {
+    super.retrieveInformationBeforeChangeTags ();
+    if (filesAndTags == null) {
+        filesAndTags = new HashMap  > ();
+        for (ILocalAudioObject file : getFilesToChange ()) {
+            Map  matches = patternMatcher.getPatternMatches (pattern, fileManager.getFolderPath (file), true);
+            Map  editTagInfo = patterns.getEditTagInfoFromMatches (matches);
+            filesAndTags.put (file, editTagInfo);
+        }
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/process/AbstractProcess.java 166 181
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/process/AbstractProcess.java 186 196
+----------------------------------------
+
+private final void showProgressDialog () {
+    try {
+        SwingUtilities.invokeAndWait (new Runnable () {
+            @Override
+            public void run () {
+                getProgressDialog ().setTotalProgress (processSize);
+                getProgressDialog ().showDialog ();
+            }}
+
+        );
+    } catch (Exception e) {
+        Logger.error (e);
+    }
+}
+
+----------------------------------------
+
+private final void hideProgressDialog () {
+    try {
+        SwingUtilities.invokeAndWait (new Runnable () {
+            public void run () {
+                getProgressDialog ().hideDialog ();
+            }}
+
+        );
+    } catch (Exception e) {
+        Logger.error (e);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/statistics/StatisticsAlbum.java 99 125
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/repository/Album.java 191 217
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    StatisticsAlbum other = (StatisticsAlbum) obj;
+    if (album == null) {
+        if (other.album != null) {
+            return false;
+        }
+    } else if (! album.equals (other.album)) {
+        return false;
+    }
+
+    if (artist == null) {
+        if (other.artist != null) {
+            return false;
+        }
+    } else if (! artist.equals (other.artist)) {
+        return false;
+    }
+
+    return true;
+}
+
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    Album other = (Album) obj;
+    if (this.artist == null) {
+        if (other.artist != null) {
+            return false;
+        }
+    } else if (! this.artist.equals (other.artist)) {
+        return false;
+    }
+
+    if (this.name == null) {
+        if (other.name != null) {
+            return false;
+        }
+    } else if (! this.name.equalsIgnoreCase (other.name)) {
+        return false;
+    }
+
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/context/AbstractContextPanel.java 287 306
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lastfm/data/LastFmArtist.java 205 224
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    IContextPanel other = (IContextPanel) obj;
+    if (getContextPanelName () == null) {
+        if (other.getContextPanelName () != null) {
+            return false;
+        }
+    } else if (! getContextPanelName ().equals (other.getContextPanelName ())) {
+        return false;
+    }
+
+    return true;
+}
+
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    LastFmArtist other = (LastFmArtist) obj;
+    if (name == null) {
+        if (other.name != null) {
+            return false;
+        }
+    } else if (! name.equals (other.name)) {
+        return false;
+    }
+
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/repository/RefreshFoldersTask.java 96 129
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/repository/AddFilesToRepositoryTask.java 121 150
+----------------------------------------
+
+public void execute (final IRepository repository, final List  folders) {
+    IBackgroundWorker  worker = this.backgroundWorkerFactory.getWorker ();
+    worker.setActionsBeforeBackgroundStarts (new Runnable () {
+        @Override
+        public void run () {
+            RefreshFoldersTask.this.frame.showProgressBar (true, StringUtils.getString (I18nUtils.getString ("REFRESHING"), "..."));
+            RefreshFoldersTask.this.beanFactory.getBean (RepositoryActionsHelper.class).disableAllRepositoryActions ();
+        }}
+
+    );
+    worker.setBackgroundActions (new Callable  () {
+        @Override
+        public Void call () {
+            RefreshFoldersTask.this.folderRefresher.refreshFolders (repository, folders);
+            return null;
+        }}
+
+    );
+    worker.setActionsWhenDone (new IBackgroundWorker.IActionsWithBackgroundResult  () {
+        @Override
+        public void call (final Void result) {
+            RefreshFoldersTask.this.beanFactory.getBean (RepositoryLoadedActions.class).repositoryReadCompleted (repository);
+        }}
+
+    );
+    worker.execute (this.taskService);
+}
+
+----------------------------------------
+
+public void execute (final IRepository repository, final List  files) {
+    IBackgroundWorker  worker = this.backgroundWorkerFactory.getWorker ();
+    worker.setActionsBeforeBackgroundStarts (new Runnable () {
+        @Override
+        public void run () {
+            showProgressBar ();
+        }}
+
+    );
+    worker.setBackgroundActions (new Callable  () {
+        @Override
+        public Void call () {
+            AddFilesToRepositoryTask.this.beanFactory.getBean (RepositoryAddService.class).addFilesToRepository (repository, files);
+            return null;
+        }}
+
+    );
+    worker.setActionsWhenDone (new IBackgroundWorker.IActionsWithBackgroundResult  () {
+        @Override
+        public void call (final Void result) {
+            processResult (repository, files);
+        }}
+
+    );
+    worker.execute (this.taskService);
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/repository/RepositoryReader.java 263 280
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/repository/ImportFoldersLoaderListener.java 82 92
+----------------------------------------
+
+public void notifyFileLoaded () {
+    this.filesLoaded ++;
+    if (this.filesLoaded % 50 == 0) {
+        SwingUtilities.invokeLater (new Runnable () {
+            @Override
+            public void run () {
+                getRepositoryProgressDialog ().setProgressText (Integer.toString (RepositoryReader.this.filesLoaded));
+                getRepositoryProgressDialog ().setProgressBarValue (RepositoryReader.this.filesLoaded);
+                RepositoryReader.this.frame.getProgressBar ().setValue (RepositoryReader.this.filesLoaded);
+            }}
+
+        );
+    }
+}
+
+----------------------------------------
+
+public void notifyFileLoaded () {
+    this.filesLoaded ++;
+    SwingUtilities.invokeLater (new Runnable () {
+        @Override
+        public void run () {
+            progressDialog.setCurrentProgress (filesLoaded);
+            progressDialog.setProgressBarValue ((int) (filesLoaded * 100.0 / totalFiles));
+        }}
+
+    );
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/repository/RepositoryReader.java 344 370
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/covernavigator/GetCoversProcessListener.java 54 67
+----------------------------------------
+
+public void notifyReadProgress () {
+    try {
+        SwingUtilities.invokeAndWait (new Runnable () {
+            @Override
+            public void run () {
+                RepositoryReader.this.navigationHandler.repositoryReloaded ();
+                RepositoryReader.this.beanFactory.getBean (ShowRepositoryDataHelper.class).showRepositoryAudioFileNumber (RepositoryReader.this.repository.getFiles ().size (), RepositoryReader.this.repository.getTotalSizeInBytes (), RepositoryReader.this.repository.getTotalDurationInSeconds ());
+            }}
+
+        );
+    } catch (InterruptedException e) {
+        Logger.error (e);
+    } catch (InvocationTargetException e) {
+        Logger.error (e);
+    }
+}
+
+----------------------------------------
+
+private void update () {
+    try {
+        SwingUtilities.invokeAndWait (new Runnable () {
+            @Override
+            public void run () {
+                GetCoversProcessListener.this.controller.updateCovers ();
+            }}
+
+        );
+    } catch (InvocationTargetException e) {
+        Logger.error (e);
+    } catch (InterruptedException e) {
+        Logger.error (e);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/repository/Album.java 191 217
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/state/FontBean.java 97 122
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    Album other = (Album) obj;
+    if (this.artist == null) {
+        if (other.artist != null) {
+            return false;
+        }
+    } else if (! this.artist.equals (other.artist)) {
+        return false;
+    }
+
+    if (this.name == null) {
+        if (other.name != null) {
+            return false;
+        }
+    } else if (! this.name.equalsIgnoreCase (other.name)) {
+        return false;
+    }
+
+    return true;
+}
+
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    FontBean other = (FontBean) obj;
+    if (this.name == null) {
+        if (other.name != null) {
+            return false;
+        }
+    } else if (! this.name.equals (other.name)) {
+        return false;
+    }
+
+    if (this.size != other.size) {
+        return false;
+    }
+    if (this.style != other.style) {
+        return false;
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/favorites/FavoritesArtistsManager.java 72 103
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/favorites/FavoritesAlbumsManager.java 73 108
+----------------------------------------
+
+public boolean toggleFavoriteArtists (final IFavorites favorites, final List  songs) {
+    if (CollectionUtils.isEmpty (songs)) {
+        return false;
+    }
+    @SuppressWarnings("unchecked")
+    Set  set = SetUniqueList.decorate (songs).asSet ();
+    Set  toRemove = new HashSet  ();
+    Set  toAdd = new HashSet  ();
+    for (ILocalAudioObject f : set) {
+        IArtist artist = this.repositoryHandler.getArtist (f.getArtist (this.unknownObjectChecker));
+        if (artist == null) {
+            artist = this.repositoryHandler.getArtist (f.getAlbumArtist (this.unknownObjectChecker));
+        }
+        if (artist != null) {
+            if (favorites.containsArtist (artist)) {
+                toRemove.add (artist);
+            } else {
+                toAdd.add (artist);
+            }
+        }
+    }
+    addArtists (favorites, toAdd);
+    removeArtists (favorites, toRemove);
+    return ! toRemove.isEmpty () || ! toAdd.isEmpty ();
+}
+
+----------------------------------------
+
+public boolean toggleFavoriteAlbums (final IFavorites favorites, final List  songs) {
+    if (CollectionUtils.isEmpty (songs)) {
+        return false;
+    }
+    @SuppressWarnings("unchecked")
+    Set  set = SetUniqueList.decorate (songs).asSet ();
+    Set  toAdd = new HashSet  ();
+    Set  toRemove = new HashSet  ();
+    for (ILocalAudioObject f : set) {
+        IArtist artist = this.repositoryHandler.getArtist (f.getArtist (this.unknownObjectChecker));
+        if (artist == null) {
+            artist = this.repositoryHandler.getArtist (f.getAlbumArtist (this.unknownObjectChecker));
+        }
+        if (artist != null) {
+            IAlbum album = artist.getAlbum (f.getAlbum (this.unknownObjectChecker));
+            if (album != null) {
+                if (favorites.containsAlbum (album)) {
+                    toRemove.add (album);
+                } else {
+                    toAdd.add (album);
+                }
+            }
+        }
+    }
+    addAlbums (favorites, toAdd);
+    removeAlbums (favorites, toRemove);
+    return ! toRemove.isEmpty () || ! toAdd.isEmpty ();
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/favorites/FavoritesSongsManager.java 95 113
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/favorites/FavoritesSongsManager.java 123 141
+----------------------------------------
+
+public boolean addSongs (final IFavorites favorites, final Collection  songs, final boolean updateWebServices) {
+    if (CollectionUtils.isEmpty (songs)) {
+        return false;
+    }
+    for (ILocalAudioObject song : songs) {
+        favorites.addSong (song);
+    }
+    if (updateWebServices && this.stateContext.isLastFmEnabled () && this.stateContext.isAutoLoveFavoriteSong ()) {
+        this.beanFactory.getBean (AddLovedSongBackgroundWorker.class).add (new ArrayList  (songs));
+    }
+    return true;
+}
+
+----------------------------------------
+
+public boolean removeSongs (final IFavorites favorites, final Collection  songs, final boolean updateWebServices) {
+    if (CollectionUtils.isEmpty (songs)) {
+        return false;
+    }
+    for (ILocalAudioObject file : songs) {
+        favorites.removeSong (file);
+    }
+    if (updateWebServices && this.stateContext.isLastFmEnabled () && this.stateContext.isAutoLoveFavoriteSong ()) {
+        this.beanFactory.getBean (RemoveLovedSongBackgroundWorker.class).remove (new ArrayList  (songs));
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/tags/TagFactory.java 194 207
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/tags/TagFactory.java 214 227
+----------------------------------------
+
+private void setDiscNumberFromProperties (final Map  editTagInfo, final ITag oldTag, final ITag newTag) {
+    if (editTagInfo.containsKey (DISC_NUMBER)) {
+        try {
+            newTag.setDiscNumber (Integer.parseInt ((String) editTagInfo.get (DISC_NUMBER)));
+        } catch (NumberFormatException ex) {
+            newTag.setDiscNumber (0);
+        }
+    } else {
+        newTag.setDiscNumber (oldTag != null ? oldTag.getDiscNumber () : 1);
+    }
+}
+
+----------------------------------------
+
+private void setTrackNumberFromProperties (final Map  editTagInfo, final ITag oldTag, final ITag newTag) {
+    if (editTagInfo.containsKey (TRACK)) {
+        try {
+            newTag.setTrackNumber (Integer.parseInt ((String) editTagInfo.get (TRACK)));
+        } catch (NumberFormatException ex) {
+            newTag.setTrackNumber (- 1);
+        }
+    } else {
+        newTag.setTrackNumber (oldTag != null ? oldTag.getTrackNumber () : 0);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/tags/TagFactory.java 214 227
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/tags/TagFactory.java 249 260
+----------------------------------------
+
+private void setTrackNumberFromProperties (final Map  editTagInfo, final ITag oldTag, final ITag newTag) {
+    if (editTagInfo.containsKey (TRACK)) {
+        try {
+            newTag.setTrackNumber (Integer.parseInt ((String) editTagInfo.get (TRACK)));
+        } catch (NumberFormatException ex) {
+            newTag.setTrackNumber (- 1);
+        }
+    } else {
+        newTag.setTrackNumber (oldTag != null ? oldTag.getTrackNumber () : 0);
+    }
+}
+
+----------------------------------------
+
+private void setYearFromProperties (final Map  editTagInfo, final ITag oldTag, final ITag newTag) {
+    if (editTagInfo.containsKey (YEAR)) {
+        try {
+            newTag.setYear (Integer.parseInt ((String) editTagInfo.get (YEAR)));
+        } catch (NumberFormatException ex) {
+            newTag.setYear (- 1);
+        }
+    } else {
+        newTag.setYear (oldTag != null ? oldTag.getYear () : 0);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/tags/JAudiotaggerTagCreator.java 304 316
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/tags/JAudiotaggerTagCreator.java 318 330
+----------------------------------------
+
+private String getFirstTagValue (final Tag tag, final String field) {
+    if (tag != null && field != null) {
+        try {
+            return tag.getFirst (field);
+        } catch (UnsupportedOperationException e) {
+            Logger.info (e.getMessage ());
+        } catch (Exception e) {
+            Logger.error (e.getMessage ());
+        }
+    }
+    return null;
+}
+
+----------------------------------------
+
+private String getFirstTagValue (final Tag tag, final FieldKey field) {
+    if (tag != null && field != null) {
+        try {
+            return tag.getFirst (field);
+        } catch (UnsupportedOperationException e) {
+            Logger.info (e.getMessage ());
+        } catch (Exception e) {
+            Logger.error (e.getMessage ());
+        }
+    }
+    return null;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/tray/MacTrayIconFiller.java 170 187
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/tray/MacTrayIconFiller.java 192 209
+----------------------------------------
+
+private CheckboxMenuItem getShuffleCheckBoxMenuItem () {
+    CheckboxMenuItem mi = new CheckboxMenuItem (I18nUtils.getString ("SHUFFLE"));
+    mi.addItemListener (new ItemListener () {
+        @Override
+        public void itemStateChanged (final ItemEvent e) {
+            AbstractAction action = MacTrayIconFiller.this.beanFactory.getBean (ShuffleModeAction.class);
+            action.putValue (AbstractAction.SELECTED_KEY, ! (Boolean) action.getValue (AbstractAction.SELECTED_KEY));
+            action.actionPerformed (null);
+        }}
+
+    );
+    boolean selected = (Boolean) this.beanFactory.getBean (ShuffleModeAction.class).getValue (AbstractAction.SELECTED_KEY);
+    mi.setState (selected);
+    return mi;
+}
+
+----------------------------------------
+
+private CheckboxMenuItem getRepeatCheckBoxMenuItem () {
+    CheckboxMenuItem mi = new CheckboxMenuItem (I18nUtils.getString ("REPEAT"));
+    mi.addItemListener (new ItemListener () {
+        @Override
+        public void itemStateChanged (final ItemEvent e) {
+            AbstractAction action = MacTrayIconFiller.this.beanFactory.getBean (RepeatModeAction.class);
+            action.putValue (AbstractAction.SELECTED_KEY, ! (Boolean) action.getValue (AbstractAction.SELECTED_KEY));
+            action.actionPerformed (null);
+        }}
+
+    );
+    boolean selected = (Boolean) this.beanFactory.getBean (RepeatModeAction.class).getValue (AbstractAction.SELECTED_KEY);
+    mi.setState (selected);
+    return mi;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/tray/MacTrayIconFiller.java 192 209
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/tray/MacTrayIconFiller.java 216 234
+----------------------------------------
+
+private CheckboxMenuItem getRepeatCheckBoxMenuItem () {
+    CheckboxMenuItem mi = new CheckboxMenuItem (I18nUtils.getString ("REPEAT"));
+    mi.addItemListener (new ItemListener () {
+        @Override
+        public void itemStateChanged (final ItemEvent e) {
+            AbstractAction action = MacTrayIconFiller.this.beanFactory.getBean (RepeatModeAction.class);
+            action.putValue (AbstractAction.SELECTED_KEY, ! (Boolean) action.getValue (AbstractAction.SELECTED_KEY));
+            action.actionPerformed (null);
+        }}
+
+    );
+    boolean selected = (Boolean) this.beanFactory.getBean (RepeatModeAction.class).getValue (AbstractAction.SELECTED_KEY);
+    mi.setState (selected);
+    return mi;
+}
+
+----------------------------------------
+
+private CheckboxMenuItem getShowOSDCheckBoxMenuItem () {
+    CheckboxMenuItem mi = new CheckboxMenuItem (I18nUtils.getString ("SHOW_OSD"));
+    mi.addItemListener (new ItemListener () {
+        @Override
+        public void itemStateChanged (final ItemEvent e) {
+            AbstractAction action = MacTrayIconFiller.this.beanFactory.getBean (ToggleOSDSettingAction.class);
+            action.putValue (AbstractAction.SELECTED_KEY, ! (Boolean) action.getValue (AbstractAction.SELECTED_KEY));
+            action.actionPerformed (null);
+        }}
+
+    );
+    boolean selected = (Boolean) this.beanFactory.getBean (ToggleOSDSettingAction.class).getValue (AbstractAction.SELECTED_KEY);
+    mi.setState (selected);
+    return mi;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/state/ExportPanel.java 127 197
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/state/ImportPanel.java 141 232
+----------------------------------------
+
+public void initialize () {
+    JPanel fileNamePanel = new JPanel (new GridBagLayout ());
+    fileNamePanel.setBorder (BorderFactory.createTitledBorder (BorderFactory.createEmptyBorder (0, 0, 10, 0), I18nUtils.getString ("FILE_NAME")));
+    this.fileNameNoChangeRadioButton = new JRadioButton (I18nUtils.getString ("NO_CHANGE"));
+    this.fileNameNoChangeRadioButton.addActionListener (new ActionListener () {
+        @Override
+        public void actionPerformed (final ActionEvent e) {
+            ExportPanel.this.fileNamePatternTextField.setEnabled (false);
+        }}
+
+    );
+    this.fileNameCustomizedRadioButton = new JRadioButton (I18nUtils.getString ("CUSTOM"));
+    this.fileNameCustomizedRadioButton.addActionListener (new ActionListener () {
+        @Override
+        public void actionPerformed (final ActionEvent e) {
+            ExportPanel.this.fileNamePatternTextField.setEnabled (true);
+        }}
+
+    );
+    this.fileNamePatternTextField = this.controlsBuilder.createTextField ();
+    this.fileNamePatternTextField.setColumns (10);
+    ButtonGroup group = new ButtonGroup ();
+    group.add (this.fileNameNoChangeRadioButton);
+    group.add (this.fileNameCustomizedRadioButton);
+    JPanel folderPathPanel = new JPanel (new GridBagLayout ());
+    folderPathPanel.setBorder (BorderFactory.createTitledBorder (BorderFactory.createEmptyBorder (0, 0, 10, 0), I18nUtils.getString ("FOLDER")));
+    this.folderPathNoChangeRadioButton = new JRadioButton (I18nUtils.getString ("NO_CHANGE"));
+    this.folderPathNoChangeRadioButton.addActionListener (new ActionListener () {
+        @Override
+        public void actionPerformed (final ActionEvent e) {
+            ExportPanel.this.folderPathPatternTextField.setEnabled (false);
+        }}
+
+    );
+    this.folderPathCustomizedRadioButton = new JRadioButton (I18nUtils.getString ("CUSTOM"));
+    this.folderPathCustomizedRadioButton.addActionListener (new ActionListener () {
+        @Override
+        public void actionPerformed (final ActionEvent e) {
+            ExportPanel.this.folderPathPatternTextField.setEnabled (true);
+        }}
+
+    );
+    this.folderPathPatternTextField = this.controlsBuilder.createTextField ();
+    this.folderPathPatternTextField.setColumns (10);
+    ButtonGroup group2 = new ButtonGroup ();
+    group2.add (this.folderPathNoChangeRadioButton);
+    group2.add (this.folderPathCustomizedRadioButton);
+    JTable availablePatternsTable = this.lookAndFeelManager.getCurrentLookAndFeel ().getTable ();
+    availablePatternsTable.setModel (new AvailablePatternsTableModel (this.patterns.getPatternsList ()));
+    JPanel patternsPanel = getPatternsPanel (availablePatternsTable);
+    arrangePanel (fileNamePanel, folderPathPanel, patternsPanel);
+}
+
+----------------------------------------
+
+public void initialize () {
+    JPanel fileNamePanel = new JPanel (new GridBagLayout ());
+    fileNamePanel.setBorder (BorderFactory.createTitledBorder (BorderFactory.createEmptyBorder (0, 0, 10, 0), I18nUtils.getString ("FILE_NAME")));
+    this.fileNameNoChangeRadioButton = new JRadioButton (I18nUtils.getString ("NO_CHANGE"));
+    this.fileNameNoChangeRadioButton.addActionListener (new ActionListener () {
+        @Override
+        public void actionPerformed (final ActionEvent e) {
+            ImportPanel.this.fileNamePatternTextField.setEnabled (false);
+        }}
+
+    );
+    this.fileNameCustomizedRadioButton = new JRadioButton (I18nUtils.getString ("CUSTOM"));
+    this.fileNameCustomizedRadioButton.addActionListener (new ActionListener () {
+        @Override
+        public void actionPerformed (final ActionEvent e) {
+            ImportPanel.this.fileNamePatternTextField.setEnabled (true);
+        }}
+
+    );
+    this.fileNamePatternTextField = this.controlsBuilder.createTextField ();
+    this.fileNamePatternTextField.setColumns (10);
+    ButtonGroup group = new ButtonGroup ();
+    group.add (this.fileNameNoChangeRadioButton);
+    group.add (this.fileNameCustomizedRadioButton);
+    JPanel folderPathPanel = new JPanel (new GridBagLayout ());
+    folderPathPanel.setBorder (BorderFactory.createTitledBorder (BorderFactory.createEmptyBorder (0, 0, 10, 0), I18nUtils.getString ("FOLDER")));
+    this.folderPathNoChangeRadioButton = new JRadioButton (I18nUtils.getString ("NO_CHANGE"));
+    this.folderPathNoChangeRadioButton.addActionListener (new ActionListener () {
+        @Override
+        public void actionPerformed (final ActionEvent e) {
+            ImportPanel.this.folderPathPatternTextField.setEnabled (false);
+        }}
+
+    );
+    this.folderPathCustomizedRadioButton = new JRadioButton (I18nUtils.getString ("CUSTOM"));
+    this.folderPathCustomizedRadioButton.addActionListener (new ActionListener () {
+        @Override
+        public void actionPerformed (final ActionEvent e) {
+            ImportPanel.this.folderPathPatternTextField.setEnabled (true);
+        }}
+
+    );
+    this.folderPathPatternTextField = this.controlsBuilder.createTextField ();
+    this.folderPathPatternTextField.setColumns (10);
+    ButtonGroup group2 = new ButtonGroup ();
+    group2.add (this.folderPathNoChangeRadioButton);
+    group2.add (this.folderPathCustomizedRadioButton);
+    JTable availablePatternsTable = this.lookAndFeelManager.getCurrentLookAndFeel ().getTable ();
+    availablePatternsTable.setModel (new AvailablePatternsTableModel (this.patterns.getPatternsList ()));
+    JPanel patternsPanel = getPatternsPanel (availablePatternsTable);
+    this.reviewTagsBeforeImportCheckBox = new JCheckBox (I18nUtils.getString ("REVIEW_TAGS_BEFORE_IMPORTING"));
+    this.reviewTagsBeforeImportCheckBox.addActionListener (new ActionListener () {
+        @Override
+        public void actionPerformed (final ActionEvent e) {
+            ImportPanel.this.applyChangesToSourceFilesCheckBox.setEnabled (((JCheckBox) e.getSource ()).isSelected ());
+        }}
+
+    );
+    this.applyChangesToSourceFilesCheckBox = new JCheckBox (I18nUtils.getString ("APPLY_CHANGES_TO_SOURCE_FILES"));
+    this.setTrackNumberWhenImportingCheckBox = new JCheckBox (I18nUtils.getString ("AUTO_SET_TRACK_NUMBER"));
+    this.setTitlesWhenImportingCheckBox = new JCheckBox (I18nUtils.getString ("AUTO_SET_TITLE"));
+    JPanel specificImportOptions = getSpecificImportOptionsPanel ();
+    arrangePanel (fileNamePanel, folderPathPanel, patternsPanel, specificImportOptions);
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/state/DevicePanel.java 300 316
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/state/DevicePanel.java 321 336
+----------------------------------------
+
+private void arrangeFolderPathPanel (final JPanel folderPathPanel) {
+    GridBagConstraints c;
+    c = new GridBagConstraints ();
+    c.gridx = 0;
+    c.gridy = 0;
+    c.anchor = GridBagConstraints.WEST;
+    folderPathPanel.add (this.folderPathNoChangeRadioButton, c);
+    c.gridx = 0;
+    c.gridy = 1;
+    folderPathPanel.add (this.folderPathCustomizedRadioButton, c);
+    c.gridx = 2;
+    c.gridy = 1;
+    c.weightx = 1;
+    c.insets = new Insets (0, 20, 0, 20);
+    c.fill = GridBagConstraints.HORIZONTAL;
+    folderPathPanel.add (this.folderPathPatternTextField, c);
+}
+
+----------------------------------------
+
+private void arrangeFileNamePanel (final JPanel fileNamePanel) {
+    GridBagConstraints c = new GridBagConstraints ();
+    c.gridx = 0;
+    c.gridy = 0;
+    c.anchor = GridBagConstraints.WEST;
+    fileNamePanel.add (this.fileNameNoChangeRadioButton, c);
+    c.gridx = 0;
+    c.gridy = 1;
+    fileNamePanel.add (this.fileNameCustomizedRadioButton, c);
+    c.gridx = 2;
+    c.gridy = 1;
+    c.weightx = 1;
+    c.insets = new Insets (0, 20, 0, 20);
+    c.fill = GridBagConstraints.HORIZONTAL;
+    fileNamePanel.add (this.fileNamePatternTextField, c);
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/state/FontBean.java 97 122
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lastfm/data/LastFmArtist.java 205 224
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    FontBean other = (FontBean) obj;
+    if (this.name == null) {
+        if (other.name != null) {
+            return false;
+        }
+    } else if (! this.name.equals (other.name)) {
+        return false;
+    }
+
+    if (this.size != other.size) {
+        return false;
+    }
+    if (this.style != other.style) {
+        return false;
+    }
+    return true;
+}
+
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    LastFmArtist other = (LastFmArtist) obj;
+    if (name == null) {
+        if (other.name != null) {
+            return false;
+        }
+    } else if (! name.equals (other.name)) {
+        return false;
+    }
+
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/podcast/PodcastFeedHandler.java 347 364
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/RipperHandler.java 437 455
+----------------------------------------
+
+public void run () {
+    while (f.exists () && ! Thread.currentThread ().isInterrupted ()) {
+        if (! f.delete ()) {
+            Logger.error (StringUtils.getString (f, " not deleted"));
+        }
+    }
+    try {
+        Thread.sleep (3000);
+    } catch (InterruptedException e) {
+    }
+    synchronized (PodcastFeedHandler.this.runningDownloads) {
+        PodcastFeedHandler.this.runningDownloads.remove (downloadPodcastFeedEntry);
+    }
+    Logger.info ("podcast entry download cancelled: " + podcastFeedEntry.getTitle ());
+}
+
+----------------------------------------
+
+public void run () {
+    for (File f : filesImported) {
+        if (! f.delete ()) {
+            Logger.error (StringUtils.getString (f, " not deleted"));
+        }
+    }
+    try {
+        Thread.sleep (2000);
+    } catch (InterruptedException e) {
+        Logger.error (e);
+    }
+    if (RipperHandler.this.folderCreated && ! folder.delete ()) {
+        Logger.error (StringUtils.getString (folder, " not deleted"));
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lastfm/SubmitNowPlayingInfoRunnable.java 78 101
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lastfm/SubmitToLastFmRunnable.java 83 106
+----------------------------------------
+
+public void run () {
+    try {
+        lastFmUserServices.submitNowPlayingInfo (audioFile);
+    } catch (ScrobblerException e) {
+        if (e.getStatus () == 2) {
+            Logger.error ("Authentication failure on Last.fm service");
+            SwingUtilities.invokeLater (new Runnable () {
+                @Override
+                public void run () {
+                    dialogFactory.newDialog (IErrorDialog.class).showErrorDialog (I18nUtils.getString ("LASTFM_USER_ERROR"));
+                    stateContext.setLastFmEnabled (false);
+                }}
+
+            );
+        } else {
+            Logger.error (e.getMessage ());
+        }
+    }
+}
+
+----------------------------------------
+
+public void run () {
+    try {
+        lastFmUserServices.submit (audioFile, secondsPlayed);
+    } catch (ScrobblerException e) {
+        if (e.getStatus () == 2) {
+            Logger.error ("Authentication failure on Last.fm service");
+            SwingUtilities.invokeLater (new Runnable () {
+                @Override
+                public void run () {
+                    dialogFactory.newDialog (IErrorDialog.class).showErrorDialog (I18nUtils.getString ("LASTFM_USER_ERROR"));
+                    stateContext.setLastFmEnabled (false);
+                }}
+
+            );
+        } else {
+            Logger.error (e.getMessage ());
+        }
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lastfm/data/LastFmArtist.java 205 224
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lastfm/data/LastFmSimilarArtists.java 151 170
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    LastFmArtist other = (LastFmArtist) obj;
+    if (name == null) {
+        if (other.name != null) {
+            return false;
+        }
+    } else if (! name.equals (other.name)) {
+        return false;
+    }
+
+    return true;
+}
+
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    LastFmSimilarArtists other = (LastFmSimilarArtists) obj;
+    if (this.artistName == null) {
+        if (other.artistName != null) {
+            return false;
+        }
+    } else if (! this.artistName.equals (other.artistName)) {
+        return false;
+    }
+
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lastfm/data/LastFmSimilarArtists.java 151 170
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lastfm/data/LastFmAlbum.java 316 335
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    LastFmSimilarArtists other = (LastFmSimilarArtists) obj;
+    if (this.artistName == null) {
+        if (other.artistName != null) {
+            return false;
+        }
+    } else if (! this.artistName.equals (other.artistName)) {
+        return false;
+    }
+
+    return true;
+}
+
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    LastFmAlbum other = (LastFmAlbum) obj;
+    if (bigCoverURL == null) {
+        if (other.bigCoverURL != null) {
+            return false;
+        }
+    } else if (! bigCoverURL.equals (other.bigCoverURL)) {
+        return false;
+    }
+
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lastfm/data/LastFmAlbum.java 316 335
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lyrics/LyricsEngineInfo.java 84 103
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    LastFmAlbum other = (LastFmAlbum) obj;
+    if (bigCoverURL == null) {
+        if (other.bigCoverURL != null) {
+            return false;
+        }
+    } else if (! bigCoverURL.equals (other.bigCoverURL)) {
+        return false;
+    }
+
+    return true;
+}
+
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    LyricsEngineInfo other = (LyricsEngineInfo) obj;
+    if (this.clazz == null) {
+        if (other.clazz != null) {
+            return false;
+        }
+    } else if (! this.clazz.equals (other.clazz)) {
+        return false;
+    }
+
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lastfm/LastFmUserServices.java 135 155
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lastfm/LastFmUserServices.java 162 182
+----------------------------------------
+
+void addBannedSong (final IAudioObject song) {
+    if (! this.lastFmLogin.checkCredentials () || ! checkAudioFile (song) || ! checkArtist (song)) {
+        return;
+    }
+    Logger.info (StringUtils.getString ("Trying to submit banned song to Last.fm: ", song.getArtist (this.unknownObjectChecker), " - ", song.getTitle ()));
+    Result r = Track.ban (song.getArtist (this.unknownObjectChecker), song.getTitle (), this.lastFmLogin.getSession ());
+    if (r.getStatus ().equals (Status.OK)) {
+        Logger.info (StringUtils.getString ("Banned song submitted OK"));
+    } else {
+        Logger.error (StringUtils.getString ("Error while submitting banned song"));
+    }
+}
+
+----------------------------------------
+
+void addLovedSong (final IAudioObject song) {
+    if (! this.lastFmLogin.checkCredentials () || ! checkAudioFile (song) || ! checkArtist (song)) {
+        return;
+    }
+    Logger.info (StringUtils.getString ("Trying to submit loved song to Last.fm: ", song.getArtist (this.unknownObjectChecker), " - ", song.getTitle ()));
+    Result r = Track.love (song.getArtist (this.unknownObjectChecker), song.getTitle (), this.lastFmLogin.getSession ());
+    if (r.getStatus ().equals (Status.OK)) {
+        Logger.info (StringUtils.getString ("Loved song submitted OK"));
+    } else {
+        Logger.error (StringUtils.getString ("Error while submitting loved song"));
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lastfm/LastFmUserServices.java 162 182
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lastfm/LastFmUserServices.java 189 208
+----------------------------------------
+
+void addLovedSong (final IAudioObject song) {
+    if (! this.lastFmLogin.checkCredentials () || ! checkAudioFile (song) || ! checkArtist (song)) {
+        return;
+    }
+    Logger.info (StringUtils.getString ("Trying to submit loved song to Last.fm: ", song.getArtist (this.unknownObjectChecker), " - ", song.getTitle ()));
+    Result r = Track.love (song.getArtist (this.unknownObjectChecker), song.getTitle (), this.lastFmLogin.getSession ());
+    if (r.getStatus ().equals (Status.OK)) {
+        Logger.info (StringUtils.getString ("Loved song submitted OK"));
+    } else {
+        Logger.error (StringUtils.getString ("Error while submitting loved song"));
+    }
+}
+
+----------------------------------------
+
+void removeLovedSong (final IAudioObject song) {
+    if (! this.lastFmLogin.checkCredentials () || ! checkAudioFile (song) || ! checkArtist (song)) {
+        return;
+    }
+    Logger.info (StringUtils.getString ("Trying to unlove song to Last.fm: ", song.getArtist (this.unknownObjectChecker), " - ", song.getTitle ()));
+    Result r = Track.unlove (song.getArtist (this.unknownObjectChecker), song.getTitle (), this.lastFmLogin.getSession ());
+    if (r.getStatus ().equals (Status.OK)) {
+        Logger.info (StringUtils.getString ("Successfully unloved song"));
+    } else {
+        Logger.error (StringUtils.getString ("Error while unloving song"));
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lastfm/LastFmAlbumServices.java 215 237
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lastfm/LastFmAlbumServices.java 247 272
+----------------------------------------
+
+ImageIcon getAlbumImage (final IAlbumInfo album) {
+    try {
+        ImageIcon img = null;
+        img = lastFmCache.retrieveAlbumCover (album);
+        if (img == null && ! StringUtils.isEmpty (album.getBigCoverURL ())) {
+            Image tmp = networkHandler.getImage (networkHandler.getConnection (album.getBigCoverURL ()));
+            if (tmp != null) {
+                img = new ImageIcon (tmp);
+                lastFmCache.storeAlbumCover (album, img);
+            }
+        }
+        return img;
+    } catch (IOException e) {
+        Logger.error (e.getMessage ());
+        Logger.debug (e);
+    }
+    return null;
+}
+
+----------------------------------------
+
+ImageIcon getAlbumThumbImage (final IAlbumInfo album) {
+    try {
+        ImageIcon img = null;
+        img = lastFmCache.retrieveAlbumCoverThumb (album);
+        if (img == null && ! StringUtils.isEmpty (album.getThumbCoverURL ())) {
+            Image tmp = networkHandler.getImage (networkHandler.getConnection (album.getThumbCoverURL ()));
+            if (tmp != null) {
+                img = new ImageIcon (ImageUtils.scaleBufferedImageBicubic (tmp, Constants.THUMB_IMAGE_WIDTH, Constants.THUMB_IMAGE_HEIGHT));
+                lastFmCache.storeAlbumCoverThumb (album, img);
+            }
+        }
+        return img;
+    } catch (IOException e) {
+        Logger.error (e.getMessage ());
+        Logger.debug (e);
+    }
+    return null;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lastfm/CacheKey.java 81 107
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lyrics/Lyrics.java 87 113
+----------------------------------------
+
+public boolean equals (Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    CacheKey other = (CacheKey) obj;
+    if (keyObject == null) {
+        if (other.keyObject != null) {
+            return false;
+        }
+    } else if (! keyObject.equals (other.keyObject)) {
+        return false;
+    }
+
+    if (keyType == null) {
+        if (other.keyType != null) {
+            return false;
+        }
+    } else if (! keyType.equals (other.keyType)) {
+        return false;
+    }
+
+    return true;
+}
+
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    Lyrics other = (Lyrics) obj;
+    if (lyrics == null) {
+        if (other.lyrics != null) {
+            return false;
+        }
+    } else if (! lyrics.equals (other.lyrics)) {
+        return false;
+    }
+
+    if (url == null) {
+        if (other.url != null) {
+            return false;
+        }
+    } else if (! url.equals (other.url)) {
+        return false;
+    }
+
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lyrics/Lyrics.java 87 113
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/model/FontSettings.java 119 144
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    Lyrics other = (Lyrics) obj;
+    if (lyrics == null) {
+        if (other.lyrics != null) {
+            return false;
+        }
+    } else if (! lyrics.equals (other.lyrics)) {
+        return false;
+    }
+
+    if (url == null) {
+        if (other.url != null) {
+            return false;
+        }
+    } else if (! url.equals (other.url)) {
+        return false;
+    }
+
+    return true;
+}
+
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    FontSettings other = (FontSettings) obj;
+    if (this.font == null) {
+        if (other.font != null) {
+            return false;
+        }
+    } else if (! this.font.equals (other.font)) {
+        return false;
+    }
+
+    if (this.useFontSmoothing != other.useFontSmoothing) {
+        return false;
+    }
+    if (this.useFontSmoothingSettingsFromOs != other.useFontSmoothingSettingsFromOs) {
+        return false;
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/webservices/lyrics/LyricsEngineInfo.java 84 103
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/columns/AbstractColumn.java 317 335
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    LyricsEngineInfo other = (LyricsEngineInfo) obj;
+    if (this.clazz == null) {
+        if (other.clazz != null) {
+            return false;
+        }
+    } else if (! this.clazz.equals (other.clazz)) {
+        return false;
+    }
+
+    return true;
+}
+
+----------------------------------------
+
+public boolean equals (final Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass () != obj.getClass ()) {
+        return false;
+    }
+    if (obj instanceof AbstractColumn ) {
+        @SuppressWarnings("rawtypes")
+        AbstractColumn other = (AbstractColumn) obj;
+        if (this.order != other.order) {
+            return false;
+        }
+    }
+    return true;
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/Cdparanoia.java 57 86
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/NeroAacEncoder.java 57 85
+----------------------------------------
+
+public static boolean pTestTool (final IOSManager osManager) {
+    if (! osManager.isWindows ()) {
+        BufferedReader stdInput = null;
+        try {
+            ProcessBuilder pb = new ProcessBuilder (CDPARANOIA_COMMAND_STRING, VERSION);
+            Process p = pb.start ();
+            stdInput = new BufferedReader (new InputStreamReader (p.getErrorStream ()));
+            String line = null;
+            while ((line = stdInput.readLine ()) != null) {
+                Logger.debug (line);
+            }
+            int code = p.waitFor ();
+            if (code != 0) {
+                return false;
+            }
+            return true;
+        } catch (IOException e) {
+            return false;
+        } catch (InterruptedException e) {
+            return false;
+        } finally {
+            ClosingUtils.close (stdInput);
+        }
+    } else {
+        return false;
+    }
+}
+
+----------------------------------------
+
+public boolean testEncoder () {
+    BufferedReader stdInput = null;
+    try {
+        Process p = new ProcessBuilder (StringUtils.getString (getOsManager ().getExternalToolsPath (), NERO_AAC), VERSION).start ();
+        stdInput = new BufferedReader (new InputStreamReader (p.getErrorStream ()));
+        String line = null;
+        while ((line = stdInput.readLine ()) != null) {
+            Logger.debug (line);
+        }
+        int code = p.waitFor ();
+        if (code != 0) {
+            return false;
+        }
+        return true;
+    } catch (IOException e) {
+        Logger.error (e);
+        return false;
+    } catch (InterruptedException e) {
+        Logger.error (e);
+        return false;
+    } finally {
+        ClosingUtils.close (stdInput);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/OggEncoder.java 55 85
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/LameEncoder.java 62 91
+----------------------------------------
+
+public boolean testEncoder () {
+    if (getOsManager ().isWindows ()) {
+        return true;
+    }
+    BufferedReader stdInput = null;
+    try {
+        Process p = new ProcessBuilder (StringUtils.getString (getOsManager ().getExternalToolsPath (), OGGENC), VERSION).start ();
+        stdInput = new BufferedReader (new InputStreamReader (p.getErrorStream ()));
+        String line = null;
+        while ((line = stdInput.readLine ()) != null) {
+            Logger.debug (line);
+        }
+        int code = p.waitFor ();
+        if (code != 0) {
+            return false;
+        }
+        return true;
+    } catch (IOException e) {
+        return false;
+    } catch (InterruptedException e) {
+        return false;
+    } finally {
+        ClosingUtils.close (stdInput);
+    }
+}
+
+----------------------------------------
+
+public boolean testEncoder () {
+    if (getOsManager ().isWindows ()) {
+        return true;
+    }
+    BufferedReader stdInput = null;
+    try {
+        Process p = new ProcessBuilder (StringUtils.getString (getOsManager ().getExternalToolsPath (), LAME), VERSION).start ();
+        stdInput = new BufferedReader (new InputStreamReader (p.getErrorStream ()));
+        String line = null;
+        while ((line = stdInput.readLine ()) != null) {
+            Logger.debug (line);
+        }
+        int code = p.waitFor ();
+        if (code != 0) {
+            return false;
+        }
+        return true;
+    } catch (IOException e) {
+        return false;
+    } catch (InterruptedException e) {
+        return false;
+    } finally {
+        ClosingUtils.close (stdInput);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/OggEncoder.java 95 136
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/LameEncoder.java 94 131
+----------------------------------------
+
+public boolean encode (final File wavFile, final File oggFile) {
+    Logger.info (StringUtils.getString ("Ogg encoding process started... ", wavFile.getName (), " -> ", oggFile.getName ()));
+    BufferedReader stdInput = null;
+    try {
+        List  command = createCommand (wavFile, oggFile);
+        process = new ProcessBuilder (command).start ();
+        stdInput = new BufferedReader (new InputStreamReader (process.getErrorStream ()));
+        String s = null;
+        int percent = - 1;
+        while ((s = stdInput.readLine ()) != null) {
+            percent = analizeLine (s, percent);
+        }
+        int code = process.waitFor ();
+        if (code != 0) {
+            Logger.error (StringUtils.getString ("Process returned code ", code));
+            return false;
+        }
+        Logger.info ("Encoded ok!!");
+        return true;
+    } catch (IOException e) {
+        Logger.error (StringUtils.getString ("Process execution caused exception ", e));
+        return false;
+    } catch (InterruptedException e) {
+        Logger.error (StringUtils.getString ("Process execution caused exception ", e));
+        return false;
+    } finally {
+        ClosingUtils.close (stdInput);
+    }
+}
+
+----------------------------------------
+
+public boolean encode (final File wavFile, final File mp3File) {
+    Logger.info (StringUtils.getString ("Mp3 encoding process started... ", wavFile.getName (), " -> ", mp3File.getName ()));
+    BufferedReader stdInput = null;
+    try {
+        List  command = createCommand (wavFile, mp3File);
+        process = new ProcessBuilder (command).start ();
+        stdInput = new BufferedReader (new InputStreamReader (process.getErrorStream ()));
+        String s = null;
+        int percent = - 1;
+        while ((s = stdInput.readLine ()) != null) {
+            percent = processOutput (s, percent);
+        }
+        int code = process.waitFor ();
+        if (code != 0) {
+            Logger.error (StringUtils.getString ("Process returned code ", code));
+            return false;
+        }
+        Logger.info ("Encoded ok!!");
+        return true;
+    } catch (IOException e) {
+        Logger.error (StringUtils.getString ("Process execution caused exception ", e));
+        Logger.error (e);
+        return false;
+    } catch (InterruptedException e) {
+        Logger.error (StringUtils.getString ("Process execution caused exception ", e));
+        Logger.error (e);
+        return false;
+    } finally {
+        ClosingUtils.close (stdInput);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/RipperProgressDialog.java 165 185
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/RipperProgressDialog.java 192 212
+----------------------------------------
+
+private void addEncodeProgress (final JPanel panel, final JLabel encodeProgressLabel, final GridBagConstraints c) {
+    c.gridy = 4;
+    c.gridwidth = 1;
+    c.weightx = 0;
+    c.anchor = GridBagConstraints.WEST;
+    c.fill = GridBagConstraints.NONE;
+    c.insets = new Insets (3, 0, 0, 20);
+    panel.add (encodeProgressLabel, c);
+    c.gridx = 2;
+    c.weightx = 0;
+    c.anchor = GridBagConstraints.EAST;
+    panel.add (this.encodeProgressValueLabel, c);
+    c.gridx = 1;
+    c.gridy = 5;
+    c.gridwidth = 2;
+    c.weightx = 1;
+    c.fill = GridBagConstraints.HORIZONTAL;
+    c.insets = new Insets (0, 0, 0, 20);
+    panel.add (this.encodeProgressBar, c);
+}
+
+----------------------------------------
+
+private void addDecodeProgress (final JPanel panel, final JLabel decodeProgressLabel, final GridBagConstraints c) {
+    c.gridy = 2;
+    c.gridwidth = 1;
+    c.weightx = 0;
+    c.anchor = GridBagConstraints.WEST;
+    c.fill = GridBagConstraints.NONE;
+    c.insets = new Insets (3, 0, 0, 20);
+    panel.add (decodeProgressLabel, c);
+    c.gridx = 2;
+    c.weightx = 0;
+    c.anchor = GridBagConstraints.EAST;
+    panel.add (this.decodeProgressValueLabel, c);
+    c.gridx = 1;
+    c.gridy = 3;
+    c.gridwidth = 2;
+    c.weightx = 1;
+    c.fill = GridBagConstraints.HORIZONTAL;
+    c.insets = new Insets (0, 0, 0, 20);
+    panel.add (this.decodeProgressBar, c);
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/LameEncoder.java 62 91
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/NeroAacEncoder.java 57 85
+----------------------------------------
+
+public boolean testEncoder () {
+    if (getOsManager ().isWindows ()) {
+        return true;
+    }
+    BufferedReader stdInput = null;
+    try {
+        Process p = new ProcessBuilder (StringUtils.getString (getOsManager ().getExternalToolsPath (), LAME), VERSION).start ();
+        stdInput = new BufferedReader (new InputStreamReader (p.getErrorStream ()));
+        String line = null;
+        while ((line = stdInput.readLine ()) != null) {
+            Logger.debug (line);
+        }
+        int code = p.waitFor ();
+        if (code != 0) {
+            return false;
+        }
+        return true;
+    } catch (IOException e) {
+        return false;
+    } catch (InterruptedException e) {
+        return false;
+    } finally {
+        ClosingUtils.close (stdInput);
+    }
+}
+
+----------------------------------------
+
+public boolean testEncoder () {
+    BufferedReader stdInput = null;
+    try {
+        Process p = new ProcessBuilder (StringUtils.getString (getOsManager ().getExternalToolsPath (), NERO_AAC), VERSION).start ();
+        stdInput = new BufferedReader (new InputStreamReader (p.getErrorStream ()));
+        String line = null;
+        while ((line = stdInput.readLine ()) != null) {
+            Logger.debug (line);
+        }
+        int code = p.waitFor ();
+        if (code != 0) {
+            return false;
+        }
+        return true;
+    } catch (IOException e) {
+        Logger.error (e);
+        return false;
+    } catch (InterruptedException e) {
+        Logger.error (e);
+        return false;
+    } finally {
+        ClosingUtils.close (stdInput);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/NeroAacEncoder.java 57 85
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/FlacEncoder.java 61 85
+----------------------------------------
+
+public boolean testEncoder () {
+    BufferedReader stdInput = null;
+    try {
+        Process p = new ProcessBuilder (StringUtils.getString (getOsManager ().getExternalToolsPath (), NERO_AAC), VERSION).start ();
+        stdInput = new BufferedReader (new InputStreamReader (p.getErrorStream ()));
+        String line = null;
+        while ((line = stdInput.readLine ()) != null) {
+            Logger.debug (line);
+        }
+        int code = p.waitFor ();
+        if (code != 0) {
+            return false;
+        }
+        return true;
+    } catch (IOException e) {
+        Logger.error (e);
+        return false;
+    } catch (InterruptedException e) {
+        Logger.error (e);
+        return false;
+    } finally {
+        ClosingUtils.close (stdInput);
+    }
+}
+
+----------------------------------------
+
+public boolean testEncoder () {
+    BufferedReader stdInput = null;
+    try {
+        Process p = new ProcessBuilder (StringUtils.getString (getOsManager ().getExternalToolsPath (), FLAC), VERSION).start ();
+        stdInput = new BufferedReader (new InputStreamReader (p.getErrorStream ()));
+        String line = null;
+        while ((line = stdInput.readLine ()) != null) {
+            Logger.debug (line);
+        }
+        int code = p.waitFor ();
+        if (code != 0) {
+            return false;
+        }
+        return true;
+    } catch (IOException e) {
+        return false;
+    } catch (InterruptedException e) {
+        return false;
+    } finally {
+        ClosingUtils.close (stdInput);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/FlacEncoder.java 61 85
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/Mp4Encoder.java 63 89
+----------------------------------------
+
+public boolean testEncoder () {
+    BufferedReader stdInput = null;
+    try {
+        Process p = new ProcessBuilder (StringUtils.getString (getOsManager ().getExternalToolsPath (), FLAC), VERSION).start ();
+        stdInput = new BufferedReader (new InputStreamReader (p.getErrorStream ()));
+        String line = null;
+        while ((line = stdInput.readLine ()) != null) {
+            Logger.debug (line);
+        }
+        int code = p.waitFor ();
+        if (code != 0) {
+            return false;
+        }
+        return true;
+    } catch (IOException e) {
+        return false;
+    } catch (InterruptedException e) {
+        return false;
+    } finally {
+        ClosingUtils.close (stdInput);
+    }
+}
+
+----------------------------------------
+
+public boolean testEncoder () {
+    BufferedReader stdInput = null;
+    try {
+        Process p = new ProcessBuilder (StringUtils.getString (getOsManager ().getExternalToolsPath (), OGGENC)).start ();
+        stdInput = new BufferedReader (new InputStreamReader (p.getErrorStream ()));
+        String line = null;
+        while ((line = stdInput.readLine ()) != null) {
+            Logger.debug (line);
+        }
+        int code = p.waitFor ();
+        if (code != 1) {
+            return false;
+        }
+        return true;
+    } catch (IOException e) {
+        return false;
+    } catch (InterruptedException e) {
+        return false;
+    } finally {
+        ClosingUtils.close (stdInput);
+    }
+}
+
+----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+0
+0
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/Cdda2wavScanBus.java 177 227
+/home/ubuntu/Webpage/app_collaborative_sci_workflow/workflow_outputs/test_workflow/atunes/aTunes/src/main/java/net/sourceforge/atunes/kernel/modules/cdripper/Cdda2wavScanBus.java 280 330
+----------------------------------------
+
+private List  tryScanWithCdda2wav () {
+    List  devices = new ArrayList  ();
+    BufferedReader stdInput = null;
+    try {
+        List  command = new ArrayList  ();
+        command.add (StringUtils.getString (osManager.getExternalToolsPath (), converterCommand));
+        command.add (Cdda2wavConstants.SCAN_BUS);
+        command.add (Cdda2wavConstants.NO_INFO_FILE);
+        Logger.debug ((Object []) command.toArray (new String [command.size ()]));
+        setProcess (new ProcessBuilder (command).start ());
+        if ((osManager.isLinux () && ! converterCommand.equals (Cdda2wavConstants.ICEDAX_COMMAND_STRING)) || osManager.isWindows ()) {
+            stdInput = new BufferedReader (new InputStreamReader (getProcess ().getErrorStream ()));
+        } else {
+            stdInput = new BufferedReader (new InputStreamReader (getProcess ().getInputStream ()));
+        }
+        readCdda2wavDevices (devices, stdInput);
+        int code = getProcess ().waitFor ();
+        if (code != 0) {
+            Logger.error (StringUtils.getString ("Process returned code ", code));
+        }
+        Logger.info (StringUtils.getString ("Found ", devices.size (), " devices with scanbus method"));
+    } catch (IOException e) {
+        Logger.error (StringUtils.getString ("Process execution caused exception: ", e.getMessage ()));
+        Logger.error (e);
+    } catch (InterruptedException e) {
+        Logger.error (StringUtils.getString ("Process execution caused exception: ", e.getMessage ()));
+        Logger.error (e);
+    } finally {
+        ClosingUtils.close (stdInput);
+    }
+    return devices;
+}
+
+----------------------------------------
+
+private List  tryScanWithATA () {
+    List  devices = new ArrayList  ();
+    BufferedReader stdInput = null;
+    try {
+        List  command = new ArrayList  ();
+        command.add (StringUtils.getString (osManager.getExternalToolsPath (), converterCommand));
+        command.add (Cdda2wavConstants.SCAN_BUS);
+        command.add (Cdda2wavConstants.ATA);
+        command.add (Cdda2wavConstants.NO_INFO_FILE);
+        Logger.debug ((Object []) command.toArray (new String [command.size ()]));
+        setProcess (new ProcessBuilder (command).start ());
+        if ((osManager.isLinux () && ! converterCommand.equals (Cdda2wavConstants.ICEDAX_COMMAND_STRING)) || osManager.isWindows ()) {
+            stdInput = new BufferedReader (new InputStreamReader (getProcess ().getErrorStream ()));
+        } else {
+            stdInput = new BufferedReader (new InputStreamReader (getProcess ().getInputStream ()));
+        }
+        readATAScanOutput (devices, stdInput);
+        int code = getProcess ().waitFor ();
+        if (code != 0) {
+            Logger.error (StringUtils.getString ("Process returned code ", code));
+        }
+        Logger.info (StringUtils.getString ("Found ", devices.size (), " devices with '-scanbus dev=ATA' method"));
+    } catch (IOException e) {
+        Logger.error (StringUtils.getString (PROCESS_EXECUTION_CAUSED_EXCEPTION, e));
+        return null;
+    } catch (InterruptedException e) {
+        Logger.error (StringUtils.getString (PROCESS_EXECUTION_CAUSED_EXCEPTION, e));
+        return null;
+    } finally {
+        ClosingUtils.close (stdInput);
+    }
+    return devices;
+}
+
+----------------------------------------
