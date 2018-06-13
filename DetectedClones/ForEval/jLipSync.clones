@@ -6,7 +6,14 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 ----------------------------------------
 
 public boolean accept (File f) {
-A
+    if (f.isDirectory ()) {
+        return true;
+    }
+    String fileName = f.getName ().toLowerCase ();
+    if (fileName.endsWith (".jls")) {
+        return true;
+    }
+    return false;
 }
 
 ----------------------------------------
